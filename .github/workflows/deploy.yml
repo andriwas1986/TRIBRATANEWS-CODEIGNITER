@@ -19,6 +19,8 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: masterprogram_ci4/
         server-dir: kopetcodeigniter/
+        timeout: 600000
+        state-name: .ftp-deploy-sync-state-core.json
         exclude: |
           **/.git*
           **/.git*/**
@@ -31,6 +33,8 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: public_html/waskitho.suaramadiun.com/
+        timeout: 600000
+        state-name: .ftp-deploy-sync-state-public.json
         exclude: |
           **/.git*
           **/.git*/**

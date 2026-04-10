@@ -18,7 +18,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: masterprogram_ci4/
-        server-dir: /kopetcodeigniter/
+        server-dir: kopetcodeigniter/
         exclude: |
           **/.git*
           **/.git*/**
@@ -30,7 +30,7 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /public_html/waskitho.suaramadiun.com/
+        server-dir: public_html/waskitho.suaramadiun.com/
         exclude: |
           **/.git*
           **/.git*/**

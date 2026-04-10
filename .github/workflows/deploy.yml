@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - main
-name: 🚀 Deploy Website on Push (SFTP v3)
+name: 🚀 Deploy Website on Push (SCP)
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -12,23 +12,22 @@ jobs:
       uses: actions/checkout@v3
 
     - name: 🔐 Sync Core (kopetcodeigniter)
-      uses: wangyucode/sftp-upload-action@v3
+      uses: appleboy/scp-action@v0.1.7
       with:
         host: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
-        privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 65002
-        localDir: 'masterprogram_ci4'
-        remoteDir: 'kopetcodeigniter'
-        exclude: '.git/*, .env, vendor/**, system/**'
+        source: "masterprogram_ci4/**,!masterprogram_ci4/vendor/**,!masterprogram_ci4/system/**"
+        target: "kopetcodeigniter"
+        strip_components: 1
 
     - name: 🌐 Sync Public (Subdomain)
-      uses: wangyucode/sftp-upload-action@v3
+      uses: appleboy/scp-action@v0.1.7
       with:
         host: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
-        privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 65002
-        localDir: './'
-        remoteDir: 'public_html/waskitho.suaramadiun.com/'
-        exclude: '.git/*, .env, masterprogram_ci4/**'
+        source: "*,!masterprogram_ci4"
+        target: "public_html/waskitho.suaramadiun.com/"

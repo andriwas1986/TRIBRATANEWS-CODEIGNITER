@@ -56,17 +56,18 @@
         .main-header .navbar { background-color: #ffffff !important; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border-bottom: none; }
         .main-header .logo { background-color: #1e293b !important; color: #fff !important; border-bottom: 0 solid transparent; }
         
-        /* Teks & Ikon Navbar */
-        .main-header .navbar .nav>li>a { font-size: 14px !important; color: #475569 !important; padding-top: 15px; padding-bottom: 15px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
-        .main-header .navbar .sidebar-toggle { color: #64748b !important; padding: 15px 15px; display: inline-flex; align-items: center; justify-content: center; font-size: 16px !important; }
+        /* Teks & Ikon Navbar (Dibuat Lebih Tipis ke Atas) */
+        .main-header .navbar { min-height: 40px !important; display: flex; justify-content: space-between; align-items: center; padding: 0 !important; }
+        .main-header .navbar .nav>li>a { font-size: 14px !important; color: #475569 !important; padding: 10px 15px !important; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+        .main-header .navbar .sidebar-toggle { color: #64748b !important; padding: 10px 15px !important; display: inline-flex; align-items: center; justify-content: center; font-size: 16px !important; height: 100%; }
         .main-header .navbar .sidebar-toggle:hover { background-color: #f8fafc !important; }
         .main-header .sidebar-toggle:before { content: ""; } /* Hindari ikon kembar */
         
         /* Tombol Lihat Website */
-        .main-header .navbar .btn-site-prev { font-size: 13px !important; padding: 6px 14px !important; margin-top: 10px; margin-right: 15px; border-radius: 20px; color: #fff !important; }
+        .main-header .navbar .btn-site-prev { font-size: 13px !important; padding: 6px 14px !important; margin-top: 8px !important; margin-bottom: 8px; margin-right: 15px; border-radius: 20px; color: #ffffff !important; font-weight: 700 !important; background-color: #10b981 !important; border: 1px solid #059669 !important; }
+        .main-header .navbar .btn-site-prev i { color: #ffffff !important; }
         
         /* Fix BS5 flex layout pada Nav Kanan (Dorong ke pojok kanan) */
-        .main-header .navbar { display: flex; justify-content: space-between; align-items: center; }
         .navbar-custom-menu { margin-left: auto; display: flex; align-items: center; }
         .navbar-custom-menu > .nav { flex-direction: row; display: flex; align-items: center; margin: 0; gap: 5px; }
         
@@ -86,7 +87,11 @@
         
         /* Fix Bootstrap 5 Link Underline & Font Overrides */
         a { text-decoration: none !important; }
-        .main-header .logo { font-size: 20px !important; font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important; letter-spacing: 0px; }
+        .main-header .logo { font-size: 20px !important; font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important; letter-spacing: 0px; font-weight: 300 !important; }
+        .main-header .logo b { font-weight: 800 !important; }
+        
+        /* General Font Size Normalization */
+        body, .content-wrapper, .main-footer { font-size: 14px !important; }
     </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">

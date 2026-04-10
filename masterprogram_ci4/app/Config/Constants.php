@@ -100,7 +100,7 @@ define('EVENT_PRIORITY_HIGH', 10);
 */
 
 //general
-defined('VARIENT_VERSION')                          || define('VARIENT_VERSION', '2.4.3');
+defined('VARIENT_VERSION')                          || define('VARIENT_VERSION', '5.3.3');
 defined('SLIDER_POSTS_LIMIT')                       || define('SLIDER_POSTS_LIMIT', 20); //MAX 100
 defined('BREAKING_POSTS_LIMIT')                     || define('BREAKING_POSTS_LIMIT', 20); //MAX 100
 defined('RECOMMENDED_POSTS_LIMIT')                  || define('RECOMMENDED_POSTS_LIMIT', 6); //MAX 100

@@ -11,7 +11,9 @@
 <script src="<?= base_url('assets/admin/js/jquery-ui.min.js'); ?>"></script>
 <script>$.widget.bridge('uibutton', $.ui.button);</script>
 <script src="<?= base_url('assets/admin/plugins/bootstrap/js/bootstrap.min.js'); ?>"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url('assets/admin/js/adminlte.min.js'); ?>"></script>
+<script src="https://cdn.jsdelivr.net/npm/adminlte4@4.0.0-rc.7/dist/js/adminlte.min.js"></script>
 <script src="<?= base_url('assets/admin/plugins/datatables/jquery.dataTables.min.js'); ?>"></script>
 <script src="<?= base_url('assets/admin/plugins/datatables/dataTables.bootstrap.min.js'); ?>"></script>
 <script src="<?= base_url('assets/admin/js/lazysizes.min.js'); ?>"></script>

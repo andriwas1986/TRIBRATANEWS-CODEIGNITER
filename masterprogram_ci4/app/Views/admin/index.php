@@ -194,7 +194,7 @@
 
     <?php if (hasPermission('admin_panel')): ?>
     <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="col-12 col-md-6 col-lg-3">
             <a href="<?= adminURL('posts'); ?>" style="text-decoration:none;">
                 <div class="card-colorful grad-blue">
                     <div class="cc-info"><p>Total Post</p><h3><?= $postsCount ?? 0; ?></h3></div>
@@ -202,7 +202,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="col-12 col-md-6 col-lg-3">
             <a href="<?= adminURL('pending-posts'); ?>" style="text-decoration:none;">
                 <div class="card-colorful grad-orange">
                     <div class="cc-info"><p>Pending</p><h3><?= $pendingPostsCount ?? 0; ?></h3></div>
@@ -210,7 +210,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="col-12 col-md-6 col-lg-3">
             <a href="<?= adminURL('drafts'); ?>" style="text-decoration:none;">
                 <div class="card-colorful grad-purple">
                     <div class="cc-info"><p>Drafts</p><h3><?= $draftsCount ?? 0; ?></h3></div>
@@ -218,7 +218,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="col-12 col-md-6 col-lg-3">
             <a href="<?= adminURL('scheduled-posts'); ?>" style="text-decoration:none;">
                 <div class="card-colorful grad-green">
                     <div class="cc-info"><p>Terjadwal</p><h3><?= $scheduledPostsCount ?? 0; ?></h3></div>
@@ -230,7 +230,7 @@
     <?php endif; ?>
 
     <div class="row">
-        <div class="col-lg-8 col-md-12">
+        <div class="col-12 col-lg-8">
             <div class="map-container">
                 <canvas id="spiderCanvas"></canvas>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" class="map-bg-img">
@@ -250,7 +250,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-12">
+        <div class="col-12 col-lg-4">
             <div class="glass-panel">
                 <div class="panel-head">
                     <h4><i class="fa fa-flash" style="color:var(--electric-blue)"></i> Recent Posts</h4>
@@ -279,7 +279,7 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-12">
             <div class="digital-panel">
                 <div class="digital-metrics">
                     <div class="digi-item">
@@ -305,7 +305,7 @@
 
     <div class="row">
         <?php if (hasPermission('users')): ?>
-        <div class="col-lg-6">
+        <div class="col-12 col-lg-6">
             <div class="glass-panel" style="height:auto; padding-bottom:10px;">
                 <div class="panel-head"><h4>New Users</h4><a href="<?= adminURL('users'); ?>" class="btn btn-xs btn-default" style="border-radius:20px; border:1px solid #bae6ff; color:var(--deep-blue);">View All</a></div>
                 <table class="tbl-modern" style="width:100%;">
@@ -322,7 +322,7 @@
         <?php endif; ?>
 
         <?php if (hasPermission('comments_contact')): ?>
-        <div class="col-lg-6">
+        <div class="col-12 col-lg-6">
             <div class="glass-panel" style="height:auto; padding-bottom:10px;">
                 <div class="panel-head"><h4>Latest Inbox</h4><a href="<?= adminURL('contact-messages'); ?>" class="btn btn-xs btn-default" style="border-radius:20px; border:1px solid #bae6ff; color:var(--deep-blue);">View All</a></div>
                 <table class="tbl-modern" style="width:100%;">

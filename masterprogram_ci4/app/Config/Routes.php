@@ -159,6 +159,7 @@ $routes->group($customRoutes->admin, ['filter' => 'auth'], function ($routes) {
     $routes->get('edit-font/(:num)', 'AdminController::editFont/$1');
     $routes->get('social-login-settings', 'AdminController::socialLoginSettings');
     $routes->get('general-settings', 'AdminController::generalSettings');
+    $routes->get('dashboard-themes', 'AdminController::dashboardThemes');
     //language
     $routes->get('language-settings', 'LanguageController::languages');
     $routes->get('edit-language/(:num)', 'LanguageController::editLanguage/$1');
@@ -300,6 +301,7 @@ $postRoutesArray = [
     'Admin/fileUploadSettingsPost',
     'Admin/routeSettingsPost',
     'Admin/addUserPost',
+    'Admin/setDashboardThemePost',
     'Admin/userOptionsPost',
     'Admin/deleteUserPost',
     'Admin/addRolePost',

@@ -354,6 +354,9 @@
                                 <li class="nav-route-settings">
                                     <a href="<?= adminUrl('route-settings'); ?>"><span><?= trans("route_settings"); ?></span></a>
                                 </li>
+                                <li class="nav-dashboard-themes">
+                                    <a href="<?= adminUrl('dashboard-themes'); ?>"><i class="fa fa-paint-brush"></i> <span>Tema Dashboard</span></a>
+                                </li>
                             </ul>
                         </li>
                     <?php endif;

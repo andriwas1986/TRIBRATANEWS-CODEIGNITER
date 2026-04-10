@@ -66,10 +66,19 @@ class AdminController extends BaseAdminController
         $data['scheduledPostsCount'] = $this->postAdminModel->getScheduledPostsCount();
         $data['panelSettings'] = panelSettings();
 
+        // Get Current Admin Theme
+        $data['adminTheme'] = $this->settingsModel->getDashboardTheme();
+
         $this->commonModel->fixNullRecords();
 
         echo view('admin/includes/_header', $data);
-        echo view('admin/index', $data);
+        if ($data['adminTheme'] == 'wordpress') {
+             echo view('admin/dashboard/theme_wordpress', $data);
+        } elseif ($data['adminTheme'] == 'modern') {
+             echo view('admin/dashboard/theme_modern', $data);
+        } else {
+             echo view('admin/index', $data);
+        }
         echo view('admin/includes/_footer');
     }
 
@@ -2198,5 +2207,40 @@ class AdminController extends BaseAdminController
         $db->table('custom_header_settings')->where('id', 1)->update($data);
         resetCacheDataOnChange();
         return redirect()->back()->with('success', 'Pengaturan Header berhasil disimpan!');
+    }
+
+    /**
+     * Dashboard Themes
+     */
+    public function dashboardThemes()
+    {
+        checkPermission('settings');
+        $data['title'] = "Tema Dashboard";
+        $data['panelSettings'] = panelSettings();
+        $data['adminTheme'] = $this->settingsModel->getDashboardTheme();
+
+        // Auto-Fix Column if not exists
+        $db = \Config\Database::connect();
+        if (!$db->fieldExists('admin_theme', 'general_settings')) {
+            $db->query("ALTER TABLE general_settings ADD COLUMN admin_theme VARCHAR(50) DEFAULT 'classic'");
+        }
+
+        echo view('admin/includes/_header', $data);
+        echo view('admin/settings/dashboard_themes', $data);
+        echo view('admin/includes/_footer');
+    }
+
+    /**
+     * Set Dashboard Theme Post
+     */
+    public function setDashboardThemePost()
+    {
+        checkPermission('settings');
+        if ($this->settingsModel->setDashboardTheme()) {
+            setSuccessMessage("msg_updated");
+        } else {
+            setErrorMessage("msg_error");
+        }
+        return redirect()->to(adminUrl('dashboard-themes'));
     }
 }

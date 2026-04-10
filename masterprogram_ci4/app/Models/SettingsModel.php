@@ -458,6 +458,23 @@ class SettingsModel extends BaseModel
         return $this->db->table('general_settings')->where('site_id', $this->activeSiteId)->get()->getRow();
     }
 
+    //get dashboard theme
+    public function getDashboardTheme()
+    {
+        $settings = $this->getGeneralSettings();
+        return !empty($settings->admin_theme) ? $settings->admin_theme : 'classic';
+    }
+
+    //set dashboard theme
+    public function setDashboardTheme()
+    {
+        $theme = inputPost('admin_theme');
+        if ($theme == 'classic' || $theme == 'modern' || $theme == 'wordpress') {
+            return $this->db->table('general_settings')->where('site_id', $this->activeSiteId)->update(['admin_theme' => $theme]);
+        }
+        return false;
+    }
+
     //set theme mode
     public function setThemeMode()
     {

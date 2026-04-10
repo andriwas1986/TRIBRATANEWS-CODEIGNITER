@@ -25,6 +25,8 @@ jobs:
           **/.git*
           **/.git*/**
           .env
+          vendor/**
+          system/**
 
     - name: 🌐 Sync Public (Subdomain)
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5

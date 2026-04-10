@@ -1,3 +1,8 @@
+<style>
+/* Fix dropdown item text color for light mode & dark mode */
+body:not(.dark-mode) .dropdown-menu .dropdown-item { color: #475569 !important; font-weight: 500; }
+body.dark-mode .dropdown-menu .dropdown-item { color: #e2e8f0 !important; }
+</style>
 <ul class="dropdown-menu <?= !empty($ulMobileClass) ? $ulMobileClass : ''; ?>">
 <?php if (hasPermission('admin_panel')): ?>
 <li>

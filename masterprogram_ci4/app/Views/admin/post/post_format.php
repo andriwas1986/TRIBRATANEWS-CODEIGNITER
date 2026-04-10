@@ -17,7 +17,7 @@
         <?php $formatCount = 0;
         if ($generalSettings->post_format_article == 1):
             $formatCount += 1; ?>
-            <div class="col-xs-12 col-sm-4 col-lg-3 col-add-post">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-add-post mb-4">
                 <a href="<?= adminUrl('add-post?type=article'); ?>">
                     <div class="item">
                         <div class="item-icon">
@@ -34,7 +34,7 @@
         <?php endif;
         if ($generalSettings->post_format_gallery == 1):
             $formatCount += 1; ?>
-            <div class="col-xs-12 col-sm-4 col-lg-3 col-add-post">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-add-post mb-4">
                 <a href="<?= adminUrl('add-post?type=gallery'); ?>">
                     <div class="item">
                         <div class="item-icon">
@@ -51,7 +51,7 @@
         <?php endif;
         if ($generalSettings->post_format_sorted_list == 1):
             $formatCount += 1; ?>
-            <div class="col-xs-12 col-sm-4 col-lg-3 col-add-post">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-add-post mb-4">
                 <a href="<?= adminUrl('add-post?type=sorted_list'); ?>">
                     <div class="item">
                         <div class="item-icon">
@@ -68,7 +68,7 @@
         <?php endif;
         if ($generalSettings->post_format_table_of_contents == 1):
             $formatCount += 1; ?>
-            <div class="col-xs-12 col-sm-4 col-lg-3 col-add-post">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-add-post mb-4">
                 <a href="<?= adminUrl('add-post?type=table_of_contents'); ?>">
                     <div class="item">
                         <div class="item-icon">
@@ -85,7 +85,7 @@
         <?php endif;
         if ($generalSettings->post_format_video == 1):
             $formatCount += 1; ?>
-            <div class="col-xs-12 col-sm-4 col-lg-3 col-add-post">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-add-post mb-4">
                 <a href="<?= adminUrl('add-post?type=video'); ?>">
                     <div class="item">
                         <div class="item-icon">
@@ -101,7 +101,7 @@
             </div>
         <?php endif;
         if ($generalSettings->post_format_audio == 1): ?>
-            <div class="col-xs-12 col-sm-4 col-lg-3 col-add-post">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-add-post mb-4">
                 <a href="<?= adminUrl('add-post?type=audio'); ?>">
                     <div class="item">
                         <div class="item-icon">
@@ -119,7 +119,7 @@
         <?php endif;
         if ($generalSettings->post_format_trivia_quiz == 1):
             $formatCount += 1; ?>
-            <div class="col-xs-12 col-sm-4 col-lg-3 col-add-post">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-add-post mb-4">
                 <a href="<?= adminUrl('add-post?type=trivia_quiz'); ?>">
                     <div class="item">
                         <div class="item-icon">
@@ -135,7 +135,7 @@
         <?php endif;
         if ($generalSettings->post_format_personality_quiz == 1):
             $formatCount += 1; ?>
-            <div class="col-xs-12 col-sm-4 col-lg-3 col-add-post">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-add-post mb-4">
                 <a href="<?= adminUrl('add-post?type=personality_quiz'); ?>">
                     <div class="item">
                         <div class="item-icon">
@@ -151,7 +151,7 @@
         <?php endif;
         if ($generalSettings->post_format_poll == 1):
             $formatCount += 1; ?>
-            <div class="col-xs-12 col-sm-4 col-lg-3 col-add-post">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-add-post mb-4">
                 <a href="<?= adminUrl('add-post?type=poll'); ?>">
                     <div class="item">
                         <div class="item-icon">
@@ -167,7 +167,7 @@
         <?php endif;
         if ($generalSettings->post_format_recipe == 1):
             $formatCount += 1; ?>
-            <div class="col-xs-12 col-sm-4 col-lg-3 col-add-post">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-add-post mb-4">
                 <a href="<?= adminUrl('add-post?type=recipe'); ?>">
                     <div class="item">
                         <div class="item-icon">

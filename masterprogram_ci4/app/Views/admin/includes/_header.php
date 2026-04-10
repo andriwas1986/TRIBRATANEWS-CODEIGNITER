@@ -52,22 +52,26 @@
         }
     </script>
     <style>
-        /* --- RESTORE ADMINLTE V2 SKIN-BLUE HEADER & FIX BS5 OVERLAPS --- */
-        .main-header .navbar { background-color: #3c8dbc !important; }
-        .main-header .logo { background-color: #367fa9 !important; color: #fff !important; border-bottom: 0 solid transparent; }
-        .main-header .navbar .nav>li>a { color: #fff !important; padding-top: 15px; padding-bottom: 15px; }
-        .main-header .navbar .sidebar-toggle { color: #fff !important; padding: 15px; }
-        .main-header .navbar .sidebar-toggle:hover { background-color: #367fa9 !important; }
-        .main-header .sidebar-toggle:before { content: ""; } /* Prevent double icons */
-        .navbar-custom-menu > .nav { flex-direction: row; } /* Fix BS5 flex layout on nav */
+        /* --- RESTORE ADMINLTE V2 CUSTOM HEADER (WHITE) & FIX BS5 OVERLAPS --- */
+        .main-header .navbar { background-color: #ffffff !important; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border-bottom: none; }
+        .main-header .logo { background-color: #1e293b !important; color: #fff !important; border-bottom: 0 solid transparent; }
         
-        /* Fix Layout Overlap */
-        .content-wrapper > .content { padding-top: 25px !important; }
-        .ticker-wrapper { margin-top: 10px; }
+        /* Teks & Ikon Navbar */
+        .main-header .navbar .nav>li>a { color: #475569 !important; padding-top: 15px; padding-bottom: 15px; font-weight: 500; display: flex; align-items: center; gap: 5px; }
+        .main-header .navbar .sidebar-toggle { color: #64748b !important; padding: 15px 15px; display: inline-flex; align-items: center; justify-content: center; }
+        .main-header .navbar .sidebar-toggle:hover { background-color: #f8fafc !important; }
+        .main-header .sidebar-toggle:before { content: ""; } /* Hindari ikon kembar */
         
-        /* Restore dropdown menu button inside header */
-        .user-menu .dropdown-toggle { display: flex; align-items: center; gap: 8px; }
-        .user-image { float: none; margin-top: -5px; }
+        /* Fix BS5 flex layout pada Nav Kanan */
+        .navbar-custom-menu > .nav { flex-direction: row; display: flex; align-items: center; margin: 0; }
+        
+        /* Fix Layout Overlap (Ticker yang terpotong) */
+        .content-wrapper { margin-top: 0px !important; }
+        .content-wrapper > .content { padding-top: 30px !important; padding-left: 25px; padding-right: 25px; }
+        
+        /* Dropdown & Avatar Fix */
+        .user-menu .dropdown-toggle { display: flex; align-items: center; }
+        .user-image { float: none; width: 25px; height: 25px; margin-top: 0; margin-right: 5px; }
     </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">

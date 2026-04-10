@@ -51,6 +51,24 @@
             return serializedData;
         }
     </script>
+    <style>
+        /* --- RESTORE ADMINLTE V2 SKIN-BLUE HEADER & FIX BS5 OVERLAPS --- */
+        .main-header .navbar { background-color: #3c8dbc !important; }
+        .main-header .logo { background-color: #367fa9 !important; color: #fff !important; border-bottom: 0 solid transparent; }
+        .main-header .navbar .nav>li>a { color: #fff !important; padding-top: 15px; padding-bottom: 15px; }
+        .main-header .navbar .sidebar-toggle { color: #fff !important; padding: 15px; }
+        .main-header .navbar .sidebar-toggle:hover { background-color: #367fa9 !important; }
+        .main-header .sidebar-toggle:before { content: ""; } /* Prevent double icons */
+        .navbar-custom-menu > .nav { flex-direction: row; } /* Fix BS5 flex layout on nav */
+        
+        /* Fix Layout Overlap */
+        .content-wrapper > .content { padding-top: 25px !important; }
+        .ticker-wrapper { margin-top: 10px; }
+        
+        /* Restore dropdown menu button inside header */
+        .user-menu .dropdown-toggle { display: flex; align-items: center; gap: 8px; }
+        .user-image { float: none; margin-top: -5px; }
+    </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">

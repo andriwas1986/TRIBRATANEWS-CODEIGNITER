@@ -1,0 +1,371 @@
+<?php namespace App\Models;
+
+require_once APPPATH . "ThirdParty/intervention-image/vendor/autoload.php";
+require_once APPPATH . "ThirdParty/webp-convert/vendor/autoload.php";
+
+use CodeIgniter\Model;
+use Intervention\Image\ImageManager;
+use Intervention\Image\ImageManagerStatic as Image;
+use WebPConvert\WebPConvert;
+
+class UploadModel extends BaseModel
+{
+    protected $jpgQuality;
+    protected $webpQuality;
+    protected $imgExt;
+    protected $activeSiteId;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->jpgQuality = 85;
+        $this->webpQuality = 85;
+        $this->imgExt = '.jpg';
+        if ($this->generalSettings->image_file_format == 'PNG') {
+            $this->imgExt = '.png';
+        }
+        if ($this->generalSettings->image_file_format == 'WEBP') {
+            //do not compress JPG image if it will be converted to WEBP
+            $this->jpgQuality = 100;
+        }
+
+        // [MODIFIKASI MULTI-SITE] Ambil Site ID
+        $this->activeSiteId = defined('CURRENT_SITE_ID') ? CURRENT_SITE_ID : 1;
+    }
+
+    //upload file
+    private function upload($inputName, $directory, $namePrefix, $allowedExtensions = null)
+    {
+        if ($allowedExtensions != null && is_array($allowedExtensions) && !empty($allowedExtensions[0])) {
+            if (!$this->checkAllowedFileTypes($inputName, $allowedExtensions)) {
+                return null;
+            }
+        }
+        $file = $this->request->getFile($inputName);
+        if (!empty($file) && !empty($file->getName())) {
+            $orjName = $file->getName();
+            $ext = pathinfo($orjName, PATHINFO_EXTENSION);
+            
+            // [FIX NAME] Gunakan Timestamp + Uniqid agar nama file PASTI BEDA per detik
+            // Format: prefix_20231025_120000_a1b2c3.jpg
+            $uniqueName = $namePrefix . date('Ymd_His') . '_' . uniqid() . '.' . $ext;
+            
+            if (!$file->hasMoved()) {
+                if ($file->move(FCPATH . $directory, $uniqueName)) {
+                    return ['name' => $uniqueName, 'orjName' => $orjName, 'path' => $directory . $uniqueName, 'ext' => $ext];
+                }
+            }
+        }
+        return null;
+    }
+
+    //upload temp file
+    public function uploadTempFile($inputName, $isImage = false)
+    {
+        $allowedExtensions = array();
+        if ($isImage) {
+            $allowedExtensions = ['jpg', 'jpeg', 'webp', 'png', 'gif'];
+        }
+        return $this->upload($inputName, 'uploads/tmp/', 'temp_', $allowedExtensions);
+    }
+
+    //upload file
+    public function uploadFile($inputName)
+    {
+        $extensions = $this->generalSettings->allowed_file_extensions;
+        $extArray = array();
+        if (!empty($extensions)) {
+            $extArray = @explode(',', $extensions);
+        }
+        // Tambah prefix site id di file umum juga
+        $prefix = "site_" . $this->activeSiteId . "_file_";
+        return $this->upload($inputName, "uploads/files/", $prefix, $extArray);
+    }
+
+    //upload GIF image
+    public function uploadGIF($fileName, $targetDirectory)
+    {
+        $newName = 'site_' . $this->activeSiteId . '_img_' . date('YmdHis') . '_' . uniqid() . '.gif';
+        $directory = $this->createUploadDirectory($targetDirectory);
+        rename(FCPATH . 'uploads/tmp/' . $fileName, FCPATH . 'uploads/' . $targetDirectory . '/' . $directory . $newName);
+        return 'uploads/' . $targetDirectory . '/' . $directory . $newName;
+    }
+
+    //upload post image
+    public function uploadPostImage($tempPath, $type)
+    {
+        $img = Image::make($tempPath)->orientate();
+        $name = '';
+        
+        // Prefix ukuran
+        if ($type == 'big') {
+            $name = 'image_870x580_';
+            $img->fit(870, 580);
+        } elseif ($type == 'default') {
+            $name = 'image_870x_';
+            $img->resize(870, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+        } elseif ($type == 'slider') {
+            $name = 'image_694x532_';
+            $img->fit(694, 532);
+        } elseif ($type == 'mid') {
+            $name = 'image_430x256_';
+            $img->fit(450, 280);
+        } elseif ($type == 'small') {
+            $name = 'image_140x98_';
+            $img->fit(140, 98);
+        }
+
+        if ($this->getFileExt($tempPath) == 'webp') {
+            $this->jpgQuality = 100;
+        }
+
+        // [MODIFIKASI] Tambahkan Site ID di nama file gambar postingan
+        // Hasil: uploads/images/202310/site_1_image_870x_abcdef12345.jpg
+        $sitePrefix = 'site_' . $this->activeSiteId . '_';
+        
+        $newPath = 'uploads/images/' . $this->createUploadDirectory('images') . $sitePrefix . $name . uniqid();
+        $img->save(FCPATH . $newPath . $this->imgExt, $this->jpgQuality);
+        return $this->convertImageFormat($newPath);
+    }
+
+    //upload quiz image
+    public function uploadQuizImage($tempPath, $type)
+    {
+        $img = Image::make($tempPath)->orientate();
+        $name = '';
+        if ($type == 'default') {
+            $name = 'image_870x580_';
+            $img->fit(870, 580);
+        } elseif ($type == 'small') {
+            $name = 'image_420x420_';
+            $img->fit(420, 420);
+        }
+        if ($this->getFileExt($tempPath) == 'webp') {
+            $this->jpgQuality = 100;
+        }
+        
+        $sitePrefix = 'site_' . $this->activeSiteId . '_';
+        $newPath = 'uploads/quiz/' . $this->createUploadDirectory('quiz') . $sitePrefix . $name . uniqid();
+        $img->save(FCPATH . $newPath . $this->imgExt, $this->jpgQuality);
+        return $this->convertImageFormat($newPath);
+    }
+
+    //gallery image upload
+    public function uploadGalleryImage($tempPath, $width)
+    {
+        $sitePrefix = 'site_' . $this->activeSiteId . '_';
+        $newPath = 'uploads/gallery/' . $this->createUploadDirectory('gallery') . $sitePrefix . 'image_' . $width . 'x_' . uniqid();
+        $img = Image::make($tempPath)->orientate();
+        $img->resize($width, null, function ($constraint) {
+            $constraint->aspectRatio();
+        });
+        $img->save(FCPATH . $newPath . $this->imgExt, 90);
+        return $this->convertImageFormat($newPath);
+    }
+
+    //avatar image upload
+    public function uploadAvatar($userId, $path)
+    {
+        $directory = $this->createUploadDirectory('profile');
+        $sitePrefix = 'site_' . $this->activeSiteId . '_';
+        $newPath = 'uploads/profile/' . $directory . $sitePrefix . 'avatar_' . $userId . '_' . uniqid();
+        $img = Image::make($path)->orientate();
+        $img->fit(240, 240);
+        $img->save(FCPATH . $newPath . $this->imgExt, 100);
+        return $this->convertImageFormat($newPath);
+    }
+
+    //cover image upload
+    public function uploadCoverImage($userId, $path)
+    {
+        $directory = $this->createUploadDirectory('profile');
+        $sitePrefix = 'site_' . $this->activeSiteId . '_';
+        $newPath = 'uploads/profile/' . $directory . $sitePrefix . 'cover_' . $userId . '_' . uniqid();
+        $img = Image::make($path)->orientate();
+        $img->fit(1920, 600);
+        if ($this->getFileExt($path) == 'webp') {
+            $this->jpgQuality = 100;
+        }
+        $img->save(FCPATH . $newPath . $this->imgExt, $this->jpgQuality);
+        return $this->convertImageFormat($newPath);
+    }
+
+    //upload video
+    public function uploadVideo($inputName)
+    {
+        $directory = $this->createUploadDirectory('profile');
+        $sitePrefix = 'site_' . $this->activeSiteId . '_video_';
+        return $this->upload($inputName, 'uploads/videos/' . $directory, $sitePrefix);
+    }
+
+    //upload audio
+    public function uploadAudio($inputName)
+    {
+        $directory = $this->createUploadDirectory('audios');
+        $sitePrefix = 'site_' . $this->activeSiteId . '_audio_';
+        return $this->upload($inputName, 'uploads/audios/' . $directory, $sitePrefix, null);
+    }
+
+    //logo upload [MULTI-SITE SAFE]
+    public function uploadLogo($inputName)
+    {
+        $prefix = "site_" . $this->activeSiteId . "_logo_";
+        return $this->upload($inputName, "uploads/logo/", $prefix, ['jpg', 'jpeg', 'png', 'gif', 'svg']);
+    }
+
+    //favicon upload [MULTI-SITE SAFE]
+    public function uploadFavicon($inputName)
+    {
+        $prefix = "site_" . $this->activeSiteId . "_favicon_";
+        return $this->upload($inputName, "uploads/logo/", $prefix, ['jpg', 'jpeg', 'png', 'gif']);
+    }
+
+    //ad upload [MULTI-SITE SAFE]
+    public function uploadAd($inputName)
+    {
+        $prefix = "site_" . $this->activeSiteId . "_block_";
+        return $this->upload($inputName, "uploads/blocks/", $prefix, ['jpg', 'jpeg', 'png', 'gif']);
+    }
+
+    //upload pwa logo
+    public function uploadPwaLogo($tempPath, $width, $height)
+    {
+        // PWA Logo biasanya statis, kita beri unik juga
+        $newPath = 'uploads/blocks/site_' . $this->activeSiteId . '_pwa_' . $width . 'x' . $height . '_' . uniqid() . '.png';
+        $img = Image::make($tempPath)->orientate()->fit($width, $height)->save(FCPATH . $newPath, 100);
+        return $newPath;
+    }
+
+    //upload newsletter image
+    public function uploadNewsletterImage($tempPath)
+    {
+        $sitePrefix = 'site_' . $this->activeSiteId . '_';
+        $newPath = 'uploads/blocks/' . $sitePrefix . 'img_' . generateToken(true);
+        $img = Image::make($tempPath)->orientate()->fit(500, 500)->save(FCPATH . $newPath . $this->imgExt, 100);
+        return $this->convertImageFormat($newPath);
+    }
+
+    //upload CSV file
+    public function uploadCSVFile($inputName)
+    {
+        return $this->upload($inputName, 'uploads/tmp/', 'temp_', ['csv']);
+    }
+
+    //convert image format
+    public function convertImageFormat($sourcePath)
+    {
+        if ($this->generalSettings->image_file_format == 'WEBP') {
+            WebPConvert::convert($sourcePath . $this->imgExt, $sourcePath . '.webp', ['quality' => $this->webpQuality]);
+            @unlink($sourcePath . $this->imgExt);
+            return $sourcePath . '.webp';
+        }
+        return $sourcePath . $this->imgExt;
+    }
+
+    //download temp image
+    function downloadTempImage($url, $ext, $fileName = 'temp')
+    {
+        $pathJPG = FCPATH . 'uploads/tmp/' . $fileName . '.jpg';
+        $pathGIF = FCPATH . 'uploads/tmp/' . $fileName . '.gif';
+        if (file_exists($pathJPG)) {
+            @unlink($pathJPG);
+        }
+        if (file_exists($pathGIF)) {
+            @unlink($pathGIF);
+        }
+        $path = $pathJPG;
+        if ($ext == 'gif') {
+            $path = $pathGIF;
+        }
+        $context = stream_context_create(array(
+            'http' => array(
+                'header' => array('User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; rv:2.2) Gecko/20110201')
+            )
+        ));
+        if (copy($url, $path, $context)) {
+            return $path;
+        }
+        return false;
+    }
+
+    //create upload directory
+    public function createUploadDirectory($folder)
+    {
+        $directory = date("Ym");
+        $directoryPath = FCPATH . 'uploads/' . $folder . '/' . $directory . '/';
+        if (!is_dir($directoryPath)) {
+            @mkdir($directoryPath, 0755, true);
+        }
+        if (!file_exists($directoryPath . "index.html")) {
+            @copy(FCPATH . "uploads/index.html", $directoryPath . "index.html");
+        }
+        return $directory . '/';
+    }
+
+    //check allowed file types
+    public function checkAllowedFileTypes($fileName, $allowedTypes)
+    {
+        if (!isset($_FILES[$fileName])) {
+            return false;
+        }
+        if (empty($_FILES[$fileName]['name'])) {
+            return false;
+        }
+
+        $ext = pathinfo($_FILES[$fileName]['name'], PATHINFO_EXTENSION);
+        if (!empty($ext)) {
+            $ext = strtolower($ext);
+        }
+        $extArray = array();
+        if (!empty($allowedTypes) && is_array($allowedTypes)) {
+            foreach ($allowedTypes as $item) {
+                if (!empty($item)) {
+                    $item = trim($item, '"');
+                }
+                if (!empty($item)) {
+                    $item = trim($item, "'");
+                }
+                array_push($extArray, $item);
+            }
+        }
+        if (!empty($extArray) && in_array($ext, $extArray)) {
+            return true;
+        }
+        return false;
+    }
+
+    //get file extension
+    public function getFileExt($name)
+    {
+        $ext = 'jpg';
+        if (!empty($name)) {
+            $ext = pathinfo($name, PATHINFO_EXTENSION);
+        }
+        if (!empty($ext)) {
+            $ext = strtolower($ext);
+        }
+        return $ext;
+    }
+
+    //create file name by extension
+    public function createFileNameByExt($name, $ext)
+    {
+        if (empty($name)) {
+            return 'file.jpg';
+        }
+        if (empty($ext)) {
+            $ext = 'jpg';
+        }
+        return pathinfo($name, PATHINFO_FILENAME) . '.' . $ext;
+    }
+
+    //delete temp file
+    public function deleteTempFile($path)
+    {
+        if (file_exists($path)) {
+            @unlink($path);
+        }
+    }
+}

@@ -1,0 +1,72 @@
+ERROR - 2026-02-20 03:08:31 --> mysqli_sql_exception: MySQL server has gone away in /home/u1568260/kopetcodeigniter/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/u1568260/kopetcodeigniter/system/Database/MySQLi/Connection.php(312): mysqli->query()
+#1 /home/u1568260/kopetcodeigniter/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u1568260/kopetcodeigniter/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u1568260/kopetcodeigniter/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u1568260/kopetcodeigniter/app/Models/PostModel.php(475): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/u1568260/kopetcodeigniter/app/Controllers/ImportController.php(435): App\Models\PostModel->addImageImport()
+#6 /home/u1568260/kopetcodeigniter/app/Controllers/ImportController.php(328): App\Controllers\ImportController->processImage()
+#7 /home/u1568260/kopetcodeigniter/system/CodeIgniter.php(933): App\Controllers\ImportController->runBatch()
+#8 /home/u1568260/kopetcodeigniter/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#9 /home/u1568260/kopetcodeigniter/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u1568260/kopetcodeigniter/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/u1568260/kopetcodeigniter/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/u1568260/public_html/waskitho.suaramadiun.com/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+ERROR - 2026-02-20 03:31:44 --> mysqli_sql_exception: MySQL server has gone away in /home/u1568260/kopetcodeigniter/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/u1568260/kopetcodeigniter/system/Database/MySQLi/Connection.php(312): mysqli->query()
+#1 /home/u1568260/kopetcodeigniter/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u1568260/kopetcodeigniter/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u1568260/kopetcodeigniter/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u1568260/kopetcodeigniter/app/Models/PostModel.php(475): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/u1568260/kopetcodeigniter/app/Controllers/ImportController.php(435): App\Models\PostModel->addImageImport()
+#6 /home/u1568260/kopetcodeigniter/app/Controllers/ImportController.php(328): App\Controllers\ImportController->processImage()
+#7 /home/u1568260/kopetcodeigniter/system/CodeIgniter.php(933): App\Controllers\ImportController->runBatch()
+#8 /home/u1568260/kopetcodeigniter/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#9 /home/u1568260/kopetcodeigniter/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u1568260/kopetcodeigniter/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/u1568260/kopetcodeigniter/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/u1568260/public_html/waskitho.suaramadiun.com/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+ERROR - 2026-02-20 10:10:25 --> Google Indexing API disabled: JSON key file not found.
+ERROR - 2026-02-20 10:10:25 --> Google Indexing API is disabled or not properly initialized.
+ERROR - 2026-02-20 14:40:04 --> Google Indexing API disabled: JSON key file not found.
+ERROR - 2026-02-20 14:40:04 --> Google Indexing API is disabled or not properly initialized.
+ERROR - 2026-02-20 18:53:19 --> mysqli_sql_exception: MySQL server has gone away in /home/u1568260/kopetcodeigniter/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/u1568260/kopetcodeigniter/system/Database/MySQLi/Connection.php(312): mysqli->query()
+#1 /home/u1568260/kopetcodeigniter/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u1568260/kopetcodeigniter/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u1568260/kopetcodeigniter/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u1568260/kopetcodeigniter/app/Models/PostModel.php(475): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/u1568260/kopetcodeigniter/app/Controllers/ImportController.php(434): App\Models\PostModel->addImageImport()
+#6 /home/u1568260/kopetcodeigniter/app/Controllers/ImportController.php(327): App\Controllers\ImportController->processImage()
+#7 /home/u1568260/kopetcodeigniter/system/CodeIgniter.php(933): App\Controllers\ImportController->runBatch()
+#8 /home/u1568260/kopetcodeigniter/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#9 /home/u1568260/kopetcodeigniter/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u1568260/kopetcodeigniter/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/u1568260/kopetcodeigniter/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/u1568260/public_html/waskitho.suaramadiun.com/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+ERROR - 2026-02-20 18:59:04 --> Google Indexing API disabled: JSON key file not found.
+ERROR - 2026-02-20 18:59:04 --> Google Indexing API is disabled or not properly initialized.
+ERROR - 2026-02-20 20:01:22 --> Google Indexing API disabled: JSON key file not found.
+ERROR - 2026-02-20 20:01:22 --> Google Indexing API is disabled or not properly initialized.
+ERROR - 2026-02-20 20:02:30 --> mysqli_sql_exception: MySQL server has gone away in /home/u1568260/kopetcodeigniter/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/u1568260/kopetcodeigniter/system/Database/MySQLi/Connection.php(312): mysqli->query()
+#1 /home/u1568260/kopetcodeigniter/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/u1568260/kopetcodeigniter/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/u1568260/kopetcodeigniter/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u1568260/kopetcodeigniter/app/Models/PostModel.php(477): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/u1568260/kopetcodeigniter/app/Controllers/ImportController.php(435): App\Models\PostModel->addImageImport()
+#6 /home/u1568260/kopetcodeigniter/app/Controllers/ImportController.php(328): App\Controllers\ImportController->processImage()
+#7 /home/u1568260/kopetcodeigniter/system/CodeIgniter.php(933): App\Controllers\ImportController->runBatch()
+#8 /home/u1568260/kopetcodeigniter/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#9 /home/u1568260/kopetcodeigniter/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u1568260/kopetcodeigniter/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/u1568260/kopetcodeigniter/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/u1568260/public_html/waskitho.suaramadiun.com/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}

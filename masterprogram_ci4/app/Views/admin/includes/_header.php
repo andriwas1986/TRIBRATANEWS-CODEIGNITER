@@ -57,15 +57,18 @@
         .main-header .logo { background-color: #1e293b !important; color: #fff !important; border-bottom: 0 solid transparent; }
         
         /* Teks & Ikon Navbar */
-        .main-header .navbar .nav>li>a { color: #475569 !important; padding-top: 15px; padding-bottom: 15px; font-weight: 500; display: flex; align-items: center; gap: 5px; }
-        .main-header .navbar .sidebar-toggle { color: #64748b !important; padding: 15px 15px; display: inline-flex; align-items: center; justify-content: center; }
+        .main-header .navbar .nav>li>a { font-size: 14px !important; color: #475569 !important; padding-top: 15px; padding-bottom: 15px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+        .main-header .navbar .sidebar-toggle { color: #64748b !important; padding: 15px 15px; display: inline-flex; align-items: center; justify-content: center; font-size: 16px !important; }
         .main-header .navbar .sidebar-toggle:hover { background-color: #f8fafc !important; }
         .main-header .sidebar-toggle:before { content: ""; } /* Hindari ikon kembar */
+        
+        /* Tombol Lihat Website */
+        .main-header .navbar .btn-site-prev { font-size: 13px !important; padding: 6px 14px !important; margin-top: 10px; margin-right: 15px; border-radius: 20px; color: #fff !important; }
         
         /* Fix BS5 flex layout pada Nav Kanan (Dorong ke pojok kanan) */
         .main-header .navbar { display: flex; justify-content: space-between; align-items: center; }
         .navbar-custom-menu { margin-left: auto; display: flex; align-items: center; }
-        .navbar-custom-menu > .nav { flex-direction: row; display: flex; align-items: center; margin: 0; gap: 15px; }
+        .navbar-custom-menu > .nav { flex-direction: row; display: flex; align-items: center; margin: 0; gap: 5px; }
         
         /* Fix Layout Overlap (Ticker yang terpotong) */
         .content-wrapper { margin-top: 0px !important; }
@@ -73,11 +76,17 @@
         
         /* Dropdown & Avatar Fix */
         .user-menu .dropdown-toggle { display: flex; align-items: center; }
-        .user-image { float: none; width: 25px; height: 25px; margin-top: 0; margin-right: 5px; }
+        .user-image { float: none; width: 30px !important; height: 30px !important; margin-top: 0; margin-right: 8px; }
+        
+        /* Dropdown Menu Item Size */
+        .dropdown-menu { box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important; border: 1px solid #f1f5f9; border-radius: 12px; padding: 8px 0; }
+        .dropdown-menu > li > a { font-size: 14px !important; padding: 10px 20px !important; color: #475569 !important; display: block; }
+        .dropdown-menu > li > a > i { margin-right: 10px; color: #64748b; width: 16px; text-align: center; }
+        .dropdown-menu > li > a:hover { background-color: #f8fafc !important; color: #00a8ff !important; }
         
         /* Fix Bootstrap 5 Link Underline & Font Overrides */
         a { text-decoration: none !important; }
-        .main-header .logo { font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important; letter-spacing: 0px; }
+        .main-header .logo { font-size: 20px !important; font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important; letter-spacing: 0px; }
     </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">

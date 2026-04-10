@@ -74,6 +74,10 @@
         /* Dropdown & Avatar Fix */
         .user-menu .dropdown-toggle { display: flex; align-items: center; }
         .user-image { float: none; width: 25px; height: 25px; margin-top: 0; margin-right: 5px; }
+        
+        /* Fix Bootstrap 5 Link Underline & Font Overrides */
+        a { text-decoration: none !important; }
+        .main-header .logo { font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important; letter-spacing: 0px; }
     </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">

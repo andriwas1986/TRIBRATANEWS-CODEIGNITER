@@ -80,8 +80,8 @@
         .user-image { float: none; width: 30px !important; height: 30px !important; margin-top: 0; margin-right: 8px; }
         
         /* Dropdown Menu Item Size */
-        .dropdown-menu { box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important; border: 1px solid #f1f5f9; border-radius: 12px; padding: 8px 0; }
-        .dropdown-menu > li > a { font-size: 14px !important; padding: 10px 20px !important; color: #475569 !important; display: block; }
+        .dropdown-menu { box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important; border: 1px solid #f1f5f9; border-radius: 12px; padding: 5px 0; }
+        .dropdown-menu > li > a { font-size: 13px !important; padding: 6px 20px !important; color: #475569 !important; display: block; }
         .dropdown-menu > li > a > i { margin-right: 10px; color: #64748b; width: 16px; text-align: center; }
         .dropdown-menu > li > a:hover { background-color: #f8fafc !important; color: #00a8ff !important; }
         
@@ -101,7 +101,7 @@
             <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"><i class="fa fa-bars" aria-hidden="true"></i></a>
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-                    <li><a class="btn btn-sm btn-success pull-left btn-site-prev" target="_blank" href="<?= base_url(); ?>"><i class="fa fa-eye"></i> <?= trans("view_site"); ?></a></li>
+                    <li><a class="btn btn-sm btn-danger pull-left btn-site-prev" target="_blank" href="<?= base_url(); ?>"><i class="fa fa-eye"></i> <?= trans("view_site"); ?></a></li>
                     <li class="dropdown user-menu">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                             <i class="fa fa-globe"></i>&nbsp;

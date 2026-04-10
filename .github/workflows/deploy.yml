@@ -17,6 +17,7 @@ jobs:
         host: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
+        passphrase: ${{ secrets.SSH_PASSPHRASE }}
         port: 65002
         source: "masterprogram_ci4/**,!masterprogram_ci4/vendor/**,!masterprogram_ci4/system/**"
         target: "kopetcodeigniter"
@@ -28,6 +29,7 @@ jobs:
         host: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
+        passphrase: ${{ secrets.SSH_PASSPHRASE }}
         port: 65002
         source: "*,!masterprogram_ci4"
         target: "public_html/waskitho.suaramadiun.com/"

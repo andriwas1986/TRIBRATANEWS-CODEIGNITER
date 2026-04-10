@@ -470,7 +470,13 @@ class SettingsModel extends BaseModel
     {
         $theme = inputPost('admin_theme');
         if ($theme == 'classic' || $theme == 'modern' || $theme == 'wordpress') {
-            return $this->db->table('general_settings')->where('site_id', $this->activeSiteId)->update(['admin_theme' => $theme]);
+            // Coba update dengan site_id (untuk multi-site)
+            $res = $this->db->table('general_settings')->where('site_id', $this->activeSiteId)->update(['admin_theme' => $theme]);
+            // Jika tidak ada baris yang berubah (mungkin site_id tidak cocok), update baris pertama
+            if ($this->db->affectedRows() == 0) {
+                $res = $this->db->table('general_settings')->limit(1)->update(['admin_theme' => $theme]);
+            }
+            return $res;
         }
         return false;
     }

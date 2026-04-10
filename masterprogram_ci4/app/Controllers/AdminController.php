@@ -2236,7 +2236,15 @@ class AdminController extends BaseAdminController
     public function setDashboardThemePost()
     {
         checkPermission('settings');
+        
+        // Ensure column exists (Migration Safe-Run)
+        $db = \Config\Database::connect();
+        if (!$db->fieldExists('admin_theme', 'general_settings')) {
+            $db->query("ALTER TABLE general_settings ADD COLUMN admin_theme VARCHAR(50) DEFAULT 'classic'");
+        }
+
         if ($this->settingsModel->setDashboardTheme()) {
+            resetCacheDataOnChange(); // CUCI CACHE
             setSuccessMessage("msg_updated");
         } else {
             setErrorMessage("msg_error");

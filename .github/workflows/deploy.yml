@@ -16,7 +16,7 @@ jobs:
       with:
         host: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
+        privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 65002
         localDir: 'masterprogram_ci4'
         remoteDir: 'kopetcodeigniter'
@@ -27,7 +27,7 @@ jobs:
       with:
         host: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
+        privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 65002
         localDir: './'
         remoteDir: 'public_html/waskitho.suaramadiun.com/'

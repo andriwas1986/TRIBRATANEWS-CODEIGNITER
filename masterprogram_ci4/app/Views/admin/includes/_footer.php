@@ -8,7 +8,7 @@
         </span>
         <strong style="font-weight: 600;"><?= $baseSettings->copyright; ?>&nbsp;</strong>
     </div>
-    <b>Andri Solution 08113647707 - APP Version</b>&nbsp;<?= VARIENT_VERSION; ?>
+    <b>Andri Solution 08113647707 - APP Version 5.3.3</b>
 </footer>
 </div>
 <script src="<?= base_url('assets/admin/js/jquery-ui.min.js'); ?>"></script>

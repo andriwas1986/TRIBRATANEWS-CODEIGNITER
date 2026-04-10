@@ -87,8 +87,8 @@
         
         /* Fix Bootstrap 5 Link Underline & Font Overrides */
         a { text-decoration: none !important; }
-        .main-header .logo { font-size: 20px !important; font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important; letter-spacing: 0px; font-weight: 300 !important; }
-        .main-header .logo b { font-weight: 800 !important; }
+        .main-header .logo, .main-sidebar .logo { font-size: 20px !important; font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important; letter-spacing: 0px; font-weight: 300 !important; color: #fff !important; }
+        .main-header .logo b, .main-sidebar .logo b { font-weight: 800 !important; }
         
         /* General Font Size Normalization */
         body, .content-wrapper, .main-footer { font-size: 14px !important; }

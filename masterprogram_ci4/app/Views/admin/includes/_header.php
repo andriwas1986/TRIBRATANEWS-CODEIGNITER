@@ -62,8 +62,10 @@
         .main-header .navbar .sidebar-toggle:hover { background-color: #f8fafc !important; }
         .main-header .sidebar-toggle:before { content: ""; } /* Hindari ikon kembar */
         
-        /* Fix BS5 flex layout pada Nav Kanan */
-        .navbar-custom-menu > .nav { flex-direction: row; display: flex; align-items: center; margin: 0; }
+        /* Fix BS5 flex layout pada Nav Kanan (Dorong ke pojok kanan) */
+        .main-header .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .navbar-custom-menu { margin-left: auto; display: flex; align-items: center; }
+        .navbar-custom-menu > .nav { flex-direction: row; display: flex; align-items: center; margin: 0; gap: 15px; }
         
         /* Fix Layout Overlap (Ticker yang terpotong) */
         .content-wrapper { margin-top: 0px !important; }

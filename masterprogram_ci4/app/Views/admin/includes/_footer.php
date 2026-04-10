@@ -3,6 +3,9 @@
 </div>
 <footer id="footer" class="main-footer">
     <div class="pull-right hidden-xs">
+        <span style="background: rgba(0, 168, 255, 0.1); color: #00a8ff; padding: 4px 12px; border-radius: 15px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0, 168, 255, 0.3); margin-right: 15px;">
+            <i class="fa fa-info-circle"></i> Bootstrap v5.3.3 & AdminLTE v4.0.0
+        </span>
         <strong style="font-weight: 600;"><?= $baseSettings->copyright; ?>&nbsp;</strong>
     </div>
     <b>Andri Solution 08113647707 - APP Version</b>&nbsp;<?= VARIENT_VERSION; ?>

@@ -12,8 +12,7 @@
         <h1 class="form-title form-title-post-format"><?= trans('choose_post_format'); ?></h1>
     </div>
 </div>
-<div class="row">
-    <div class="col-sm-12 post-format-container">
+<div class="row post-format-container" style="display: flex; flex-wrap: wrap; align-content: flex-start;">
         <?php $formatCount = 0;
         if ($generalSettings->post_format_article == 1):
             $formatCount += 1; ?>
@@ -183,4 +182,3 @@
         <?php endif; ?>
 
     </div>
-</div>

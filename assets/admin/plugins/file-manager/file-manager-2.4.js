@@ -8,7 +8,8 @@ var data_list_item_id = '';
 var data_is_update = '';
 var data_editor_id = '';
 //update images
-$('#file_manager_image').on('show.bs.modal', function (e) {
+$('#file_manager_image').on('show.bs.modal shown.bs.modal', function (e) {
+    var image_type_old = image_type;
     image_type = $(e.relatedTarget).attr('data-image-type');
     data_is_update = $(e.relatedTarget).attr('data-is-update');
     if (image_type == 'list_item') {
@@ -22,7 +23,20 @@ $('#file_manager_image').on('show.bs.modal', function (e) {
             data_editor_id = 'recipe_info';
         }
     }
-    refresh_images();
+    // Optimization: Skip if already loaded (Hyper-Speed)
+    var imageCount = $('#image_file_upload_response .file-box').length;
+    if (imageCount === 0) {
+        refresh_images();
+    }
+});
+
+// Auto-load images on document ready (Hyper-Speed)
+$(document).ready(function() {
+    if ($('#image_file_upload_response').length > 0) {
+        setTimeout(function() {
+            refresh_images();
+        }, 800);
+    }
 });
 
 //select image
@@ -38,10 +52,12 @@ $(document).on('click', '#file_manager_image .file-box', function () {
     $('#selected_img_base_url').val($(this).attr('data-file-base-url'));
     $('#btn_img_delete').show();
     $('#btn_img_select').show();
+    select_image();
 });
 
 //refresh images
 function refresh_images() {
+    $("#image_file_upload_response").html('<div class="col-sm-12 text-center" style="padding: 60px 0;"><i class="fa fa-spinner fa-spin fa-3x" style="color: #00a8ff;"></i><p style="margin-top: 15px; font-weight: 600;">Memuat Galeri...</p></div>');
     $.ajax({
         type: "POST",
         url: VrConfig.baseURL + "/File/getImages",
@@ -138,7 +154,7 @@ function select_image() {
         $('input[name=post_image_id]').val(file_id);
     }
 
-    $('#file_manager_image').modal('toggle');
+    $('#file_manager_image').modal('hide');
     $('#file_manager_image .file-box').removeClass('selected');
     $('#btn_img_delete').hide();
     $('#btn_img_select').hide();
@@ -235,6 +251,7 @@ $(document).on('click', '#file_manager_quiz_image .file-box', function () {
     $('#selected_quiz_img_storage').val($(this).attr('data-file-storage'));
     $('#btn_quiz_img_delete').show();
     $('#btn_quiz_img_select').show();
+    select_quiz_image();
 });
 
 //refresh quiz images
@@ -349,7 +366,7 @@ function select_quiz_image() {
         document.getElementById("quiz_question_image_container_" + data_question_id).innerHTML = image;
     }
 
-    $('#file_manager_quiz_image').modal('toggle');
+    $('#file_manager_quiz_image').modal('hide');
     $('#file_manager_quiz_image .file-box').removeClass('selected');
     $('#btn_quiz_img_delete').hide();
     $('#btn_quiz_img_select').hide();
@@ -442,6 +459,7 @@ $(document).on('click', '#file_manager_recipe_image .file-box', function () {
     $('#selected_recipe_img_base_url').val($(this).attr('data-file-base-url'));
     $('#btn_recipe_img_delete').show();
     $('#btn_recipe_img_select').show();
+    select_recipe_image();
 });
 
 //refresh recipe images
@@ -509,7 +527,7 @@ function select_recipe_image() {
         '</div>';
     document.getElementById("post_list_item_image_container_" + recipe_item_id).innerHTML = image;
 
-    $('#file_manager_recipe_image').modal('toggle');
+    $('#file_manager_recipe_image').modal('hide');
     $('#file_manager_recipe_image .file-box').removeClass('selected');
     $('#btn_recipe_img_delete').hide();
     $('#btn_recipe_img_select').hide();
@@ -593,6 +611,7 @@ $(document).on('click', '#file_manager .file-box', function () {
     $('#selected_file_name').val(file_name);
     $('#btn_file_delete').show();
     $('#btn_file_select').show();
+    select_file();
 });
 
 //delete file
@@ -641,7 +660,7 @@ function select_file() {
         '</div>\n' +
         '</div>';
     $('#post_selected_files').append(file);
-    $('#file_manager').modal('toggle');
+    $('#file_manager').modal('hide');
     $('#file_manager .file-box').removeClass('selected');
     $('#btn_file_delete').hide();
     $('#btn_file_select').hide();
@@ -747,6 +766,7 @@ $(document).on('click', '#file_manager_video .file-box', function () {
     $('#selected_video_base_url').val(video_base_url);
     $('#btn_video_delete').show();
     $('#btn_video_select').show();
+    select_video();
 });
 
 //delete video
@@ -789,7 +809,7 @@ function select_video() {
         '<input type="hidden" name="video_path" value="' + video_path + '">' +
         '<input type="hidden" name="video_storage" value="' + video_storage + '">';
     document.getElementById("post_selected_video").innerHTML = video;
-    $('#file_manager_video').modal('toggle');
+    $('#file_manager_video').modal('hide');
     $('#file_manager_video .file-box').removeClass('selected');
     $('#btn_video_delete').hide();
     $('#btn_video_select').hide();
@@ -887,6 +907,7 @@ $(document).on('click', '#file_manager_audio .file-box', function () {
     $('#selected_audio_name').val(audio_name);
     $('#btn_audio_delete').show();
     $('#btn_audio_select').show();
+    select_audio();
 });
 
 //delete audio
@@ -935,7 +956,7 @@ function select_audio() {
         '</div>\n' +
         '</div>';
     $('#post_audio_list').append(file);
-    $('#file_manager_audio').modal('toggle');
+    $('#file_manager_audio').modal('hide');
     $('#file_manager_audio .file-box').removeClass('selected');
     $('#btn_audio_delete').hide();
     $('#btn_audio_select').hide();

@@ -131,11 +131,10 @@
         body.theme-wordpress .box-header { border-bottom: 1px solid #f0f0f1 !important; }
         body.theme-wordpress .btn-primary { background: #2271b1 !important; border-color: #2271b1 !important; border-radius: 3px !important; }
         
-        /* Modal Visibility & Fix */
-        .modal { z-index: 9999 !important; background-color: rgba(0,0,0,0.5) !important; }
-        .modal-backdrop { z-index: 9998 !important; }
-        .modal-content { background-color: #ffffff !important; opacity: 1 !important; visibility: visible !important; border-radius: 12px !important; box-shadow: 0 20px 60px rgba(0,0,0,0.2) !important; border: none !important; }
-        .modal.fade .modal-dialog { transition: transform 0.2s ease-out !important; }
+        /* Modal Fix */
+        .modal { z-index: 99999 !important; }
+        .modal-content { background-color: #ffffff !important; border-radius: 12px !important; box-shadow: 0 15px 50px rgba(0,0,0,0.3) !important; border: none !important; }
+        .modal-body { max-height: 80vh; overflow-y: auto; }
     </style>
     <?php endif; ?>
 </head>

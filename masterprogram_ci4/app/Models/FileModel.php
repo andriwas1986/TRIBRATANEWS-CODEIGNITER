@@ -21,7 +21,7 @@ class FileModel extends BaseModel
         $this->builderFiles = $this->db->table('files');
         $this->builderVideos = $this->db->table('videos');
         $this->builderAudios = $this->db->table('audios');
-        $this->fileManagerLimit = 60;
+        $this->fileManagerLimit = 40;
     }
 
     /*

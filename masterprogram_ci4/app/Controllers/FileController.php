@@ -82,9 +82,9 @@ class FileController extends BaseAdminController
             foreach ($images as $image) {
                 $imgBaseURL = getBaseURLByStorage($image->storage);
                 $data['content'] .= '<div class="col-file-manager" id="img_col_id_' . $image->id . '">';
-                $data['content'] .= '<div class="file-box" data-file-id="' . $image->id . '" data-mid-file-path="' . $image->image_mid . '" data-default-file-path="' . $image->image_default . '" data-slider-file-path="' . $image->image_slider . '" data-big-file-path="' . $image->image_big . '" data-file-storage="' . $image->storage . '" data-file-base-url="' . $imgBaseURL . '">';
+                $data['content'] .= '<div class="file-box" data-file-id="' . $image->id . '" data-mid-file-path="' . $image->image_mid . '" data-default-file-path="' . $image->image_default . '" data-small-file-path="' . $image->image_small . '" data-big-file-path="' . $image->image_big . '" data-file-storage="' . $image->storage . '" data-file-base-url="' . $imgBaseURL . '">';
                 $data['content'] .= '<div class="image-container">';
-                $data['content'] .= '<img src="' . $imgBaseURL . $image->image_slider . '" alt="" class="img-responsive" loading="lazy" style="background: #f4f4f4;">';
+                $data['content'] .= '<img src="' . $imgBaseURL . $image->image_small . '" alt="" class="img-responsive" loading="lazy" style="background: #f4f4f4;">';
                 $data['content'] .= '</div>';
                 if (!empty($image->file_name)):
                     $data['content'] .= '<span class="file-name">' . esc($image->file_name) . '</span>';

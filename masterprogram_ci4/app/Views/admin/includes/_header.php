@@ -52,8 +52,11 @@
         }
     </script>
     <?php 
-    $segment1 = \Config\Services::uri()->getSegment(1);
-    if ($segment1 == 'admin' || $segment1 == 'pokok-awuren'): ?>
+    $isAdminPage = false;
+    $requestUri = $_SERVER['REQUEST_URI'];
+    if (strpos($requestUri, '/admin') !== false || strpos($requestUri, '/pokok-awuren') !== false) { $isAdminPage = true; }
+    if (isset($adminTheme)) { $isAdminPage = true; }
+    if ($isAdminPage): ?>
     <style>
         /* --- TOTAL ISOLATION: ADMIN ONLY --- */
         .wrapper .main-header .navbar { background-color: #ffffff !important; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border-bottom: none; }

@@ -27,6 +27,7 @@ abstract class BaseAdminController extends Controller
     public $aiWriter;
     public $categories;
     public $perPage;
+    public $adminTheme;
 
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
@@ -179,7 +180,7 @@ abstract class BaseAdminController extends Controller
             'baseSettings' => $this->settings, 
             'baseAIWriter' => $this->aiWriter, 
             'baseCategories' => $this->categories,
-            'adminTheme' => $settingsModel->getDashboardTheme()
+            'adminTheme' => $this->adminTheme = $settingsModel->getDashboardTheme()
         ]);
 
        

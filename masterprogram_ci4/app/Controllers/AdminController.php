@@ -69,9 +69,9 @@ class AdminController extends BaseAdminController
         $this->commonModel->fixNullRecords();
 
         echo view('admin/includes/_header', $data);
-        if ($data['adminTheme'] == 'wordpress') {
+        if ($this->adminTheme == 'wordpress') {
              echo view('admin/dashboard/theme_wordpress', $data);
-        } elseif ($data['adminTheme'] == 'modern') {
+        } elseif ($this->adminTheme == 'modern') {
              echo view('admin/dashboard/theme_modern', $data);
         } else {
              echo view('admin/index', $data);

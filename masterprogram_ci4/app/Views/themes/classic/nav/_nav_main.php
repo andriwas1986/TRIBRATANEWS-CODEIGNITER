@@ -67,6 +67,15 @@ if ($db->tableExists('custom_submenu_icons')) {
     .dark-mode .mega-custom-border { border-bottom: 1px solid #334155 !important; }
     .dark-mode .mega-divider-left { border-right: 1px solid #334155 !important; }
     .dark-mode .mega-divider-right { border-left: 1px solid #334155 !important; }
+    
+    /* FIX: Force Home/Active link to be Dark with White Text (Override Leakage) */
+    .navbar-default .navbar-nav > .active > a, 
+    .navbar-default .navbar-nav > .active > a:hover, 
+    .navbar-default .navbar-nav > .active > a:focus {
+        background-color: #161616 !important;
+        color: #ffffff !important;
+        border-bottom: 3px solid #ff0000 !important;
+    }
 </style>
 
 <nav class="navbar navbar-default main-menu megamenu">

@@ -131,9 +131,11 @@
         body.theme-wordpress .box-header { border-bottom: 1px solid #f0f0f1 !important; }
         body.theme-wordpress .btn-primary { background: #2271b1 !important; border-color: #2271b1 !important; border-radius: 3px !important; }
         
-        /* Modal Fix */
+        /* Modal Force Visibility */
         .modal { z-index: 99999 !important; }
-        .modal-content { background-color: #ffffff !important; border-radius: 12px !important; box-shadow: 0 15px 50px rgba(0,0,0,0.3) !important; border: none !important; }
+        .modal.in, .modal.show { display: block !important; opacity: 1 !important; background: rgba(0,0,0,0.5) !important; }
+        .modal-dialog { z-index: 100000 !important; }
+        .modal-content { background-color: #ffffff !important; border-radius: 12px !important; box-shadow: 0 15px 50px rgba(0,0,0,0.3) !important; border: none !important; opacity: 1 !important; visibility: visible !important; }
         .modal-body { max-height: 80vh; overflow-y: auto; }
     </style>
     <?php endif; ?>

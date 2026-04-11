@@ -33,7 +33,7 @@
                             </div>
                         <?php else: ?>
                             <div id="post_select_image_container" class="post-select-image-container">
-                                <a class="btn-select-image" data-toggle="modal" data-target="#file_manager_image" data-image-type="main" style="display: block; width: 100%; border: 2px dashed #d2d6de; padding: 40px 20px; border-radius: 12px; background: #f9fafb; text-align: center; text-decoration: none !important; cursor: pointer;">
+                                <a class="btn-select-image" data-toggle="modal" data-target="#file_manager_image" data-bs-toggle="modal" data-bs-target="#file_manager_image" data-image-type="main" style="display: block; width: 100%; border: 2px dashed #d2d6de; padding: 40px 20px; border-radius: 12px; background: #f9fafb; text-align: center; text-decoration: none !important; cursor: pointer;">
                                     <div class="btn-select-image-inner">
                                         <i class="fa fa-image" style="font-size: 40px; color: #94a3b8; display: block; margin-bottom: 10px;"></i>
                                         <span style="font-weight: 600; color: #64748b; font-size: 14px;"><?= trans("select_image"); ?></span>

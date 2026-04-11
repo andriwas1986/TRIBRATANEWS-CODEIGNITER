@@ -56,6 +56,7 @@ $routes->post('delete-account-post', 'ProfileController::deleteAccountPost');
 $routes->post('download-file', 'CommonController::downloadFile');
 $routes->post('add-newsletter-post', 'AjaxController::addNewsletterPost');
 $routes->post('close-cookies-warning-post', 'AjaxController::closeCookiesWarningPost');
+$routes->post('skm/submit', 'SkmController::submit');
 
 /*
  * --------------------------------------------------------------------
@@ -239,7 +240,12 @@ $routes->group($customRoutes->admin, ['filter' => 'auth'], function ($routes) {
     $routes->post('mega-menu-settings-post', 'AdminController::megaMenuSettingsPost');
     $routes->get('header-settings', 'AdminController::headerSettings');
     $routes->post('header-settings-post', 'AdminController::headerSettingsPost');
-    $routes->post('set-dashboard-theme-post', 'AdminController::setDashboardThemePost');
+    $routes->post('set-dashboard-theme', 'AdminController::setDashboardThemePost');
+    
+    //SKM
+    $routes->get('skm', 'AdminSkmController::index');
+    $routes->get('skm/statistics', 'AdminSkmController::statistics');
+    $routes->get('skm/delete/(:num)', 'AdminSkmController::delete/$1');
 
 });
 

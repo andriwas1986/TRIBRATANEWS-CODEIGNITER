@@ -107,6 +107,7 @@
 <?= $generalSettings->adsense_activation_code; ?>
 <?= $generalSettings->google_analytics; ?>
 <?= $generalSettings->custom_footer_codes; ?>
+<?= view('skm/survey_form'); ?>
 </body>
 </html>
 <?php if (!empty($isPage404)): exit(); endif; ?>

@@ -259,6 +259,15 @@
                                     </a>
                                 </li>
                             </ul>
+                        <li class="treeview<?php isAdminNavActive(['skm']); ?>">
+                            <a href="#">
+                                <i class="fa fa-line-chart"></i> <span>SKM (Survei)</span>
+                                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="nav-skm"><a href="<?= adminUrl('skm'); ?>"><i class="fa fa-circle-o"></i> Daftar Survei</a></li>
+                                <li class="nav-skm-statistics"><a href="<?= adminUrl('skm/statistics'); ?>"><i class="fa fa-circle-o"></i> Statistik SKM</a></li>
+                            </ul>
                         </li>
                         <?php if (isSuperAdmin() || $generalSettings->bulk_post_upload_for_authors == 1): ?>
                             <li class="nav-import-posts">

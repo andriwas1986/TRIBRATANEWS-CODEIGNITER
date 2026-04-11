@@ -231,6 +231,50 @@ class AdminController extends BaseAdminController
         echo view('admin/includes/_footer');
     }
 
+    public function seedThemes()
+    {
+        checkSuperAdmin();
+        $db = \Config\Database::connect();
+        $themes = [
+            [
+                'theme' => 'jnews_tech',
+                'theme_name' => 'Elite Tech',
+                'theme_folder' => 'jnews_tech',
+                'theme_color' => '#1e3799',
+                'block_color' => '#1e3799',
+                'mega_menu_color' => '#0a3d62',
+                'is_active' => 0
+            ],
+            [
+                'theme' => 'jnews_lifestyle',
+                'theme_name' => 'Luxury Lifestyle',
+                'theme_folder' => 'jnews_lifestyle',
+                'theme_color' => '#60a3bc',
+                'block_color' => '#60a3bc',
+                'mega_menu_color' => '#3c6382',
+                'is_active' => 0
+            ],
+            [
+                'theme' => 'jnews_viral',
+                'theme_name' => 'National Viral',
+                'theme_folder' => 'jnews_viral',
+                'theme_color' => '#eb2f06',
+                'block_color' => '#eb2f06',
+                'mega_menu_color' => '#b71540',
+                'is_active' => 0
+            ]
+        ];
+
+        foreach ($themes as $theme) {
+            $check = $db->table('themes')->where('theme', $theme['theme'])->get()->getRow();
+            if (!$check) {
+                $db->table('themes')->insert($theme);
+            }
+        }
+        return redirect()->to(adminUrl('themes'))->with('success', 'Themes seeded successfully!');
+    }
+
+
     /**
      * Set Theme Post
      */

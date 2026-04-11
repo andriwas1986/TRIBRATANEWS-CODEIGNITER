@@ -248,6 +248,10 @@ $routes->group($customRoutes->admin, ['filter' => 'auth'], function ($routes) {
     $routes->get('skm/seed', 'AdminSkmController::seed');
     $routes->get('skm/delete/(:num)', 'AdminSkmController::delete/$1');
 
+    //Themes
+    $routes->get('seed-themes', 'AdminController::seedThemes');
+
+
 });
 
 

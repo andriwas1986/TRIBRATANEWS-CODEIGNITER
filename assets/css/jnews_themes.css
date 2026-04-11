@@ -1,0 +1,47 @@
+/* JNews Inspired Modern Themes CSS Overrides */
+
+/* ELITE TECH THEME */
+body.theme-jnews-tech {
+    font-family: 'Inter', 'Roboto', sans-serif;
+    --primary-color: #1e3799;
+}
+.theme-jnews-tech .header-top { background-color: #0a3d62; }
+.theme-jnews-tech .nav-main { border-bottom: 3px solid #1e3799; }
+.theme-jnews-tech .section-title {
+    border-left: 5px solid #1e3799;
+    padding-left: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.theme-jnews-tech .post-item-title { font-weight: 700; font-size: 1.1rem; }
+
+/* LUXURY LIFESTYLE THEME */
+body.theme-jnews-lifestyle {
+    font-family: 'Playfair Display', serif;
+    --primary-color: #60a3bc;
+}
+.theme-jnews-lifestyle .header-top { background-color: #3c6382; }
+.theme-jnews-lifestyle .section-title {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    font-style: italic;
+}
+.theme-jnews-lifestyle .post-item { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+
+/* NATIONAL VIRAL THEME */
+body.theme-jnews-viral {
+    font-family: 'Oswald', sans-serif;
+    --primary-color: #eb2f06;
+}
+.theme-jnews-viral .header-top { background-color: #b71540; }
+.theme-jnews-viral .badge-category { background-color: #eb2f06; border-radius: 0; }
+.theme-jnews-viral .section-title {
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 20px;
+    transform: skew(-10deg);
+}
+.theme-jnews-viral .post-item-title:hover { color: #eb2f06; }

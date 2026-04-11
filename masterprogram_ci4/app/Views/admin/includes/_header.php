@@ -52,54 +52,54 @@
         }
     </script>
     <style>
-        /* --- RESTORE ADMINLTE V2 CUSTOM HEADER (WHITE) & FIX BS5 OVERLAPS --- */
-        .main-header .navbar { background-color: #ffffff !important; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border-bottom: none; }
-        .main-header .logo { background-color: #1e293b !important; color: #fff !important; border-bottom: 0 solid transparent; }
+        /* --- SCOPED TO ADMIN AREA ONLY --- */
+        body.hold-transition .main-header .navbar { background-color: #ffffff !important; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border-bottom: none; }
+        body.hold-transition .main-header .logo { background-color: #1e293b !important; color: #fff !important; border-bottom: 0 solid transparent; }
         
-        /* Teks & Ikon Navbar (Dibuat Lebih Tipis ke Atas) */
-        .main-header .navbar { min-height: 40px !important; display: flex; justify-content: space-between; align-items: center; padding: 0 !important; }
-        .main-header .navbar .nav>li>a { font-size: 14px !important; color: #475569 !important; padding: 10px 15px !important; font-weight: 600; display: flex; align-items: center; gap: 6px; }
-        .main-header .navbar .sidebar-toggle { color: #64748b !important; padding: 10px 15px !important; display: inline-flex; align-items: center; justify-content: center; font-size: 16px !important; height: 100%; }
-        .main-header .navbar .sidebar-toggle:hover { background-color: #f8fafc !important; }
-        .main-header .sidebar-toggle:before { content: ""; } /* Hindari ikon kembar */
+        /* Teks & Ikon Navbar */
+        body.hold-transition .main-header .navbar { min-height: 40px !important; display: flex; justify-content: space-between; align-items: center; padding: 0 !important; }
+        body.hold-transition .main-header .navbar .nav>li>a { font-size: 14px !important; color: #475569 !important; padding: 10px 15px !important; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+        body.hold-transition .main-header .navbar .sidebar-toggle { color: #64748b !important; padding: 10px 15px !important; display: inline-flex; align-items: center; justify-content: center; font-size: 16px !important; height: 100%; }
+        body.hold-transition .main-header .navbar .sidebar-toggle:hover { background-color: #f8fafc !important; }
+        body.hold-transition .main-header .sidebar-toggle:before { content: ""; }
         
         /* Tombol Lihat Website (Force White Text) */
-        .main-header .navbar .nav > li > a.btn-site-prev { font-size: 14px !important; padding: 8px 20px !important; margin-top: 8px !important; margin-bottom: 8px; margin-right: 15px; border-radius: 20px; color: #ffffff !important; font-weight: 700 !important; background-color: #ef4444 !important; border: 1px solid #dc2626 !important; }
-        .main-header .navbar .nav > li > a.btn-site-prev i { color: #ffffff !important; }
+        body.hold-transition .main-header .navbar .nav > li > a.btn-site-prev { font-size: 14px !important; padding: 8px 20px !important; margin-top: 8px !important; margin-bottom: 8px; margin-right: 15px; border-radius: 20px; color: #ffffff !important; font-weight: 700 !important; background-color: #ef4444 !important; border: 1px solid #dc2626 !important; }
+        body.hold-transition .main-header .navbar .nav > li > a.btn-site-prev i { color: #ffffff !important; }
         
-        /* Fix BS5 flex layout pada Nav Kanan (Dorong ke pojok kanan) */
-        .navbar-custom-menu { margin-left: auto; display: flex; align-items: center; }
-        .navbar-custom-menu > .nav { flex-direction: row; display: flex; align-items: center; margin: 0; gap: 5px; }
+        /* Fix BS5 flex layout pada Nav Kanan */
+        body.hold-transition .navbar-custom-menu { margin-left: auto; display: flex; align-items: center; }
+        body.hold-transition .navbar-custom-menu > .nav { flex-direction: row; display: flex; align-items: center; margin: 0; gap: 5px; }
         
-        /* Fix Layout Overlap (Ticker yang terpotong) */
-        .content-wrapper { margin-top: 0px !important; }
-        .content-wrapper > .content { padding-top: 30px !important; padding-left: 25px; padding-right: 25px; }
+        /* Fix Layout Overlap */
+        body.hold-transition .content-wrapper { margin-top: 0px !important; }
+        body.hold-transition .content-wrapper > .content { padding-top: 30px !important; padding-left: 25px; padding-right: 25px; }
         
         /* Dropdown & Avatar Fix */
-        .user-menu .dropdown-toggle { display: flex; align-items: center; }
-        .user-image { float: none; width: 30px !important; height: 30px !important; margin-top: 0; margin-right: 8px; }
+        body.hold-transition .user-menu .dropdown-toggle { display: flex; align-items: center; }
+        body.hold-transition .user-image { float: none; width: 30px !important; height: 30px !important; margin-top: 0; margin-right: 8px; }
         
         /* Dropdown Menu Item Size */
-        .dropdown-menu { box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important; border: 1px solid #f1f5f9; border-radius: 12px; padding: 5px 0; }
-        .dropdown-menu > li > a { font-size: 13px !important; padding: 6px 20px !important; color: #475569 !important; display: block; }
-        .dropdown-menu > li > a > i { margin-right: 10px; color: #64748b; width: 16px; text-align: center; }
-        .dropdown-menu > li > a:hover { background-color: #f8fafc !important; color: #00a8ff !important; }
+        body.hold-transition .dropdown-menu { box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important; border: 1px solid #f1f5f9; border-radius: 12px; padding: 5px 0; }
+        body.hold-transition .dropdown-menu > li > a { font-size: 13px !important; padding: 6px 20px !important; color: #475569 !important; display: block; }
+        body.hold-transition .dropdown-menu > li > a > i { margin-right: 10px; color: #64748b; width: 16px; text-align: center; }
+        body.hold-transition .dropdown-menu > li > a:hover { background-color: #f8fafc !important; color: #00a8ff !important; }
         
         /* Fix Bootstrap 5 Link Underline & Font Overrides */
-        a { text-decoration: none !important; }
-        .main-header .logo, .main-sidebar .logo { font-size: 20px !important; font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important; letter-spacing: 0px; font-weight: 300 !important; color: #fff !important; }
-        .main-header .logo b, .main-sidebar .logo b { font-weight: 800 !important; }
+        body.hold-transition a { text-decoration: none !important; }
+        body.hold-transition .main-header .logo, body.hold-transition .main-sidebar .logo { font-size: 20px !important; font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important; letter-spacing: 0px; font-weight: 300 !important; color: #fff !important; }
+        body.hold-transition .main-header .logo b, body.hold-transition .main-sidebar .logo b { font-weight: 800 !important; }
         
         /* General Font Size Normalization */
-        body, .content-wrapper, .main-footer { font-size: 14px !important; }
+        body.hold-transition, body.hold-transition .content-wrapper, body.hold-transition .main-footer { font-size: 14px !important; }
 
-        /* General Button Fix (Normalizing size) */
-        .btn { padding: 8px 20px !important; font-size: 14px !important; border-radius: 8px !important; }
-        .btn-sm { padding: 6px 16px !important; font-size: 13px !important; }
+        /* General Button Fix */
+        body.hold-transition .btn { padding: 8px 20px !important; font-size: 14px !important; border-radius: 8px !important; }
+        body.hold-transition .btn-sm { padding: 6px 16px !important; font-size: 13px !important; }
 
         /* --- GLOBAL THEME OVERRIDES --- */
         
-        /* MODERN GLASS THEME (Royal Luxury) */
+        /* MODERN GLASS THEME */
         body.theme-modern { background-color: #f8fafc; font-family: 'Outfit', sans-serif !important; }
         body.theme-modern .main-header .navbar { background: rgba(255, 255, 255, 0.8) !important; backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.3); }
         body.theme-modern .main-sidebar { background-color: #ffffff !important; box-shadow: 10px 0 30px rgba(0,0,0,0.02) !important; border-right: 1px solid #f1f5f9; }

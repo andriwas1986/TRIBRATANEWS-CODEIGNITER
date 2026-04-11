@@ -93,6 +93,10 @@
         /* General Font Size Normalization */
         body, .content-wrapper, .main-footer { font-size: 14px !important; }
 
+        /* General Button Fix (Normalizing size) */
+        .btn { padding: 8px 20px !important; font-size: 14px !important; border-radius: 8px !important; }
+        .btn-sm { padding: 6px 16px !important; font-size: 13px !important; }
+
         /* --- GLOBAL THEME OVERRIDES --- */
         
         /* MODERN GLASS THEME (Royal Luxury) */
@@ -105,7 +109,7 @@
         body.theme-modern .sidebar-menu > li.header { background: transparent !important; color: #94a3b8 !important; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; font-size: 10px; padding-left: 20px; }
         body.theme-modern .content-wrapper { background-color: #f8fafc !important; }
         body.theme-modern .box { border-radius: 20px !important; border: none !important; box-shadow: 0 10px 30px rgba(0,0,0,0.03) !important; overflow: hidden; }
-        body.theme-modern .btn-primary { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%) !important; border: none !important; border-radius: 10px !important; padding: 8px 20px !important; font-weight: 600 !important; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2) !important; }
+        body.theme-modern .btn-primary { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%) !important; border: none !important; border-radius: 10px !important; padding: 10px 25px !important; font-weight: 600 !important; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2) !important; }
         body.theme-modern .user-panel { border-bottom: 1px solid #f1f5f9 !important; padding: 20px 15px !important; }
 
         /* WORDPRESS STYLE THEME */

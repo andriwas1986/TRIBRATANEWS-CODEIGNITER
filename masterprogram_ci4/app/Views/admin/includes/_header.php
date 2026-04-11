@@ -51,7 +51,9 @@
             return serializedData;
         }
     </script>
-    <?php if (isset($isAdminPanel) && $isAdminPanel === true): ?>
+    <?php 
+    $segment1 = \Config\Services::uri()->getSegment(1);
+    if ($segment1 == 'admin' || $segment1 == 'pokok-awuren'): ?>
     <style>
         /* --- TOTAL ISOLATION: ADMIN ONLY --- */
         .wrapper .main-header .navbar { background-color: #ffffff !important; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border-bottom: none; }

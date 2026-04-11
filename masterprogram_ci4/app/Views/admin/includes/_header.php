@@ -359,7 +359,7 @@
                             <a href="#"><i class="fa fa-cogs"></i><span><?= trans("settings"); ?></span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
                             <ul class="treeview-menu">
                                 <li class="nav-general-settings">
-                                    <a href="<?= adminUrl('general-settings'); ?>"><span><?= trans("general_settings"); ?></span></a>
+                                    <a href="<?= adminUrl('general-settings'); ?>"><i class="fa fa-sliders"></i> <span><?= trans("general_settings"); ?></span></a>
                                 </li>
                                 <li class="nav-header-settings">
                                     <a href="<?= adminUrl('header-settings'); ?>"><i class="fa fa-paint-brush"></i> <span>Header Settings</span></a>
@@ -368,19 +368,19 @@
                                     <a href="<?= adminUrl('mega-menu-settings'); ?>"><i class="fa fa-window-restore"></i> <span>Mega Menu Custom</span></a>
                                 </li>
                                 <li class="nav-language-settings">
-                                    <a href="<?= adminUrl('language-settings'); ?>"><span><?= trans("language_settings"); ?></span></a>
+                                    <a href="<?= adminUrl('language-settings'); ?>"><i class="fa fa-language"></i> <span><?= trans("language_settings"); ?></span></a>
                                 </li>
                                 <li class="nav-email-settings">
-                                    <a href="<?= adminUrl('email-settings'); ?>"><span><?= trans("email_settings"); ?></span></a>
+                                    <a href="<?= adminUrl('email-settings'); ?>"><i class="fa fa-envelope-o"></i> <span><?= trans("email_settings"); ?></span></a>
                                 </li>
                                 <li class="nav-font-settings">
-                                    <a href="<?= adminUrl('font-settings'); ?>"><span><?= trans("font_settings"); ?></span></a>
+                                    <a href="<?= adminUrl('font-settings'); ?>"><i class="fa fa-font"></i> <span><?= trans("font_settings"); ?></span></a>
                                 </li>
                                 <li class="nav-social-login-settings">
-                                    <a href="<?= adminUrl('social-login-settings'); ?>"><span><?= trans("social_login_settings"); ?></span></a>
+                                    <a href="<?= adminUrl('social-login-settings'); ?>"><i class="fa fa-share-alt"></i> <span><?= trans("social_login_settings"); ?></span></a>
                                 </li>
                                 <li class="nav-route-settings">
-                                    <a href="<?= adminUrl('route-settings'); ?>"><span><?= trans("route_settings"); ?></span></a>
+                                    <a href="<?= adminUrl('route-settings'); ?>"><i class="fa fa-map-signs"></i> <span><?= trans("route_settings"); ?></span></a>
                                 </li>
                                 <li class="nav-dashboard-themes">
                                     <a href="<?= adminUrl('dashboard-themes'); ?>"><i class="fa fa-paint-brush"></i> <span>Tema Dashboard</span></a>

@@ -52,78 +52,78 @@
         }
     </script>
     <style>
-        /* --- SCOPED TO ADMIN AREA ONLY --- */
-        body.hold-transition .main-header .navbar { background-color: #ffffff !important; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border-bottom: none; }
-        body.hold-transition .main-header .logo { background-color: #1e293b !important; color: #fff !important; border-bottom: 0 solid transparent; }
+        /* --- SCOPED TO ADMIN AREA ONLY (Using permanent sidebar-mini class) --- */
+        body.sidebar-mini .main-header .navbar { background-color: #ffffff !important; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border-bottom: none; }
+        body.sidebar-mini .main-header .logo { background-color: #1e293b !important; color: #fff !important; border-bottom: 0 solid transparent; }
         
         /* Teks & Ikon Navbar */
-        body.hold-transition .main-header .navbar { min-height: 40px !important; display: flex; justify-content: space-between; align-items: center; padding: 0 !important; }
-        body.hold-transition .main-header .navbar .nav>li>a { font-size: 14px !important; color: #475569 !important; padding: 10px 15px !important; font-weight: 600; display: flex; align-items: center; gap: 6px; }
-        body.hold-transition .main-header .navbar .sidebar-toggle { color: #64748b !important; padding: 10px 15px !important; display: inline-flex; align-items: center; justify-content: center; font-size: 16px !important; height: 100%; }
-        body.hold-transition .main-header .navbar .sidebar-toggle:hover { background-color: #f8fafc !important; }
-        body.hold-transition .main-header .sidebar-toggle:before { content: ""; }
+        body.sidebar-mini .main-header .navbar { min-height: 40px !important; display: flex; justify-content: space-between; align-items: center; padding: 0 !important; }
+        body.sidebar-mini .main-header .navbar .nav>li>a { font-size: 14px !important; color: #475569 !important; padding: 10px 15px !important; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+        body.sidebar-mini .main-header .navbar .sidebar-toggle { color: #64748b !important; padding: 10px 15px !important; display: inline-flex; align-items: center; justify-content: center; font-size: 16px !important; height: 100%; }
+        body.sidebar-mini .main-header .navbar .sidebar-toggle:hover { background-color: #f8fafc !important; }
+        body.sidebar-mini .main-header .sidebar-toggle:before { content: ""; }
         
         /* Tombol Lihat Website (Force White Text) */
-        body.hold-transition .main-header .navbar .nav > li > a.btn-site-prev { font-size: 14px !important; padding: 8px 20px !important; margin-top: 8px !important; margin-bottom: 8px; margin-right: 15px; border-radius: 20px; color: #ffffff !important; font-weight: 700 !important; background-color: #ef4444 !important; border: 1px solid #dc2626 !important; }
-        body.hold-transition .main-header .navbar .nav > li > a.btn-site-prev i { color: #ffffff !important; }
+        body.sidebar-mini .main-header .navbar .nav > li > a.btn-site-prev { font-size: 14px !important; padding: 8px 20px !important; margin-top: 8px !important; margin-bottom: 8px; margin-right: 15px; border-radius: 20px; color: #ffffff !important; font-weight: 700 !important; background-color: #ef4444 !important; border: 1px solid #dc2626 !important; }
+        body.sidebar-mini .main-header .navbar .nav > li > a.btn-site-prev i { color: #ffffff !important; }
         
         /* Fix BS5 flex layout pada Nav Kanan */
-        body.hold-transition .navbar-custom-menu { margin-left: auto; display: flex; align-items: center; }
-        body.hold-transition .navbar-custom-menu > .nav { flex-direction: row; display: flex; align-items: center; margin: 0; gap: 5px; }
+        body.sidebar-mini .navbar-custom-menu { margin-left: auto; display: flex; align-items: center; }
+        body.sidebar-mini .navbar-custom-menu > .nav { flex-direction: row; display: flex; align-items: center; margin: 0; gap: 5px; }
         
         /* Fix Layout Overlap */
-        body.hold-transition .content-wrapper { margin-top: 0px !important; }
-        body.hold-transition .content-wrapper > .content { padding-top: 30px !important; padding-left: 25px; padding-right: 25px; }
+        body.sidebar-mini .content-wrapper { margin-top: 0px !important; }
+        body.sidebar-mini .content-wrapper > .content { padding-top: 30px !important; padding-left: 25px; padding-right: 25px; }
         
         /* Dropdown & Avatar Fix */
-        body.hold-transition .user-menu .dropdown-toggle { display: flex; align-items: center; }
-        body.hold-transition .user-image { float: none; width: 30px !important; height: 30px !important; margin-top: 0; margin-right: 8px; }
+        body.sidebar-mini .user-menu .dropdown-toggle { display: flex; align-items: center; }
+        body.sidebar-mini .user-image { float: none; width: 30px !important; height: 30px !important; margin-top: 0; margin-right: 8px; }
         
         /* Dropdown Menu Item Size */
-        body.hold-transition .dropdown-menu { box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important; border: 1px solid #f1f5f9; border-radius: 12px; padding: 5px 0; }
-        body.hold-transition .dropdown-menu > li > a { font-size: 13px !important; padding: 6px 20px !important; color: #475569 !important; display: block; }
-        body.hold-transition .dropdown-menu > li > a > i { margin-right: 10px; color: #64748b; width: 16px; text-align: center; }
-        body.hold-transition .dropdown-menu > li > a:hover { background-color: #f8fafc !important; color: #00a8ff !important; }
+        body.sidebar-mini .dropdown-menu { box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important; border: 1px solid #f1f5f9; border-radius: 12px; padding: 5px 0; }
+        body.sidebar-mini .dropdown-menu > li > a { font-size: 13px !important; padding: 6px 20px !important; color: #475569 !important; display: block; }
+        body.sidebar-mini .dropdown-menu > li > a > i { margin-right: 10px; color: #64748b; width: 16px; text-align: center; }
+        body.sidebar-mini .dropdown-menu > li > a:hover { background-color: #f8fafc !important; color: #00a8ff !important; }
         
         /* Fix Bootstrap 5 Link Underline & Font Overrides */
-        body.hold-transition a { text-decoration: none !important; }
-        body.hold-transition .main-header .logo, body.hold-transition .main-sidebar .logo { font-size: 20px !important; font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important; letter-spacing: 0px; font-weight: 300 !important; color: #fff !important; }
-        body.hold-transition .main-header .logo b, body.hold-transition .main-sidebar .logo b { font-weight: 800 !important; }
+        body.sidebar-mini a { text-decoration: none !important; }
+        body.sidebar-mini .main-header .logo, body.sidebar-mini .main-sidebar .logo { font-size: 20px !important; font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important; letter-spacing: 0px; font-weight: 300 !important; color: #fff !important; }
+        body.sidebar-mini .main-header .logo b, body.sidebar-mini .main-sidebar .logo b { font-weight: 800 !important; }
         
         /* General Font Size Normalization */
-        body.hold-transition, body.hold-transition .content-wrapper, body.hold-transition .main-footer { font-size: 14px !important; }
+        body.sidebar-mini, body.sidebar-mini .content-wrapper, body.sidebar-mini .main-footer { font-size: 14px !important; }
 
         /* General Button Fix */
-        body.hold-transition .btn { padding: 8px 20px !important; font-size: 14px !important; border-radius: 8px !important; }
-        body.hold-transition .btn-sm { padding: 6px 16px !important; font-size: 13px !important; }
+        body.sidebar-mini .btn { padding: 8px 20px !important; font-size: 14px !important; border-radius: 8px !important; }
+        body.sidebar-mini .btn-sm { padding: 6px 16px !important; font-size: 13px !important; }
 
         /* --- GLOBAL THEME OVERRIDES --- */
         
         /* MODERN GLASS THEME */
-        body.theme-modern { background-color: #f8fafc; font-family: 'Outfit', sans-serif !important; }
-        body.theme-modern .main-header .navbar { background: rgba(255, 255, 255, 0.8) !important; backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.3); }
-        body.theme-modern .main-sidebar { background-color: #ffffff !important; box-shadow: 10px 0 30px rgba(0,0,0,0.02) !important; border-right: 1px solid #f1f5f9; }
-        body.theme-modern .main-sidebar .logo { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%) !important; color: #fff !important; }
-        body.theme-modern .sidebar-menu > li > a { color: #475569 !important; border-radius: 12px; margin: 2px 10px; transition: all 0.3s ease; }
-        body.theme-modern .sidebar-menu > li:hover > a, body.theme-modern .sidebar-menu > li.active > a { background: #f1f5f9 !important; color: #6366f1 !important; }
-        body.theme-modern .sidebar-menu > li.header { background: transparent !important; color: #94a3b8 !important; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; font-size: 10px; padding-left: 20px; }
-        body.theme-modern .content-wrapper { background-color: #f8fafc !important; }
-        body.theme-modern .box { border-radius: 20px !important; border: none !important; box-shadow: 0 10px 30px rgba(0,0,0,0.03) !important; overflow: hidden; }
-        body.theme-modern .btn-primary { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%) !important; border: none !important; border-radius: 10px !important; padding: 10px 25px !important; font-weight: 600 !important; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2) !important; }
-        body.theme-modern .user-panel { border-bottom: 1px solid #f1f5f9 !important; padding: 20px 15px !important; }
+        body.theme-modern.sidebar-mini { background-color: #f8fafc; font-family: 'Outfit', sans-serif !important; }
+        body.theme-modern.sidebar-mini .main-header .navbar { background: rgba(255, 255, 255, 0.8) !important; backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.3); }
+        body.theme-modern.sidebar-mini .main-sidebar { background-color: #ffffff !important; box-shadow: 10px 0 30px rgba(0,0,0,0.02) !important; border-right: 1px solid #f1f5f9; }
+        body.theme-modern.sidebar-mini .main-sidebar .logo { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%) !important; color: #fff !important; }
+        body.theme-modern.sidebar-mini .sidebar-menu > li > a { color: #475569 !important; border-radius: 12px; margin: 2px 10px; transition: all 0.3s ease; }
+        body.theme-modern.sidebar-mini .sidebar-menu > li:hover > a, body.theme-modern.sidebar-mini .sidebar-menu > li.active > a { background: #f1f5f9 !important; color: #6366f1 !important; }
+        body.theme-modern.sidebar-mini .sidebar-menu > li.header { background: transparent !important; color: #94a3b8 !important; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; font-size: 10px; padding-left: 20px; }
+        body.theme-modern.sidebar-mini .content-wrapper { background-color: #f8fafc !important; }
+        body.theme-modern.sidebar-mini .box { border-radius: 20px !important; border: none !important; box-shadow: 0 10px 30px rgba(0,0,0,0.03) !important; overflow: hidden; }
+        body.theme-modern.sidebar-mini .btn-primary { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%) !important; border: none !important; border-radius: 10px !important; padding: 10px 25px !important; font-weight: 600 !important; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2) !important; }
+        body.theme-modern.sidebar-mini .user-panel { border-bottom: 1px solid #f1f5f9 !important; padding: 20px 15px !important; }
 
         /* WORDPRESS STYLE THEME */
-        body.theme-wordpress { background-color: #f0f0f1; }
-        body.theme-wordpress .main-header .navbar { background-color: #ffffff !important; border-bottom: 1px solid #dcdcde !important; }
-        body.theme-wordpress .main-sidebar { background-color: #1d2327 !important; }
-        body.theme-wordpress .main-sidebar .logo { background-color: #1d2327 !important; border-bottom: 1px solid #3c434a !important; }
-        body.theme-wordpress .sidebar-menu > li > a { color: #f0f0f1 !important; font-size: 14px !important; }
-        body.theme-wordpress .sidebar-menu > li:hover > a { background-color: #2271b1 !important; }
-        body.theme-wordpress .sidebar-menu > li.active > a { background-color: #2271b1 !important; color: #fff !important; }
-        body.theme-wordpress .content-wrapper { background-color: #f0f0f1 !important; }
-        body.theme-wordpress .box { border-radius: 0 !important; border: 1px solid #c3c4c7 !important; box-shadow: none !important; }
-        body.theme-wordpress .box-header { border-bottom: 1px solid #f0f0f1 !important; }
-        body.theme-wordpress .btn-primary { background: #2271b1 !important; border-color: #2271b1 !important; border-radius: 3px !important; }
+        body.theme-wordpress.sidebar-mini { background-color: #f0f0f1; }
+        body.theme-wordpress.sidebar-mini .main-header .navbar { background-color: #ffffff !important; border-bottom: 1px solid #dcdcde !important; }
+        body.theme-wordpress.sidebar-mini .main-sidebar { background-color: #1d2327 !important; }
+        body.theme-wordpress.sidebar-mini .main-sidebar .logo { background-color: #1d2327 !important; border-bottom: 1px solid #3c434a !important; }
+        body.theme-wordpress.sidebar-mini .sidebar-menu > li > a { color: #f0f0f1 !important; font-size: 14px !important; }
+        body.theme-wordpress.sidebar-mini .sidebar-menu > li:hover > a { background-color: #2271b1 !important; }
+        body.theme-wordpress.sidebar-mini .sidebar-menu > li.active > a { background-color: #2271b1 !important; color: #fff !important; }
+        body.theme-wordpress.sidebar-mini .content-wrapper { background-color: #f0f0f1 !important; }
+        body.theme-wordpress.sidebar-mini .box { border-radius: 0 !important; border: 1px solid #c3c4c7 !important; box-shadow: none !important; }
+        body.theme-wordpress.sidebar-mini .box-header { border-bottom: 1px solid #f0f0f1 !important; }
+        body.theme-wordpress.sidebar-mini .btn-primary { background: #2271b1 !important; border-color: #2271b1 !important; border-radius: 3px !important; }
     </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini theme-<?= $adminTheme; ?>">

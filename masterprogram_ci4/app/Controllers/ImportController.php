@@ -42,11 +42,13 @@ class ImportController extends BaseAdminController
                     </div>
                     <div class="box-body">
                         <form id="formScan" enctype="multipart/form-data">
-                            <div class="input-group input-group-lg">
-                                <input type="file" name="xml_scan" class="form-control" required accept=".xml">
-                                <span class="input-group-btn">
-                                    <button type="submit" class="btn btn-info btn-flat"><i class="fa fa-search"></i> SCAN GAMBAR</button>
-                                </span>
+                            <div class="row">
+                                <div class="col-sm-9">
+                                    <input type="file" name="xml_scan" class="form-control" style="height: 45px;" required accept=".xml">
+                                </div>
+                                <div class="col-sm-3">
+                                    <button type="submit" class="btn btn-info btn-block" style="height: 45px;"><i class="fa fa-search"></i> SCAN GAMBAR</button>
+                                </div>
                             </div>
                         </form>
                         <br>

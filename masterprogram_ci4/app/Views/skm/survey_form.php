@@ -127,8 +127,9 @@
             const links = document.querySelectorAll('a');
             let patchedCount = 0;
             links.forEach(link => {
-                const text = link.innerText.trim().toUpperCase();
-                if (text === 'SKM' || text === 'SURVEI SKM') {
+                const text = (link.innerText || link.textContent || '').trim().toUpperCase();
+                // Match "SKM", "SURVEI SKM", "MENU SKM", etc.
+                if (text.includes('SKM')) {
                     link.setAttribute('href', 'javascript:void(0)');
                     link.setAttribute('data-toggle', 'modal');
                     link.setAttribute('data-target', '#modalSkm');
@@ -136,10 +137,12 @@
                     // Force internal click handler just in case data-attributes fail
                     link.onclick = function(e) {
                         e.preventDefault();
+                        e.stopPropagation();
                         $('#modalSkm').modal('show');
                         return false;
                     };
                     patchedCount++;
+                    link.style.cursor = 'pointer'; // Visual feedback
                 }
             });
             if (patchedCount > 0) console.log('[SKM] Pathced ' + patchedCount + ' navigation links');

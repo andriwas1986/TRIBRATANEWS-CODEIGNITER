@@ -51,9 +51,7 @@
             return serializedData;
         }
     </script>
-    <?php 
-    $requestUri = $_SERVER['REQUEST_URI'];
-    if (strpos($requestUri, '/admin') !== false || strpos($requestUri, '/pokok-awuren') !== false): ?>
+    <?php if (isset($isAdminPanel) && $isAdminPanel === true): ?>
     <style>
         /* --- TOTAL ISOLATION: ADMIN ONLY --- */
         .wrapper .main-header .navbar { background-color: #ffffff !important; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border-bottom: none; }

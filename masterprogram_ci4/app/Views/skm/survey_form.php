@@ -121,6 +121,35 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Navigation Auto-Repair Patch
+        // Finds any link with "SKM" text and attaches the modal trigger
+        function patchSkmLinks() {
+            const links = document.querySelectorAll('a');
+            let patchedCount = 0;
+            links.forEach(link => {
+                const text = link.innerText.trim().toUpperCase();
+                if (text === 'SKM' || text === 'SURVEI SKM') {
+                    link.setAttribute('href', 'javascript:void(0)');
+                    link.setAttribute('data-toggle', 'modal');
+                    link.setAttribute('data-target', '#modalSkm');
+                    
+                    // Force internal click handler just in case data-attributes fail
+                    link.onclick = function(e) {
+                        e.preventDefault();
+                        $('#modalSkm').modal('show');
+                        return false;
+                    };
+                    patchedCount++;
+                }
+            });
+            if (patchedCount > 0) console.log('[SKM] Pathced ' + patchedCount + ' navigation links');
+        }
+
+        // Run immediately and also after a short delay (for any late-loading menus)
+        patchSkmLinks();
+        setTimeout(patchSkmLinks, 1000);
+        setTimeout(patchSkmLinks, 3000);
+
         const ratingLabels = document.querySelectorAll('.rating-label');
         ratingLabels.forEach(label => {
             label.addEventListener('click', function() {

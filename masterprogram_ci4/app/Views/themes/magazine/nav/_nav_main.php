@@ -86,7 +86,7 @@ endif; ?>
 </li>
 <?php endif; ?>
 <li class="nav-item">
-    <a href="javascript:void(0)" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalSkm">SKM</a>
+    <a href="javascript:void(0)" class="nav-link" data-toggle="modal" data-target="#modalSkm">SKM</a>
 </li>
 </ul>
 <hr class="d-md-none text-white-50">

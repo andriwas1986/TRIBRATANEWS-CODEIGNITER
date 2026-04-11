@@ -44,7 +44,11 @@ endforeach; ?>
 </ul>
 </li>
 <?php else: ?>
+<?php if (strtoupper($item->item_name) == 'SKM' || $item->item_slug == 'skm'): ?>
+<li class="nav-item"><a href="javascript:void(0)" class="nav-link" data-toggle="modal" data-target="#modalSkm"><?= esc($item->item_name); ?></a></li>
+<?php else: ?>
 <li class="nav-item <?= uri_string() == $item->item_slug ? 'active' : ''; ?>"><a href="<?= generateMenuItemURL($item, $baseCategories); ?>" class="nav-link"><?= esc($item->item_name); ?></a></li>
+<?php endif; ?>
 <?php endif;
 endif;
 $i++;
@@ -75,7 +79,11 @@ endforeach; ?>
 </ul>
 </li>
 <?php else: ?>
+<?php if (strtoupper($item->item_name) == 'SKM' || $item->item_slug == 'skm'): ?>
+<li><a href="javascript:void(0)" class="dropdown-item" data-toggle="modal" data-target="#modalSkm"><?= esc($item->item_name); ?></a></li>
+<?php else: ?>
 <li><a href="<?= generateMenuItemURL($item, $baseCategories); ?>" class="dropdown-item"><?= esc($item->item_name); ?></a></li>
+<?php endif; ?>
 <?php endif;
 endif;
 $i++;
@@ -85,9 +93,6 @@ endif; ?>
 </ul>
 </li>
 <?php endif; ?>
-<li class="nav-item">
-    <a href="javascript:void(0)" class="nav-link" data-toggle="modal" data-target="#modalSkm">SKM</a>
-</li>
 </ul>
 <hr class="d-md-none text-white-50">
 <ul class="navbar-nav navbar-right flex-row flex-wrap align-items-center ms-md-auto">

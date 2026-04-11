@@ -118,20 +118,25 @@ if (!empty($subLinks)): ?>
 <?php endif;
 foreach ($subLinks as $sub):
 if ($sub->item_visibility == 1):?>
+<?php if (strtoupper($sub->item_name) == 'SKM' || $sub->item_slug == 'skm'): ?>
+<li class="nav-item"><a href="javascript:void(0)" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalSkm"><?= esc($sub->item_name) ?></a></li>
+<?php else: ?>
 <li class="nav-item"><a href="<?= generateMenuItemURL($sub, $baseCategories); ?>" class="nav-link"><?= esc($sub->item_name) ?></a></li>
+<?php endif; ?>
 <?php endif;
 endforeach; ?>
 </ul>
 </li>
 <?php else: ?>
+<?php if (strtoupper($item->item_name) == 'SKM' || $item->item_slug == 'skm'): ?>
+<li class="nav-item"><a href="javascript:void(0)" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalSkm"><?= esc($item->item_name) ?></a></li>
+<?php else: ?>
 <li class="nav-item"><a href="<?= generateMenuItemURL($item, $baseCategories); ?>" class="nav-link"><?= esc($item->item_name) ?></a></li>
+<?php endif; ?>
 <?php endif;
 endif;
 endforeach;
 endif; ?>
-<li class="nav-item">
-    <a href="javascript:void(0)" class="nav-link" data-toggle="modal" data-target="#modalSkm">SKM</a>
-</li>
 </ul>
 </div>
 

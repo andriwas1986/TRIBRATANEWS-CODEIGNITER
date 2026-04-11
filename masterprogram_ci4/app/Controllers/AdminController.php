@@ -220,7 +220,6 @@ class AdminController extends BaseAdminController
     /**
      * Themes
      */
-    // Re-trigger deployment
     public function themes()
     {
         checkSuperAdmin();

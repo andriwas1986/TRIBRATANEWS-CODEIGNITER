@@ -130,6 +130,10 @@
         body.theme-wordpress .box { border-radius: 0 !important; border: 1px solid #c3c4c7 !important; box-shadow: none !important; }
         body.theme-wordpress .box-header { border-bottom: 1px solid #f0f0f1 !important; }
         body.theme-wordpress .btn-primary { background: #2271b1 !important; border-color: #2271b1 !important; border-radius: 3px !important; }
+        
+        /* Modal Speedup */
+        .modal.fade .modal-dialog { transition: transform 0.15s ease-out !important; }
+        .modal.in .modal-dialog { transform: translate(0, 0) !important; }
     </style>
     <?php endif; ?>
 </head>

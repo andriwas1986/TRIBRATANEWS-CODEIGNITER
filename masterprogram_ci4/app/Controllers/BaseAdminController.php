@@ -178,7 +178,8 @@ abstract class BaseAdminController extends Controller
             'generalSettings' => $this->generalSettings, 
             'baseSettings' => $this->settings, 
             'baseAIWriter' => $this->aiWriter, 
-            'baseCategories' => $this->categories
+            'baseCategories' => $this->categories,
+            'adminTheme' => $settingsModel->getDashboardTheme()
         ]);
 
        

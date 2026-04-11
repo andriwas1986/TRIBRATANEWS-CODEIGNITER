@@ -29,7 +29,7 @@
 ?>
 
 <style>
-    .wp-dashboard { background: #f1f1f1; padding: 20px 20px 50px 20px; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; color: #3c434a; margin-top: -20px; margin-left: -15px; margin-right: -15px;}
+    .wp-dashboard { padding: 20px 20px 50px 20px; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; color: #3c434a; margin-top: -20px; margin-left: -15px; margin-right: -15px;}
     .wp-title { font-size: 23px; font-weight: 400; margin: 0 0 20px 0; }
     .wp-box { background: #fff; border: 1px solid #c3c4c7; border-radius: 0; margin-bottom: 20px; box-shadow: none; }
     .wp-box-header { border-bottom: 1px solid #c3c4c7; padding: 12px 15px; }

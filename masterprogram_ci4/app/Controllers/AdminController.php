@@ -66,9 +66,6 @@ class AdminController extends BaseAdminController
         $data['scheduledPostsCount'] = $this->postAdminModel->getScheduledPostsCount();
         $data['panelSettings'] = panelSettings();
 
-        // Get Current Admin Theme
-        $data['adminTheme'] = $this->settingsModel->getDashboardTheme();
-
         $this->commonModel->fixNullRecords();
 
         echo view('admin/includes/_header', $data);
@@ -2217,7 +2214,6 @@ class AdminController extends BaseAdminController
         checkPermission('settings');
         $data['title'] = "Tema Dashboard";
         $data['panelSettings'] = panelSettings();
-        $data['adminTheme'] = $this->settingsModel->getDashboardTheme();
 
         // Auto-Fix Column if not exists
         $db = \Config\Database::connect();

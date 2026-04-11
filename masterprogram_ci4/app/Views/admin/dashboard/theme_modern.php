@@ -28,7 +28,7 @@
 ?>
 
 <style>
-    .modern-dashboard { background: #f8fafc; padding: 30px; }
+    .modern-dashboard { padding: 30px; }
     .hero-glass {
         background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
         border-radius: 24px; padding: 40px; color: #fff; margin-bottom: 30px;

@@ -28,7 +28,14 @@ class FileController extends BaseAdminController
      */
     public function uploadImage()
     {
-        $this->fileModel->uploadImage();
+        $fileId = $this->fileModel->uploadImage();
+        if ($fileId) {
+            $file = $this->fileModel->getImage($fileId);
+            if (!empty($file)) {
+                $file->img_base_url = getBaseURLByStorage($file->storage);
+                echo json_encode($file);
+            }
+        }
     }
 
     /**

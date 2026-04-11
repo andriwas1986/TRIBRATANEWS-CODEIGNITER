@@ -118,10 +118,27 @@
             },
             onUploadSuccess: function (id, data) {
                 document.getElementById("uploaderFile" + id).remove();
-                refresh_images();
                 ui_multi_update_file_status(id, 'success', 'Upload Complete');
                 ui_multi_update_file_progress(id, 100, 'success', false);
                 $("#btn_reset_upload_image").hide();
+                
+                try {
+                    var obj = JSON.parse(data);
+                    if (obj && obj.id) {
+                        $('#selected_img_file_id').val(obj.id);
+                        $('#selected_img_mid_file_path').val(obj.image_mid);
+                        $('#selected_img_default_file_path').val(obj.image_default);
+                        $('#selected_img_slider_file_path').val(obj.image_slider);
+                        $('#selected_img_big_file_path').val(obj.image_big);
+                        $('#selected_img_storage').val(obj.storage);
+                        $('#selected_img_base_url').val(obj.img_base_url);
+                        
+                        // Auto-select and close
+                        select_image();
+                    }
+                } catch (e) {
+                    refresh_images();
+                }
             },
             onUploadError: function (id, xhr, status, message) {
                 if (message == "Not Acceptable") {

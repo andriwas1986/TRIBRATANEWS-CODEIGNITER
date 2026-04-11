@@ -70,7 +70,9 @@ class FileModel extends BaseModel
                     $awsModel->uploadFile($data['image_small']);
                 }
             }
+            return $insertId;
         }
+        return false;
     }
 
     //get image

@@ -33,12 +33,12 @@
                             </div>
                         <?php else: ?>
                             <div id="post_select_image_container" class="post-select-image-container">
-                                <a class="btn-select-image" data-toggle="modal" data-target="#file_manager_image" data-image-type="main">
-                                    <div class="btn-select-image-inner">
-                                        <i class="fa fa-image"></i>
-                                        <button type="button" class="btn"><?= trans("select_image"); ?></button>
+                                <button type="button" class="btn btn-select-image" data-toggle="modal" data-target="#file_manager_image" data-image-type="main" style="width: 100%; border: 2px dashed #d2d6de; padding: 40px 20px !important; border-radius: 12px !important; background: #f9fafb;">
+                                    <div class="btn-select-image-inner" style="pointer-events: none;">
+                                        <i class="fa fa-image" style="font-size: 40px; color: #94a3b8; display: block; margin-bottom: 10px;"></i>
+                                        <span style="font-weight: 600; color: #64748b;"><?= trans("select_image"); ?></span>
                                     </div>
-                                </a>
+                                </button>
                             </div>
                         <?php endif; ?>
                         <input type="hidden" name="post_image_id" id="post_image_id">
@@ -64,12 +64,12 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div id="post_select_image_container" class="post-select-image-container">
-                            <a class="btn-select-image" data-toggle="modal" data-target="#file_manager_image" data-image-type="main">
-                                <div class="btn-select-image-inner">
-                                    <i class="fa fa-image"></i>
-                                    <button type="button" class="btn"><?= trans("select_image"); ?></button>
+                            <button type="button" class="btn btn-select-image" data-toggle="modal" data-target="#file_manager_image" data-image-type="main" style="width: 100%; border: 2px dashed #d2d6de; padding: 40px 20px !important; border-radius: 12px !important; background: #f9fafb;">
+                                <div class="btn-select-image-inner" style="pointer-events: none;">
+                                    <i class="fa fa-image" style="font-size: 40px; color: #94a3b8; display: block; margin-bottom: 10px;"></i>
+                                    <span style="font-weight: 600; color: #64748b;"><?= trans("select_image"); ?></span>
                                 </div>
-                            </a>
+                            </button>
                         </div>
                         <input type="hidden" name="post_image_id" id="post_image_id">
                     </div>

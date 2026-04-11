@@ -63,9 +63,9 @@
         .main-header .navbar .sidebar-toggle:hover { background-color: #f8fafc !important; }
         .main-header .sidebar-toggle:before { content: ""; } /* Hindari ikon kembar */
         
-        /* Tombol Lihat Website */
-        .main-header .navbar .btn-site-prev { font-size: 14px !important; padding: 8px 20px !important; margin-top: 8px !important; margin-bottom: 8px; margin-right: 15px; border-radius: 20px; color: #ffffff !important; font-weight: 700 !important; background-color: #ef4444 !important; border: 1px solid #dc2626 !important; }
-        .main-header .navbar .btn-site-prev i { color: #ffffff !important; }
+        /* Tombol Lihat Website (Force White Text) */
+        .main-header .navbar .nav > li > a.btn-site-prev { font-size: 14px !important; padding: 8px 20px !important; margin-top: 8px !important; margin-bottom: 8px; margin-right: 15px; border-radius: 20px; color: #ffffff !important; font-weight: 700 !important; background-color: #ef4444 !important; border: 1px solid #dc2626 !important; }
+        .main-header .navbar .nav > li > a.btn-site-prev i { color: #ffffff !important; }
         
         /* Fix BS5 flex layout pada Nav Kanan (Dorong ke pojok kanan) */
         .navbar-custom-menu { margin-left: auto; display: flex; align-items: center; }

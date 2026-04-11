@@ -239,6 +239,7 @@ $routes->group($customRoutes->admin, ['filter' => 'auth'], function ($routes) {
     $routes->post('mega-menu-settings-post', 'AdminController::megaMenuSettingsPost');
     $routes->get('header-settings', 'AdminController::headerSettings');
     $routes->post('header-settings-post', 'AdminController::headerSettingsPost');
+    $routes->post('set-dashboard-theme-post', 'AdminController::setDashboardThemePost');
 
 });
 

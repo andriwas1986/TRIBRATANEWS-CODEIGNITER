@@ -243,8 +243,8 @@ $routes->group($customRoutes->admin, ['filter' => 'auth'], function ($routes) {
     $routes->post('set-dashboard-theme', 'AdminController::setDashboardThemePost');
     
     //SKM
-    $routes->get('skm', 'AdminSkmController::index');
     $routes->get('skm/statistics', 'AdminSkmController::statistics');
+    $routes->get('skm/seed', 'AdminSkmController::seed');
     $routes->get('skm/delete/(:num)', 'AdminSkmController::delete/$1');
 
 });

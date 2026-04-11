@@ -11,6 +11,18 @@
             <a href="#" class="small-box-footer">Statistik Real-time <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
+    <div class="col-lg-3 col-xs-6">
+        <div class="small-box bg-purple">
+            <div class="inner">
+                <h3>Dummy</h3>
+                <p>Populasi Data SKM</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-database"></i>
+            </div>
+            <a href="<?= adminUrl('skm/seed?confirm=yes'); ?>" class="small-box-footer" onclick="return confirm('Apakah Anda yakin ingin mengisi 1000 data dummy? Data lama akan dihapus.')">Klik untuk Generate 1000 Data <i class="fa fa-magic"></i></a>
+        </div>
+    </div>
 </div>
 
 <div class="row">

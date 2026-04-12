@@ -41,7 +41,7 @@ body.theme-jnews-lifestyle {
 .theme-jnews-classic .nav-main { background: #fff !important; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-top: 1px solid #eee; }
 .theme-jnews-classic .nav-main .nav-link { color: #222 !important; font-weight: 700 !important; text-transform: uppercase; font-size: 14px; }
 .theme-jnews-classic .nav-main .nav-link:hover { color: var(--jnews-primary) !important; }
-.theme-jnews-classic .nav-top { background: #1a1a1a !important; color: #fff !important; }
+.theme-jnews-classic .nav-top { background: #1a1a1a !important; color: #fff !important; margin-bottom: 0 !important; }
 
 /* Sharp Edges */
 .theme-jnews-classic img, 
@@ -51,6 +51,12 @@ body.theme-jnews-lifestyle {
 .theme-jnews-classic .card {
     border-radius: 0 !important;
     box-shadow: none !important;
+}
+
+/* Slim Header */
+.theme-jnews-classic #header {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
 }
 
 .theme-jnews-classic .badge-category {

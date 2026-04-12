@@ -61,6 +61,7 @@
     if ($isAdminPage): ?>
     <style>
         /* --- COMPATIBILITY LAYER: AdminLTE 2 to 4 --- */
+        body { font-size: 14px !important; line-height: 1.42857143 !important; color: #333 !important; background-color: #f4f6f9 !important; }
         .app-main { flex: 1; padding: 20px; background: #f4f6f9; min-height: calc(100vh - 120px); }
         .content-wrapper { background: transparent !important; margin-left: 0 !important; padding: 0 !important; min-height: auto !important; }
         .row { display: flex; flex-wrap: wrap; margin-right: -7.5px; margin-left: -7.5px; }
@@ -68,17 +69,22 @@
         .float-right-container { float: right; }
         .treeview-menu { list-style: none; padding-left: 20px; display: none; }
         .menu-open > .treeview-menu { display: block; }
-        .sidebar-menu li a { display: flex; align-items: center; padding: 10px 15px; text-decoration: none; transition: 0.3s; }
-        .sidebar-menu li a i { width: 30px; }
         
-        /* Modern Scrollbar */
-        .sidebar-wrapper { overflow-y: auto; height: calc(100vh - 60px); }
-        .sidebar-wrapper::-webkit-scrollbar { width: 6px; }
-        .sidebar-wrapper::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+        /* Font Scaling Resets */
+        h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: 10px; font-weight: 500; }
+        h1 { font-size: 24px; } h2 { font-size: 20px; } h3 { font-size: 18px; } h4 { font-size: 16px; } h5 { font-size: 14px; } h6 { font-size: 12px; }
+        
+        /* Legacy Panels & Boxes */
+        .panel { margin-bottom: 20px; background-color: #fff; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 1px 1px rgba(0,0,0,.05); }
+        .panel-heading { padding: 10px 15px; border-bottom: 1px solid #ddd; border-top-left-radius: 3px; border-top-right-radius: 3px; }
+        .panel-title { margin-top: 0; margin-bottom: 0; font-size: 14px !important; color: inherit; }
+        .panel-body { padding: 15px; }
+        .list-group-item { padding: 10px 15px; margin-bottom: -1px; background-color: #fff; border: 1px solid #ddd; font-size: 14px !important; }
 
         /* Legacy AdminLTE 2 classes support */
         .box { position: relative; border-radius: 8px; background: #ffffff; border-top: 3px solid #d2d6de; margin-bottom: 20px; width: 100%; box-shadow: 0 1px 1px rgba(0,0,0,0.1); }
         .box-header { color: #444; display: block; padding: 10px; position: relative; border-bottom: 1px solid #f4f4f4; }
+        .box-header .box-title { display: inline-block; font-size: 16px; margin: 0; line-height: 1; }
         .box-body { border-radius: 0 0 3px 3px; padding: 10px; }
         .pull-right { float: right !important; }
         .pull-left { float: left !important; }

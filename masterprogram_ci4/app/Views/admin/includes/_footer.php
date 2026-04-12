@@ -1,15 +1,17 @@
-<?= $baseAIWriter->status == 1 && hasPermission('ai_writer') ? view('admin/post/_ai_writer') : ''; ?>
-</section>
-</div>
-<footer id="footer" class="main-footer">
-    <div class="float-end hidden-xs">
-        <span style="background: rgba(0, 168, 255, 0.1); color: #00a8ff; padding: 4px 12px; border-radius: 15px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0, 168, 255, 0.3); margin-right: 15px;">
-            <i class="fa fa-info-circle"></i> Bootstrap v5.3.3 & AdminLTE v4.0.0
-        </span>
-        <strong style="font-weight: 600;"><?= $baseSettings->copyright; ?>&nbsp;</strong>
-    </div>
-    <b>Andri Solution 08113647707 - APP Version 5.3.3</b>
-</footer>
+            </section>
+        </div>
+    </main>
+    <footer id="footer" class="app-footer">
+        <div class="float-end d-none d-sm-inline">
+            <span class="badge rounded-pill bg-info-subtle text-info border border-info-subtle px-3 py-2">
+                <i class="fa fa-info-circle"></i> Bootstrap v5.3.3 & AdminLTE v4.0.0
+            </span>
+            <strong class="ms-3 fw-semibold"><?= $baseSettings->copyright; ?>&nbsp;</strong>
+        </div>
+        <div class="d-inline">
+            <b>Andri Solution 08113647707 - APP Version 5.3.3</b>
+        </div>
+    </footer>
 </div>
 <script src="<?= base_url('assets/admin/js/jquery-ui.min.js'); ?>"></script>
 <script>$.widget.bridge('uibutton', $.ui.button);</script>

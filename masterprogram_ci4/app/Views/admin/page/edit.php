@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col-sm-12 col-xs-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans("update_page"); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans("update_page"); ?></h3>
             </div>
             <form action="<?= base_url('Admin/editPagePost'); ?>" method="post">
                 <?= csrf_field(); ?>
                 <input type="hidden" name="id" value="<?= esc($page->id); ?>">
                 <input type="hidden" name="redirect_url" value="<?= esc(inputGet('redirect_url')); ?>">
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label class="control-label"><?= trans('title'); ?></label>
                         <input type="text" class="form-control" name="title" placeholder="<?= trans('title'); ?>" value="<?= esc($page->title); ?>" required>
@@ -145,11 +145,12 @@
                         <input type="hidden" name="page_content" content="">
                     <?php endif; ?>
                 </div>
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 <?= view('admin/file-manager/_load_file_manager', ['loadImages' => true, 'loadFiles' => false, 'loadVideos' => false, 'loadAudios' => false]); ?>
+

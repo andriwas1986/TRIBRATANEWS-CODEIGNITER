@@ -1,12 +1,12 @@
-<div class="box">
-    <div class="box-header with-border">
+<div class="card">
+    <div class="card-header with-border">
         <div class="left">
-            <h3 class="box-title"><?= trans('video_thumbnails'); ?>
+            <h3 class="card-title"><?= trans('video_thumbnails'); ?>
                 <small class="small-title"><?= trans('image_for_video'); ?></small>
             </h3>
         </div>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <div class="form-group m-0">
             <input type="hidden" id="selected_image_type" value="image">
             <?php if (!empty($post)):
@@ -73,3 +73,4 @@
         </div>
     </div>
 </div>
+

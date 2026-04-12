@@ -14,7 +14,7 @@
                                 <small>(Youtube, Vimeo, Dailymotion, Facebook)</small>
                             </label>
                             <input type="text" class="form-control" name="video_url" id="video_url" value="<?= $post->video_url; ?>" placeholder="<?= trans('video_url'); ?>">
-                            <a href="javascript:void(0)" class="btn btn-sm btn-info pull-right btn-get-embed" onclick="getVideoFromURL('<?= $videoUploadPostType; ?>');"><?= trans('get_video'); ?></a>
+                            <a href="javascript:void(0)" class="btn btn-sm btn-info float-end btn-get-embed" onclick="getVideoFromURL('<?= $videoUploadPostType; ?>');"><?= trans('get_video'); ?></a>
                         </div>
                         <div class="form-group">
                             <label class="control-label"><?= trans('video_embed_code'); ?></label>
@@ -61,7 +61,7 @@
                                 <small>(Youtube, Vimeo, Dailymotion, Facebook)</small>
                             </label>
                             <input type="text" class="form-control" name="video_url" id="video_url" placeholder="<?= trans('video_url'); ?>">
-                            <a href="javascript:void(0)" class="btn btn-sm btn-info pull-right btn-get-embed" onclick="getVideoFromURL('<?= $videoUploadPostType; ?>');"><?= trans('get_video'); ?></a>
+                            <a href="javascript:void(0)" class="btn btn-sm btn-info float-end btn-get-embed" onclick="getVideoFromURL('<?= $videoUploadPostType; ?>');"><?= trans('get_video'); ?></a>
                         </div>
                         <div class="form-group">
                             <label class="control-label video-embed-lbl"><?= trans('video_embed_code'); ?></label>
@@ -86,3 +86,4 @@
         </div>
     </div>
 </div>
+

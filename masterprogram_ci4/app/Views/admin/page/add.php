@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-sm-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
+        <div class="card card-primary">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans("add_page"); ?></h3>
+                    <h3 class="card-title"><?= trans("add_page"); ?></h3>
                 </div>
                 <div class="right">
                     <a href="<?= adminUrl('pages'); ?>" class="btn btn-success btn-add-new"><i class="fa fa-bars"></i><?= trans("pages"); ?></a>
@@ -11,7 +11,7 @@
             </div>
             <form action="<?= base_url('Admin/addPagePost'); ?>" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label class="control-label"><?= trans('title'); ?></label>
                         <input type="text" class="form-control" name="title" placeholder="<?= trans('title'); ?>" value="<?= old('title'); ?>" required>
@@ -130,11 +130,12 @@
                     </div>
                 </div>
 
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('add_page'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('add_page'); ?></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 <?= view('admin/file-manager/_load_file_manager', ['loadImages' => true, 'loadFiles' => false, 'loadVideos' => false, 'loadAudios' => false]); ?>
+

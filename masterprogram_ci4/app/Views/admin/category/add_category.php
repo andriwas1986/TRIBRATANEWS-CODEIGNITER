@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-lg-8 col-md-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
+        <div class="card card-primary">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans("add_category"); ?></h3>
+                    <h3 class="card-title"><?= trans("add_category"); ?></h3>
                 </div>
                 <div class="right">
                     <a href="<?= adminUrl('categories'); ?>" class="btn btn-success btn-add-new"><i class="fa fa-bars"></i><?= trans("categories"); ?></a>
@@ -11,7 +11,7 @@
             </div>
             <form action="<?= base_url('Category/addCategoryPost'); ?>" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label><?= trans("language"); ?></label>
                         <select name="lang_id" class="form-control" onchange="getParentCategoriesByLang(this.value);">
@@ -59,7 +59,7 @@
                         <label><?= trans('color'); ?></label>
                         <div class="input-group my-colorpicker">
                             <input type="text" class="form-control" name="color" maxlength="200" placeholder="<?= trans('color'); ?>">
-                            <div class="input-group-addon"><i></i></div>
+                            <div class="input-group-text"><i></i></div>
                         </div>
                     </div>
 
@@ -88,7 +88,7 @@
                             <label><?= trans('category_block_style'); ?></label>
                             <div class="row m-b-15 m-t-15">
                                 <?php for ($i = 1; $i <= 5; $i++): ?>
-                                    <div class="category-block-box">
+                                    <div class="category-block-card">
                                         <div class="col-sm-12 text-center m-b-15">
                                             <div class="custom-control custom-radio" style="justify-content: center">
                                                 <input type="radio" name="block_type" value="block-<?= $i; ?>" id="block_type_<?= $i; ?>" class="custom-control-input" <?= $i == 1 ? 'checked' : ''; ?>>
@@ -105,7 +105,7 @@
                             <label><?= trans('category_block_style'); ?></label>
                             <div class="row m-b-15 m-t-15">
                                 <?php for ($i = 1; $i <= 6; $i++): ?>
-                                    <div class="category-block-box">
+                                    <div class="category-block-card">
                                         <div class="col-sm-12 text-center m-b-15">
                                             <div class="custom-control custom-radio" style="justify-content: center">
                                                 <input type="radio" name="block_type" value="block-<?= $i; ?>" id="block_type_<?= $i; ?>" class="custom-control-input" <?= $i == 1 ? 'checked' : ''; ?>>
@@ -122,8 +122,8 @@
                         </div>
                     <?php endif; ?>
                 </div>
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('add_category'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('add_category'); ?></button>
                 </div>
             </form>
         </div>
@@ -139,3 +139,5 @@
         }
     }
 </script>
+
+

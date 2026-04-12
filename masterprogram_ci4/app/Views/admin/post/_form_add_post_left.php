@@ -1,10 +1,10 @@
-<div class="box">
-    <div class="box-header with-border">
+<div class="card">
+    <div class="card-header with-border">
         <div class="left">
-            <h3 class="box-title"><?= trans('post_details'); ?></h3>
+            <h3 class="card-title"><?= trans('post_details'); ?></h3>
         </div>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         
         <div class="form-group">
             <label class="control-label"><?= trans('title'); ?></label>
@@ -138,3 +138,4 @@
 
     </div>
 </div>
+

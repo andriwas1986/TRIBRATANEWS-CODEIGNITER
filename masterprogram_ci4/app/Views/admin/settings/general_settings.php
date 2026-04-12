@@ -77,7 +77,7 @@ endif; ?>
                                         </a>
                                         (.png, .jpg, .jpeg, .gif, .svg)
                                     </div>
-                                    <span class='label label-info' id="upload-file-info1"></span>
+                                    <span class='label badge bg-info' id="upload-file-info1"></span>
                                 </div>
                                 <div class="col-sm-12 col-md-6 col-lg-3 m-b-15">
                                     <label class="control-label display-block"><?= trans('logo_footer'); ?></label>
@@ -91,7 +91,7 @@ endif; ?>
                                         </a>
                                         (.png, .jpg, .jpeg, .gif, .svg)
                                     </div>
-                                    <span class='label label-info' id="upload-file-info2"></span>
+                                    <span class='label badge bg-info' id="upload-file-info2"></span>
                                 </div>
                                 <div class="col-sm-12 col-md-6 col-lg-3 m-b-15">
                                     <div class="form-group" style="margin-bottom: 60px;">
@@ -106,7 +106,7 @@ endif; ?>
                                             </a>
                                             (.png, .jpg, .jpeg)
                                         </div>
-                                        <span class='label label-info' id="upload-file-info3"></span>
+                                        <span class='label badge bg-info' id="upload-file-info3"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-12" style="margin-bottom: 45px;">
@@ -138,7 +138,7 @@ endif; ?>
                                             </a>
                                             (.png)
                                         </div>
-                                        <span class='label label-info' id="upload-file-info4"></span>
+                                        <span class='label badge bg-info' id="upload-file-info4"></span>
                                     </div>
                                 </div>
 
@@ -219,8 +219,8 @@ endif; ?>
                     </div>
                 </div>
 
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                 </div>
             </div>
         </form>
@@ -229,13 +229,13 @@ endif; ?>
 
 <div class="row">
     <div class="col-lg-6 col-md-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans('google_recaptcha'); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans('google_recaptcha'); ?></h3>
             </div>
             <form action="<?= base_url('Admin/recaptchaSettingsPost'); ?>" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label class="control-label"><?= trans('site_key'); ?></label>
                         <input type="text" class="form-control" name="recaptcha_site_key" placeholder="<?= trans('site_key'); ?>" value="<?= $generalSettings->recaptcha_site_key; ?>">
@@ -245,8 +245,8 @@ endif; ?>
                         <label class="control-label"><?= trans('secret_key'); ?></label>
                         <input type="text" class="form-control" name="recaptcha_secret_key" placeholder="<?= trans('secret_key'); ?>" value="<?= $generalSettings->recaptcha_secret_key; ?>">
                     </div>
-                    <div class="box-footer" style="padding-left: 0; padding-right: 0;">
-                        <button type="submit" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                    <div class="card-footer" style="padding-left: 0; padding-right: 0;">
+                        <button type="submit" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                     </div>
             </form>
         </div>
@@ -254,13 +254,13 @@ endif; ?>
 </div>
 
 <div class="col-lg-6 col-md-12">
-    <div class="box box-primary">
-        <div class="box-header with-border">
-            <h3 class="box-title"><?= trans('maintenance_mode'); ?></h3>
+    <div class="card card-primary">
+        <div class="card-header with-border">
+            <h3 class="card-title"><?= trans('maintenance_mode'); ?></h3>
         </div>
         <form action="<?= base_url('Admin/maintenanceModePost'); ?>" method="post">
             <?= csrf_field(); ?>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="form-group">
                     <label class="control-label"><?= trans('title'); ?></label>
                     <input type="text" class="form-control" name="maintenance_mode_title" placeholder="<?= trans('title'); ?>" value="<?= $generalSettings->maintenance_mode_title; ?>">
@@ -281,8 +281,8 @@ endif; ?>
                 </div>
             </div>
 
-            <div class="box-footer">
-                <button type="submit" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
             </div>
         </form>
     </div>
@@ -293,3 +293,4 @@ endif; ?>
         height: 340px !important;
     }
 </style>
+

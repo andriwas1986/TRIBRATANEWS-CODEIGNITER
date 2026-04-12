@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-sm-12 form-header">
                     <h1 class="form-title"><?= trans('update_recipe'); ?></h1>
-                    <a href="<?= adminUrl('posts'); ?>" class="btn btn-success btn-add-new pull-right">
+                    <a href="<?= adminUrl('posts'); ?>" class="btn btn-success btn-add-new float-end">
                         <i class="fa fa-bars"></i>
                         <?= trans('posts'); ?>
                     </a>
@@ -29,13 +29,13 @@
                                     <?= view('admin/post/_upload_image_box'); ?>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div class="box">
-                                        <div class="box-header with-border">
+                                    <div class="card">
+                                        <div class="card-header with-border">
                                             <div class="left">
-                                                <h3 class="box-title"><?= trans('recipe_video'); ?></h3>
+                                                <h3 class="card-title"><?= trans('recipe_video'); ?></h3>
                                             </div>
                                         </div>
-                                        <div class="box-body box-recipe-video">
+                                        <div class="card-body card-recipe-video">
                                             <?= view('admin/post/_upload_video_box', ['videoUploadPostType' => 'recipe']); ?>
                                         </div>
                                     </div>
@@ -65,3 +65,5 @@
 </div>
 
 <?= view('admin/file-manager/_load_file_manager', ['loadImages' => true, 'loadRecipeImages' => true, 'loadQuizImages' => false, 'loadFiles' => true, 'loadVideos' => true, 'loadAudios' => false]); ?>
+
+

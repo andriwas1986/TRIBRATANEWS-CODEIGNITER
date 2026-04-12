@@ -1,10 +1,10 @@
-<div class="box">
-    <div class="box-header with-border">
+<div class="card">
+    <div class="card-header with-border">
         <div class="left">
-            <h3 class="box-title"><?= trans('contact_messages'); ?></h3>
+            <h3 class="card-title"><?= trans('contact_messages'); ?></h3>
         </div>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <div class="row">
             <div class="col-sm-12">
                 <div class="table-responsive">
@@ -50,7 +50,7 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="row">
-                        <div class="pull-left">
+                        <div class="float-start">
                             <button class="btn btn-sm btn-danger btn-table-delete" onclick="deleteSelectedContactMessages('<?= clrQuotes(trans("confirm_messages")); ?>');"><i class="fa fa-trash"></i>&nbsp;<?= trans('delete'); ?></button>
                         </div>
                     </div>
@@ -64,3 +64,4 @@
         $("input:checkbox").prop("checked", false);
     });
 </script>
+

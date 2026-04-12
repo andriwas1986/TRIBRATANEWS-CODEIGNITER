@@ -1,15 +1,15 @@
 <div class="row">
     <div class="col-md-12 col-lg-10">
-        <div class="box">
-            <div class="box-header with-border">
+        <div class="card">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans("tags"); ?></h3>
+                    <h3 class="card-title"><?= trans("tags"); ?></h3>
                 </div>
                 <div class="right">
                     <button type="button" class="btn btn-success btn-add-new" data-toggle="modal" data-target="#modalAddTag"><i class="fa fa-plus"></i><?= trans("add_tag"); ?></button>
                 </div>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="table-responsive">
@@ -165,3 +165,4 @@
         $("#formEditTag input[name='tag']").val(tag);
     });
 </script>
+

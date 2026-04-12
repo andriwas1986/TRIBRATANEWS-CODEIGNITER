@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-sm-10">
-        <div class="box box-primary">
-            <div class="box-header with-border">
+        <div class="card card-primary">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans("add_role"); ?></h3>
+                    <h3 class="card-title"><?= trans("add_role"); ?></h3>
                 </div>
                 <div class="right">
                     <a href="<?= adminUrl('roles-permissions'); ?>" class="btn btn-success btn-add-new">
@@ -14,7 +14,7 @@
             <form action="<?= base_url('Admin/addRolePost'); ?>" method="post">
                 <?= csrf_field(); ?>
                 <input type="hidden" name="back_url" value="<?= esc(currentFullURL()); ?>">
-                <div class="box-body">
+                <div class="card-body">
                     <?php foreach ($activeLanguages as $language): ?>
                         <div class="form-group">
                             <label><?= trans("role_name"); ?> (<?= esc($language->name); ?>)</label>
@@ -56,10 +56,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans("add_role"); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans("add_role"); ?></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+

@@ -1,10 +1,10 @@
-<div class="box">
-    <div class="box-header with-border">
+<div class="card">
+    <div class="card-header with-border">
         <div class="left">
-            <h3 class="box-title"><?= trans('publish'); ?></h3>
+            <h3 class="card-title"><?= trans('publish'); ?></h3>
         </div>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <?php if (!empty($post)): ?>
             <?php if ($post->status == 0): ?>
                 <div class="form-group">
@@ -22,7 +22,7 @@
                         <label><?= trans('date_publish'); ?></label>
                         <div class='input-group date' id='datetimepicker'>
                             <input type='text' class="form-control" name="date_published" placeholder="<?= trans("date_publish"); ?>" value="<?= $post->created_at; ?>">
-                            <span class="input-group-addon">
+                            <span class="input-group-text">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
                         </div>
@@ -31,9 +31,9 @@
             </div>
             <div class="form-group">
                 <?php if ($post->status == 0): ?>
-                    <button type="submit" name="publish" value="1" class="btn btn-warning pull-right m-l-10" onclick="allowSubmitForm = true;"><?= trans('publish'); ?></button>
+                    <button type="submit" name="publish" value="1" class="btn btn-warning float-end m-l-10" onclick="allowSubmitForm = true;"><?= trans('publish'); ?></button>
                 <?php endif; ?>
-                <button type="submit" name="publish" value="0" class="btn btn-primary pull-right" onclick="allowSubmitForm = true;"><?= trans('save_changes'); ?></button>
+                <button type="submit" name="publish" value="0" class="btn btn-primary float-end" onclick="allowSubmitForm = true;"><?= trans('save_changes'); ?></button>
             </div>
         <?php else: ?>
             <div class="form-group">
@@ -48,7 +48,7 @@
                         <label><?= trans('date_publish'); ?></label>
                         <div class='input-group date' id='datetimepicker'>
                             <input type='text' class="form-control" name="date_published" id="input_date_published" placeholder="<?= trans("date_publish"); ?>"/>
-                            <span class="input-group-addon">
+                            <span class="input-group-text">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </span>
                         </div>
@@ -56,9 +56,10 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit" name="status" value="1" class="btn btn-primary pull-right" onclick="allowSubmitForm = true;"><?= trans('btn_submit'); ?></button>
-                <button type="submit" name="status" value="0" class="btn btn-warning btn-draft pull-right" onclick="allowSubmitForm = true;"><?= trans('save_draft'); ?></button>
+                <button type="submit" name="status" value="1" class="btn btn-primary float-end" onclick="allowSubmitForm = true;"><?= trans('btn_submit'); ?></button>
+                <button type="submit" name="status" value="0" class="btn btn-warning btn-draft float-end" onclick="allowSubmitForm = true;"><?= trans('save_draft'); ?></button>
             </div>
         <?php endif; ?>
     </div>
 </div>
+

@@ -1,15 +1,15 @@
 <?php $editorLanguageOptions = \Config\App::$editorLanguageOptions; ?>
 <div class="row">
     <div class="col-lg-5 col-md-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans("update_language"); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans("update_language"); ?></h3>
             </div>
             <form action="<?= base_url('Language/editLanguagePost'); ?>" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
                 <input type="hidden" name="id" value="<?= $language->id; ?>">
 
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label><?= trans("language_name"); ?></label>
                         <input type="text" class="form-control" name="name" placeholder="<?= trans("language_name"); ?>" value="<?= $language->name; ?>" maxlength="200" required>
@@ -53,10 +53,11 @@
                         <?= formRadio('status', 1, 0, trans("active"), trans("inactive"), $language->status); ?>
                     </div>
                 </div>
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+

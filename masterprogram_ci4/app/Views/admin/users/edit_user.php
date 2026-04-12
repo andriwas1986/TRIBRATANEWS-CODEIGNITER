@@ -1,16 +1,16 @@
 <div class="row">
     <div class="col-sm-8">
-        <div class="box box-primary">
-            <div class="box-header with-border">
+        <div class="card card-primary">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans('update_profile'); ?></h3>
+                    <h3 class="card-title"><?= trans('update_profile'); ?></h3>
                 </div>
             </div>
             <form action="<?= base_url('Admin/editUserPost'); ?>" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
                 <input type="hidden" name="id" value="<?= $user->id; ?>">
 
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <?php $role = getRole($user->role_id);
                         if (!empty($role)):
@@ -18,11 +18,11 @@
                             if ($user->role_id == 1):?>
                                 <label class="label bg-maroon"><?= esc($roleName); ?></label>
                             <?php elseif ($user->role_id == 2): ?>
-                                <label class="label label-success"><?= esc($roleName); ?></label>
+                                <label class="label badge bg-success"><?= esc($roleName); ?></label>
                             <?php elseif ($user->role_id == 3): ?>
                                 <label class="label label-default"><?= esc($roleName); ?></label>
                             <?php else: ?>
-                                <label class="label label-warning"><?= esc($roleName); ?></label>
+                                <label class="label badge bg-warning"><?= esc($roleName); ?></label>
                             <?php endif;
                         endif; ?>
                     </div>
@@ -41,7 +41,7 @@
                                         <input name="file" size="40" accept=".png, .jpg, .webp, .jpeg, .gif" onchange="$('#upload-file-info').html($(this).val().replace(/.*[\/\\]/, ''));" type="file">
                                     </a>
                                 </p>
-                                <p class='label label-info' id="upload-file-info"></p>
+                                <p class='label badge bg-info' id="upload-file-info"></p>
                             </div>
                         </div>
                     </div>
@@ -85,10 +85,11 @@
                     </div>
                 </div>
 
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+

@@ -53,7 +53,7 @@
                                         <?php foreach ($files as $file):
                                             if (!empty($file)): ?>
                                                 <div class="col-file-manager" id="file_col_id_<?= $file->id; ?>">
-                                                    <div class="file-box" data-file-id="<?= $file->id; ?>" data-file-name="<?= esc($file->file_name); ?>">
+                                                    <div class="file-card" data-file-id="<?= $file->id; ?>" data-file-name="<?= esc($file->file_name); ?>">
                                                         <div class="image-container icon-container">
                                                             <div class="file-icon file-icon-lg" data-type="<?= @pathinfo($file->file_path, PATHINFO_EXTENSION); ?>"></div>
                                                         </div>
@@ -74,7 +74,7 @@
             </div>
             <div class="modal-footer">
                 <div class="file-manager-footer">
-                    <button type="button" id="btn_file_delete" class="btn btn-danger pull-left btn-file-delete"><i class="fa fa-trash"></i>&nbsp;&nbsp;<?= trans('delete'); ?></button>
+                    <button type="button" id="btn_file_delete" class="btn btn-danger float-start btn-file-delete"><i class="fa fa-trash"></i>&nbsp;&nbsp;<?= trans('delete'); ?></button>
                     <button type="button" id="btn_file_select" class="btn bg-olive btn-file-select"><i class="fa fa-check"></i>&nbsp;&nbsp;<?= trans('select_file'); ?></button>
                     <button type="button" class="btn btn-default" data-dismiss="modal"><?= trans('close'); ?></button>
                 </div>
@@ -162,3 +162,5 @@ if (!empty($extArray)) {
         $(this).hide();
     });
 </script>
+
+

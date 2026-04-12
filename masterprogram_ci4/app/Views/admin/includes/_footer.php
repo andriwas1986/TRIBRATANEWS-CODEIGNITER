@@ -2,7 +2,7 @@
 </section>
 </div>
 <footer id="footer" class="main-footer">
-    <div class="pull-right hidden-xs">
+    <div class="float-end hidden-xs">
         <span style="background: rgba(0, 168, 255, 0.1); color: #00a8ff; padding: 4px 12px; border-radius: 15px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0, 168, 255, 0.3); margin-right: 15px;">
             <i class="fa fa-info-circle"></i> Bootstrap v5.3.3 & AdminLTE v4.0.0
         </span>
@@ -14,7 +14,6 @@
 <script src="<?= base_url('assets/admin/js/jquery-ui.min.js'); ?>"></script>
 <script>$.widget.bridge('uibutton', $.ui.button);</script>
 <script src="<?= base_url('assets/admin/plugins/bootstrap5/js/bootstrap.bundle.min.js'); ?>"></script>
-<script src="<?= base_url('assets/admin/js/adminlte.min.js'); ?>"></script>
 <script src="<?= base_url('assets/admin/js/adminlte4.min.js'); ?>"></script>
 <script src="<?= base_url('assets/admin/plugins/datatables/jquery.dataTables.min.js'); ?>"></script>
 <script src="<?= base_url('assets/admin/plugins/datatables/dataTables.bootstrap.min.js'); ?>"></script>
@@ -135,3 +134,4 @@
 
 </body>
 </html>
+

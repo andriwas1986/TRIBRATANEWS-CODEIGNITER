@@ -1,13 +1,13 @@
 <div class="row">
     <div class="col-lg-5 col-md-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans('update_category'); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans('update_category'); ?></h3>
             </div>
             <form action="<?= base_url('Gallery/editCategoryPost'); ?>" method="post">
                 <?= csrf_field(); ?>
                 <input type="hidden" name="id" value="<?= esc($category->id); ?>">
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label><?= trans("language"); ?></label>
                         <select name="lang_id" class="form-control" onchange="getAlbumsByLang(this.value);">
@@ -33,10 +33,11 @@
                     </div>
                 </div>
 
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+

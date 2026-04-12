@@ -1,10 +1,10 @@
-<div class="box">
-    <div class="box-header with-border">
+<div class="card">
+    <div class="card-header with-border">
         <div class="left">
-            <h3 class="box-title"><?= $title; ?> - <?= $language->name; ?></h3>
+            <h3 class="card-title"><?= $title; ?> - <?= $language->name; ?></h3>
         </div>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <div class="row">
             <div class="col-sm-12">
                 <div class="table-responsive">
@@ -66,7 +66,7 @@
                             endif; ?>
                             </tbody>
                         </table>
-                        <button type="submit" class="btn btn-primary pull-right"><?= trans("save_changes"); ?></button>
+                        <button type="submit" class="btn btn-primary float-end"><?= trans("save_changes"); ?></button>
                     </form>
                 </div>
                 <?php if (empty($translations)): ?>
@@ -83,3 +83,4 @@
         </div>
     </div>
 </div>
+

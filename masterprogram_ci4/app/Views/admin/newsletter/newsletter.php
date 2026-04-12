@@ -6,16 +6,16 @@
 
 <div class="row">
     <div class="col-md-6 col-sm-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
+        <div class="card card-primary">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans('users'); ?>&nbsp;(<?= $usersCount; ?>)</h3>
+                    <h3 class="card-title"><?= trans('users'); ?>&nbsp;(<?= $usersCount; ?>)</h3>
                 </div>
                 <div class="right">
                     <input type="text" id="searchUsers" class="form-control" placeholder="<?= trans("search"); ?>" style="width: 180px;">
                 </div>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div id="userTableContainer" class="tableFixHead">
                     <table class="table table-users">
                         <thead>
@@ -41,7 +41,7 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="box-footer">
+            <div class="card-footer">
                 <form action="<?= adminUrl('newsletter-send-email'); ?>" method="post">
                     <?= csrf_field(); ?>
                     <input type="hidden" name="user_ids" id="selectedUserIds">
@@ -52,16 +52,16 @@
     </div>
 
     <div class="col-md-6 col-sm-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
+        <div class="card card-primary">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans('subscribers'); ?>&nbsp;(<?= $subscribersCount; ?>)</h3>
+                    <h3 class="card-title"><?= trans('subscribers'); ?>&nbsp;(<?= $subscribersCount; ?>)</h3>
                 </div>
                 <div class="right">
                     <input type="text" id="searchSubscribers" class="form-control" placeholder="<?= trans("search"); ?>" style="width: 180px;">
                 </div>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div id="subscriberTableContainer" class="tableFixHead">
                     <table class="table table-subscribers">
                         <thead>
@@ -87,7 +87,7 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="box-footer">
+            <div class="card-footer">
                 <form action="<?= adminUrl('newsletter-send-email'); ?>" method="post">
                     <?= csrf_field(); ?>
                     <input type="hidden" name="subscriber_ids" id="selectedSubscriberIds">
@@ -100,13 +100,13 @@
 
 <div class="row">
     <div class="col-md-6 col-sm-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans('settings'); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans('settings'); ?></h3>
             </div>
             <form action="<?= base_url('Admin/newsletterSettingsPost'); ?>" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label><?= trans("status"); ?></label>
                         <?= formRadio('newsletter_status', 1, 0, trans("enable"), trans("disable"), $generalSettings->newsletter_status); ?>
@@ -127,10 +127,10 @@
                             </a>
                             (.jpg, .jpeg, .webp, .png)
                         </div>
-                        <span class='label label-info' id="upload-file-info"></span>
+                        <span class='label badge bg-info' id="upload-file-info"></span>
                     </div>
                 </div>
-                <div class="box-footer text-right">
+                <div class="card-footer text-right">
                     <button type="submit" name="submit" value="general" class="btn btn-primary"><?= trans('save_changes'); ?></button>
                 </div>
             </form>
@@ -317,3 +317,4 @@
         loadMoreSubscribers();
     });
 </script>
+

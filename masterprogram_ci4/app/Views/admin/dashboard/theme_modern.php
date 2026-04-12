@@ -32,7 +32,7 @@
     .hero-glass {
         background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
         border-radius: 24px; padding: 40px; color: #fff; margin-bottom: 30px;
-        position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        position: relative; overflow: hidden; card-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
     }
     .hero-glass::before {
         content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
@@ -58,7 +58,7 @@
         background: #fff; border-radius: 20px; overflow: hidden; border: 1px solid #e2e8f0;
         transition: all 0.3s ease; display: flex; flex-direction: column;
     }
-    .post-card-modern:hover { transform: translateY(-8px); box-shadow: 0 20px 30px rgba(0,0,0,0.05); }
+    .post-card-modern:hover { transform: translateY(-8px); card-shadow: 0 20px 30px rgba(0,0,0,0.05); }
     .post-thumb-modern { width: 100%; height: 180px; object-fit: cover; }
     .post-content-modern { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
     .post-card-modern h4 { font-size: 15px; font-weight: 700; color: #1e293b; margin: 0 0 10px 0; line-height: 1.5; }
@@ -71,7 +71,7 @@
             <div class="col-md-5">
                 <h1 style="font-weight: 800; margin-bottom: 10px;">Hello, Admin!</h1>
                 <p style="opacity: 0.9; margin-bottom: 25px;">Welcome back to your command center. Everything is running smoothly today.</p>
-                <a href="<?= adminUrl('add-post'); ?>" class="btn btn-default" style="border-radius: 12px; font-weight: 700; color: #6366f1; padding: 10px 25px; border:none; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">+ New Article</a>
+                <a href="<?= adminUrl('add-post'); ?>" class="btn btn-default" style="border-radius: 12px; font-weight: 700; color: #6366f1; padding: 10px 25px; border:none; card-shadow: 0 10px 20px rgba(0,0,0,0.1);">+ New Article</a>
             </div>
             <div class="col-md-7">
                 <div class="row">
@@ -112,3 +112,5 @@
         <?php endif; ?>
     </div>
 </div>
+
+

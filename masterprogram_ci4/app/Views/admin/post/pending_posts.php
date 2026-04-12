@@ -1,16 +1,16 @@
-<div class="box">
-    <div class="box-header with-border">
+<div class="card">
+    <div class="card-header with-border">
         <div class="left">
-            <h3 class="box-title"><?= $title; ?></h3>
+            <h3 class="card-title"><?= $title; ?></h3>
         </div>
         <div class="right">
-            <a href="<?= adminUrl('post-format'); ?>" class="btn btn-success btn-add-new pull-right">
+            <a href="<?= adminUrl('post-format'); ?>" class="btn btn-success btn-add-new float-end">
                 <i class="fa fa-plus"></i>
                 <?= trans('add_post'); ?>
             </a>
         </div>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <div class="row">
             <div class="col-sm-12">
                 <div class="table-responsive">
@@ -129,11 +129,11 @@
                     <?php endif; ?>
                     <div class="col-sm-12 table-ft">
                         <div class="row">
-                            <div class="pull-right">
+                            <div class="float-end">
                                 <?= $pager->links; ?>
                             </div>
                             <?php if (!empty($posts) && countItems($posts) > 0): ?>
-                                <div class="pull-left bulk-options">
+                                <div class="float-start bulk-options">
                                     <button class="btn btn-sm btn-danger btn-table-delete" onclick="deleteSelectePosts('<?= clrQuotes(trans("confirm_posts")); ?>');"><i class="fa fa-trash option-icon"></i><?= trans('delete'); ?></button>
                                     <button class="btn btn-sm btn-default btn-table-delete" onclick="postBulkOptions('approve');"><i class="fa fa-check option-icon"></i><?= trans('approve'); ?></button>
                                 </div>
@@ -145,3 +145,4 @@
         </div>
     </div>
 </div>
+

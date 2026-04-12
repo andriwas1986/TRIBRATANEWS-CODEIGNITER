@@ -1,15 +1,15 @@
 <div class="row">
     <div class="col-sm-12">
-        <div class="box">
-            <div class="box-header with-border">
+        <div class="card">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans('polls'); ?></h3>
+                    <h3 class="card-title"><?= trans('polls'); ?></h3>
                 </div>
                 <div class="right">
                     <a href="<?= adminUrl('add-poll'); ?>" class="btn btn-success btn-add-new"><i class="fa fa-plus"></i><?= trans('add_poll'); ?></a>
                 </div>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="table-responsive">
@@ -48,9 +48,9 @@
                                             </td>
                                             <td>
                                                 <?php if ($item->status == 1): ?>
-                                                    <label class="label label-success"><?= trans('active'); ?></label>
+                                                    <label class="label badge bg-success"><?= trans('active'); ?></label>
                                                 <?php else: ?>
-                                                    <label class="label label-danger"><?= trans('inactive'); ?></label>
+                                                    <label class="label badge bg-danger"><?= trans('inactive'); ?></label>
                                                 <?php endif; ?>
                                             </td>
 
@@ -131,3 +131,4 @@
         </div>
     <?php endforeach;
 endif; ?>
+

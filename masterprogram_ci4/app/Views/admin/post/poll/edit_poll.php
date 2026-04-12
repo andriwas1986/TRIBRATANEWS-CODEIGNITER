@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-sm-12 form-header">
                     <h1 class="form-title"><?= $title; ?></h1>
-                    <a href="<?= adminUrl('posts'); ?>" class="btn btn-success btn-add-new pull-right">
+                    <a href="<?= adminUrl('posts'); ?>" class="btn btn-success btn-add-new float-end">
                         <i class="fa fa-bars"></i>
                         <?= trans('posts'); ?>
                     </a>
@@ -47,3 +47,4 @@
 </div>
 
 <?= view('admin/file-manager/_load_file_manager', ['loadImages' => true, 'loadQuizImages' => true, 'loadFiles' => false, 'loadVideos' => false, 'loadAudios' => false]); ?>
+

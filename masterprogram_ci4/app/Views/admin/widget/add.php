@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-lg-8 col-md-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
+        <div class="card card-primary">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans('add_widget'); ?></h3>
+                    <h3 class="card-title"><?= trans('add_widget'); ?></h3>
                 </div>
                 <div class="right">
                     <a href="<?= adminUrl('widgets'); ?>" class="btn btn-success btn-add-new"><i class="fa fa-bars"></i><?= trans('widgets'); ?>
@@ -13,7 +13,7 @@
             <form action="<?= base_url('Admin/addWidgetPost'); ?>" method="post">
                 <?= csrf_field(); ?>
                 <input type="hidden" name="is_custom" value="1">
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label class="control-label"><?= trans('title'); ?></label>
                         <input type="text" class="form-control" name="title" placeholder="<?= trans('title'); ?>" value="<?= old('title'); ?>" required>
@@ -84,8 +84,8 @@
                     </div>
                 </div>
 
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('add_widget'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('add_widget'); ?></button>
                 </div>
             </form>
         </div>
@@ -104,3 +104,4 @@
 </script>
 
 <?= view('admin/file-manager/_load_file_manager', ['loadImages' => true, 'loadFiles' => false, 'loadVideos' => false, 'loadAudios' => false]); ?>
+

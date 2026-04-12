@@ -1,12 +1,12 @@
-<div class="box">
-    <div class="box-header with-border">
+<div class="card">
+    <div class="card-header with-border">
         <div class="left">
-            <h3 class="box-title"><?= trans('image'); ?>
+            <h3 class="card-title"><?= trans('image'); ?>
                 <small class="small-title"><?= trans('main_post_image'); ?></small>
             </h3>
         </div>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <div class="form-group m-0">
             <?php if (!empty($post)):
                 if (empty($post->image_id)) {
@@ -92,3 +92,4 @@
         </div>
     </div>
 </div>
+

@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-sm-12 col-lg-10">
-        <div class="box box-primary">
-            <div class="box-header with-border">
+        <div class="card card-primary">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans('update_rss_feed'); ?></h3>
+                    <h3 class="card-title"><?= trans('update_rss_feed'); ?></h3>
                 </div>
                 <div class="right">
                     <a href="<?= adminUrl('feeds'); ?>" class="btn btn-success btn-add-new">
@@ -14,7 +14,7 @@
             </div>
             <form action="<?= base_url('Rss/editFeedPost'); ?>" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <input type="hidden" name="id" value="<?= esc($feed->id); ?>">
 
                     <div class="form-group">
@@ -95,10 +95,11 @@
                         <input type="text" class="form-control max-500" name="read_more_button_text" placeholder="<?= trans("read_more_button_text"); ?>" value="<?= esc($feed->read_more_button_text); ?>">
                     </div>
                 </div>
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+

@@ -7,12 +7,12 @@
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans('send_email_subscriber'); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans('send_email_subscriber'); ?></h3>
             </div>
             <form id="form_send_email">
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group" style="margin-bottom: 10px;">
                         <label><?= trans('to'); ?></label>
                         <?php if (!empty($emails)): ?>
@@ -38,9 +38,9 @@
                         <textarea class="tinyMCE form-control" name="body"></textarea>
                     </div>
                 </div>
-                <div class="box-footer">
+                <div class="card-footer">
                     <a href="<?= adminUrl('newsletter'); ?>" id="btn_newsletter_back" class="btn btn-danger"><?= trans("back"); ?></a>
-                    <button type="submit" id="btn_send_newsletter" class="btn btn-primary pull-right"><?= trans('send_email'); ?>&nbsp;&nbsp;<i class="fa fa-send"></i></button>
+                    <button type="submit" id="btn_send_newsletter" class="btn btn-primary float-end"><?= trans('send_email'); ?>&nbsp;&nbsp;<i class="fa fa-send"></i></button>
                     <div class="col-sm-12 m-t-30">
                         <div class="row">
                             <div id="newsletter_spinner" class="newsletter-spinner">
@@ -168,3 +168,5 @@
         display: none;
     }
 </style>
+
+

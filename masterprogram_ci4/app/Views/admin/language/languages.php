@@ -1,13 +1,13 @@
 <?php $editorLanguageOptions = \Config\App::$editorLanguageOptions; ?>
 <div class="row">
     <div class="col-sm-12">
-        <div class="box">
-            <div class="box-header with-border">
-                <div class="pull-left">
-                    <h3 class="box-title"><?= trans('languages'); ?></h3>
+        <div class="card">
+            <div class="card-header with-border">
+                <div class="float-start">
+                    <h3 class="card-title"><?= trans('languages'); ?></h3>
                 </div>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="row">
                     <div class="table-responsive">
                         <div class="col-sm-12">
@@ -29,9 +29,9 @@
                                             <td>
                                                 <?= esc($item->name); ?>&nbsp;&nbsp;
                                                 <?php if ($item->status == 1): ?>
-                                                    <label class="label label-success"><?= trans('active'); ?></label>
+                                                    <label class="label badge bg-success"><?= trans('active'); ?></label>
                                                 <?php else: ?>
-                                                    <label class="label label-danger"><?= trans('inactive'); ?></label>
+                                                    <label class="label badge bg-danger"><?= trans('inactive'); ?></label>
                                                 <?php endif; ?>
                                             </td>
                                             <td>
@@ -89,13 +89,13 @@
     </div>
 
     <div class="col-lg-6 col-sm-12">
-        <div class="box">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans("add_language"); ?></h3>
+        <div class="card">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans("add_language"); ?></h3>
             </div>
             <form action="<?= base_url('Language/addLanguagePost'); ?>" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label><?= trans("language_name"); ?></label>
                         <input type="text" class="form-control" name="name" placeholder="<?= trans("language_name"); ?>" value="<?= old('name'); ?>" maxlength="200" required>
@@ -140,21 +140,21 @@
                     </div>
                 </div>
 
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('add_language'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('add_language'); ?></button>
                 </div>
             </form>
         </div>
     </div>
 
     <div class="col-lg-6 col-sm-12">
-        <div class="box" style="max-width: 500px;">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans("import_language"); ?></h3>
+        <div class="card" style="max-width: 500px;">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans("import_language"); ?></h3>
             </div>
             <form action="<?= base_url('Language/importLanguagePost'); ?>" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label class="control-label"><?= trans('json_language_file'); ?></label>
                         <div class="display-block">
@@ -167,8 +167,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('import_language'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('import_language'); ?></button>
                 </div>
             </form>
         </div>
@@ -177,3 +177,5 @@
         </div>
     </div>
 </div>
+
+

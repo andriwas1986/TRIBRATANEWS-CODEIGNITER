@@ -43,7 +43,7 @@
 
     .table-compact-yt tbody tr { 
         background-color: #fff; 
-        box-shadow: 0 1px 2px rgba(0,0,0,0.05); 
+        card-shadow: 0 1px 2px rgba(0,0,0,0.05); 
     }
     .table-compact-yt tbody tr:hover { background-color: #fce8e8; }
 
@@ -156,8 +156,8 @@
                         </div>
                     </div>
 
-                    <div class="box box-solid" style="background: transparent; box-shadow: none; border: none;">
-                        <div class="box-body no-padding">
+                    <div class="card card-solid" style="background: transparent; card-shadow: none; border: none;">
+                        <div class="card-body no-padding">
                             <table class="table-compact-yt">
                                 <thead>
                                     <tr>
@@ -201,7 +201,7 @@
                             </table>
                         </div>
                         
-                        <div class="box-footer" style="background: transparent; border-top: none; padding-top: 5px;">
+                        <div class="card-footer" style="background: transparent; border-top: none; padding-top: 5px;">
                             <div class="row">
                                 <div class="col-md-6" style="padding-top: 5px; color: #777; font-size: 11px;">
                                     Total Data: <b><?= number_format($totalDaily ?? 0); ?></b>
@@ -229,8 +229,8 @@
                     </form>
 
                     <?php if(isset($rangeLinks)): ?>
-                        <div class="box box-solid m-t-10">
-                            <div class="box-body table-responsive no-padding">
+                        <div class="card card-solid m-t-10">
+                            <div class="card-body table-responsive no-padding">
                                 <table class="table table-bordered table-striped table-condensed">
                                     <thead class="bg-gray">
                                         <tr>
@@ -247,7 +247,7 @@
                                             <td><?= $no++; ?></td>
                                             <td><?= date('d/m/Y', strtotime($r['created_at'])); ?></td>
                                             <td style="font-weight:bold; font-size:11px;"><?= esc($r['satker']); ?></td>
-                                            <td><span class="label label-danger btn-xs"><?= $r['category']; ?></span></td>
+                                            <td><span class="label badge bg-danger btn-xs"><?= $r['category']; ?></span></td>
                                             <td style="font-size:11px;"><a href="<?= $r['url']; ?>" target="_blank"><?= $r['url']; ?></a></td>
                                         </tr>
                                         <?php endforeach; else: ?>
@@ -262,10 +262,11 @@
 
                 <div class="tab-pane <?= (isset($_GET['tab']) && $_GET['tab'] == 'monthly') ? 'active' : ''; ?>" id="tab_monthly">
                     <form action="<?= current_url(); ?>" method="get" class="form-inline m-b-15"><input type="hidden" name="tab" value="monthly"><div class="form-group"><label class="m-r-5">Bulan:</label><select name="month" class="form-control input-sm"><?php $months = [1=>'Januari',2=>'Februari',3=>'Maret',4=>'April',5=>'Mei',6=>'Juni',7=>'Juli',8=>'Agustus',9=>'September',10=>'Oktober',11=>'November',12=>'Desember']; foreach($months as $k => $v): ?><option value="<?= $k; ?>" <?= ($k == $selectedMonth) ? 'selected' : ''; ?>><?= $v; ?></option><?php endforeach; ?></select></div><div class="form-group"><label class="m-r-5 m-l-5">Tahun:</label><select name="year" class="form-control input-sm"><?php for($y=date('Y'); $y>=2020; $y--): ?><option value="<?= $y; ?>" <?= ($y == $selectedYear) ? 'selected' : ''; ?>><?= $y; ?></option><?php endfor; ?></select></div><button type="submit" class="btn btn-danger btn-sm m-l-10"><i class="fa fa-eye"></i> Filter</button></form>
-                    <div class="row"><div class="col-md-6"><div class="small-box bg-red"><div class="inner"><h3><?= $monthlyTotal ?? 0; ?></h3><p>Total Link Bulan Ini</p></div><div class="icon"><i class="fa fa-youtube-play"></i></div></div></div></div>
+                    <div class="row"><div class="col-md-6"><div class="small-card bg-red"><div class="inner"><h3><?= $monthlyTotal ?? 0; ?></h3><p>Total Link Bulan Ini</p></div><div class="icon"><i class="fa fa-youtube-play"></i></div></div></div></div>
                 </div>
 
             </div>
         </div>
     </div>
 </div>
+

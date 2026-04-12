@@ -13,7 +13,7 @@
             .sheet {
                 background: white; width: 210mm; height: 297mm;
                 margin: 0 auto 20px auto; position: relative;
-                box-shadow: 0 0 10px rgba(0,0,0,0.5); overflow: hidden;
+                card-shadow: 0 0 10px rgba(0,0,0,0.5); overflow: hidden;
             }
         }
         @media print {
@@ -41,14 +41,14 @@
             background-color: #1F3A60; color: white; width: 100%;
             padding: 20px 0; text-align: center; font-weight: bold;
             font-size: 18px; text-transform: uppercase; margin: 0;
-            box-sizing: border-box;
+            card-sizing: border-card;
         }
         .sub-header {
             background-color: #1F3A60; color: white; padding: 12px;
             font-weight: bold; text-align: center; font-size: 14px;
             text-transform: uppercase; margin-bottom: 0; letter-spacing: 1px;
         }
-        .center-stats-box { width: 85%; margin: 0 auto; padding-top: 40px; }
+        .center-stats-card { width: 85%; margin: 0 auto; padding-top: 40px; }
         .table-title {
             background-color: #1F3A60; color: white; padding: 12px;
             font-weight: bold; text-align: center; border: 1px solid #000;
@@ -116,7 +116,7 @@
         <div class="content-layer-full">
             <div class="section-top">
                 <div class="header-bar">JUMLAH POSTINGAN MEDIA SOSIAL</div>
-                <div class="center-stats-box">
+                <div class="center-stats-card">
                     <div class="table-title">POSTINGAN</div>
                     <table class="table-stats">
                         <thead><tr><th style="width: 10%">IG</th><th style="width: 10%">X</th><th style="width: 10%">FB</th><th style="width: 10%">TT</th><th style="width: 10%">PT</th><th style="width: 10%">YT</th><th style="width: 40%">TOTAL</th></tr></thead>
@@ -126,7 +126,7 @@
             </div>
             <div class="section-middle">
                 <div class="header-bar">JUMLAH ENGAGEMENT MEDIA SOSIAL</div>
-                <div class="center-stats-box">
+                <div class="center-stats-card">
                     <div class="table-title">ENGAGEMENT</div>
                     <table class="table-stats">
                         <thead><tr><th style="width: 10%">IG</th><th style="width: 10%">TW</th><th style="width: 10%">FB</th><th style="width: 10%">TT</th><th style="width: 10%">PT</th><th style="width: 10%">YT</th><th style="width: 40%">TOTAL</th></tr></thead>
@@ -169,3 +169,4 @@
     <?php $pageCount++; endforeach; endforeach; ?>
 </body>
 </html>
+

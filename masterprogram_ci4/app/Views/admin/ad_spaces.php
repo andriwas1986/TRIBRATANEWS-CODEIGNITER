@@ -1,10 +1,10 @@
 <div class="row">
     <div class="col-sm-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans('ad_spaces'); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans('ad_spaces'); ?></h3>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="form-group">
                     <label><?= trans("settings_language"); ?></label>
                     <select name="lang_id" class="form-control" onchange="window.location.href = '<?= adminUrl(); ?>'+'/ad-spaces?lang='+this.value+'&ad_space=<?= strSlug($adSpaceKey); ?>';" style="max-width: 800px;">
@@ -63,7 +63,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <span class='label label-info' id="upload-file-info1"></span>
+                                    <span class='label badge bg-info' id="upload-file-info1"></span>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <span class='label label-info' id="upload-file-info2"></span>
+                                    <span class='label badge bg-info' id="upload-file-info2"></span>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +144,7 @@
 
                     <div class="row m-t-15">
                         <div class="col-sm-12">
-                            <button type="submit" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                            <button type="submit" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                         </div>
                     </div>
                 </form>
@@ -154,18 +154,18 @@
 </div>
 <div class="row">
     <div class="col-lg-6 col-md-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans('adsense_activation_code'); ?></h3><small class="small-title"><?= trans("custom_footer_codes_exp"); ?></small>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans('adsense_activation_code'); ?></h3><small class="small-title"><?= trans("custom_footer_codes_exp"); ?></small>
             </div>
             <form action="<?= base_url('Admin/googleAdsenseCodePost'); ?>" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <textarea name="adsense_activation_code" class="form-control" placeholder="<?= trans('adsense_activation_code'); ?>" style="min-height: 140px;"><?= $generalSettings->adsense_activation_code; ?></textarea>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                        <button type="submit" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                     </div>
                 </div>
             </form>
@@ -219,3 +219,5 @@
         }
     </style>
 <?php endif; ?>
+
+

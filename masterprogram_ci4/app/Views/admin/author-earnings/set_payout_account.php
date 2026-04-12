@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-sm-12 col-md-10">
-        <div class="box box-primary">
-            <div class="box-header with-border">
+        <div class="card card-primary">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= $title; ?></h3>
+                    <h3 class="card-title"><?= $title; ?></h3>
                 </div>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <ul class="nav nav-pills nav-payout-accounts display-flex justify-content-center">
                     <?php if (payoutMethod('paypal_status')): ?>
                         <li class="<?= $selectedPayout == 'paypal' ? 'active' : ''; ?>">
@@ -181,3 +181,4 @@
         background-color: #337ab7 !important;
     }
 </style>
+

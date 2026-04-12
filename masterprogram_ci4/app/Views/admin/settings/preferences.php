@@ -79,7 +79,7 @@ if ($tab != "general" && $tab != "homepage" && $tab != "posts" && $tab != "post_
                                 </a>
                                 (PNG, 512x512 px)
                             </div>
-                            <span class='label label-info' id="upload-file-info-pwa"></span>
+                            <span class='label badge bg-info' id="upload-file-info-pwa"></span>
                         </div>
 
                         <div class="form-group text-right" style="margin-top: 60px;">
@@ -285,13 +285,13 @@ if ($tab != "general" && $tab != "homepage" && $tab != "posts" && $tab != "post_
 
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-6">
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <h3 class="box-title"><?= trans('ai_content_creator'); ?>&nbsp;(<?= trans("ai_writer"); ?>)</h3>
+                <div class="card card-primary">
+                    <div class="card-header with-border">
+                        <h3 class="card-title"><?= trans('ai_content_creator'); ?>&nbsp;(<?= trans("ai_writer"); ?>)</h3>
                     </div>
                     <form action="<?= base_url('Admin/aiWriterPost'); ?>" method="post">
                         <?= csrf_field(); ?>
-                        <div class="box-body">
+                        <div class="card-body">
                             <?php $aiWriter = aiWriter(); ?>
                             <div class="form-group">
                                 <label><?= trans("status"); ?></label>
@@ -302,19 +302,19 @@ if ($tab != "general" && $tab != "homepage" && $tab != "posts" && $tab != "post_
                                 <input type="text" class="form-control" name="api_key" placeholder="<?= trans('api_key'); ?>" value="<?= esc($aiWriter->apiKey); ?>" required>
                             </div>
                         </div>
-                        <div class="box-footer">
-                            <button type="submit" name="submit" value="post_deletion" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                        <div class="card-footer">
+                            <button type="submit" name="submit" value="post_deletion" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                         </div>
                     </form>
                 </div>
 
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <h3 class="box-title"><?= trans('auto_post_deletion'); ?></h3>
+                <div class="card card-primary">
+                    <div class="card-header with-border">
+                        <h3 class="card-title"><?= trans('auto_post_deletion'); ?></h3>
                     </div>
                     <form action="<?= base_url('Admin/preferencesPost'); ?>" method="post">
                         <?= csrf_field(); ?>
-                        <div class="box-body">
+                        <div class="card-body">
                             <div class="form-group">
                                 <label><?= trans("status"); ?></label>
                                 <?= formRadio('auto_post_deletion', 1, 0, trans("enable"), trans("disable"), $generalSettings->auto_post_deletion); ?>
@@ -328,21 +328,21 @@ if ($tab != "general" && $tab != "homepage" && $tab != "posts" && $tab != "post_
                                 <?= formRadio('auto_post_deletion_delete_all', 1, 0, trans("delete_all_posts"), trans("delete_only_rss_posts"), $generalSettings->auto_post_deletion_delete_all); ?>
                             </div>
                         </div>
-                        <div class="box-footer">
-                            <button type="submit" name="submit" value="post_deletion" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                        <div class="card-footer">
+                            <button type="submit" name="submit" value="post_deletion" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                         </div>
                     </form>
                 </div>
             </div>
 
             <div class="col-sm-12 col-md-12 col-lg-6">
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <h3 class="box-title"><?= trans("file_upload") ?></h3>
+                <div class="card card-primary">
+                    <div class="card-header with-border">
+                        <h3 class="card-title"><?= trans("file_upload") ?></h3>
                     </div>
                     <form action="<?= base_url('Admin/fileUploadSettingsPost'); ?>" method="post">
                         <?= csrf_field(); ?>
-                        <div class="box-body">
+                        <div class="card-body">
                             <div class="form-group">
                                 <label><?= trans("image_file_format"); ?></label>
                                 <div class="row">
@@ -377,8 +377,8 @@ if ($tab != "general" && $tab != "homepage" && $tab != "posts" && $tab != "post_
                                 </div>
                             </div>
                         </div>
-                        <div class="box-footer">
-                            <button type="submit" name="submit" value="post_deletion" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                        <div class="card-footer">
+                            <button type="submit" name="submit" value="post_deletion" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                         </div>
                     </form>
                 </div>
@@ -398,3 +398,4 @@ if ($tab != "general" && $tab != "homepage" && $tab != "posts" && $tab != "post_
         });
     });
 </script>
+

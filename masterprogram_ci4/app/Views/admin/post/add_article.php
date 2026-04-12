@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-sm-12 form-header">
                     <h1 class="form-title"><?= trans('add_article'); ?></h1>
-                    <a href="<?= adminUrl('posts'); ?>" class="btn btn-success btn-add-new pull-right">
+                    <a href="<?= adminUrl('posts'); ?>" class="btn btn-success btn-add-new float-end">
                         <i class="fa fa-bars"></i>
                         <?= trans('posts'); ?>
                     </a>
@@ -27,11 +27,11 @@
 
                             <div class="row m-t-15">
                                 <div class="col-sm-12">
-                                    <div class="box">
-                                        <div class="box-header with-border">
-                                            <h3 class="box-title">Pengaturan Tambahan</h3>
+                                    <div class="card">
+                                        <div class="card-header with-border">
+                                            <h3 class="card-title">Pengaturan Tambahan</h3>
                                         </div>
-                                        <div class="box-body">
+                                        <div class="card-body">
                                             
                                             <div class="form-group">
                                                 <label class="control-label"><?= trans('optional_url'); ?></label>
@@ -93,3 +93,4 @@
 </div>
 
 <?= view('admin/file-manager/_load_file_manager', ['loadImages' => true, 'loadFiles' => true, 'loadVideos' => false, 'loadAudios' => false]); ?>
+

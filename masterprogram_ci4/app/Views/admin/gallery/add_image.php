@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-sm-12 col-md-8">
-        <div class="box box-primary">
-            <div class="box-header with-border">
+        <div class="card card-primary">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans("add_image"); ?></h3>
+                    <h3 class="card-title"><?= trans("add_image"); ?></h3>
                 </div>
                 <div class="right">
                     <a href="<?= adminUrl('gallery-images'); ?>" class="btn btn-success btn-add-new"><i class="fa fa-bars"></i><?= trans("images"); ?></a>
@@ -11,7 +11,7 @@
             </div>
             <form action="<?= base_url('Gallery/addImagePost'); ?>" enctype="multipart/form-data" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label><?= trans("language"); ?></label>
                         <select name="lang_id" class="form-control" onchange="getAlbumsByLang(this.value);">
@@ -65,10 +65,11 @@
                     </div>
                 </div>
 
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('add_image'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('add_image'); ?></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+

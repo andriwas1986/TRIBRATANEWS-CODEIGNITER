@@ -1,7 +1,7 @@
-<div class="box">
-    <div class="box-header with-border">
+<div class="card">
+    <div class="card-header with-border">
         <div class="left">
-            <h3 class="box-title"><?= $title; ?></h3>
+            <h3 class="card-title"><?= $title; ?></h3>
         </div>
         <div class="right">
             <a href="<?= $topButtonURL; ?>" class="btn btn-success btn-add-new">
@@ -10,7 +10,7 @@
             </a>
         </div>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <div class="row">
             <div class="col-sm-12">
                 <div class="table-responsive">
@@ -78,13 +78,13 @@
                 </div>
             </div>
             <div class="col-sm-12 text-right">
-                <div class="pull-left">
+                <div class="float-start">
                     <button class="btn btn-sm btn-danger btn-table-delete" onclick="deleteSelectedComments('<?= clrQuotes(trans("confirm_comments")); ?>');"><i class="fa fa-trash"></i>&nbsp;<?= trans('delete'); ?></button>
                     <?php if ($showApproveButton == true): ?>
                         <button class="btn btn-sm btn-success btn-table-delete" onclick="approveSelectedComments();"><i class="fa fa-check"></i>&nbsp;<?= trans('approve'); ?></button>
                     <?php endif; ?>
                 </div>
-                <div class="pull-right">
+                <div class="float-end">
                     <?= $pager->links; ?>
                 </div>
             </div>
@@ -96,3 +96,4 @@
         $("input:checkbox").prop("checked", false);
     });
 </script>
+

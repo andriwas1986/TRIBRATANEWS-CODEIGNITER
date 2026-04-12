@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-3 col-xs-6">
-        <div class="small-box bg-aqua">
+        <div class="small-card bg-aqua">
             <div class="inner">
                 <h3><?= $overallAvg; ?>/4.00</h3>
                 <p>Indeks Kepuasan Global</p>
@@ -8,11 +8,11 @@
             <div class="icon">
                 <i class="fa fa-line-chart"></i>
             </div>
-            <a href="#" class="small-box-footer">Statistik Real-time <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#" class="small-card-footer">Statistik Real-time <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <div class="col-lg-3 col-xs-6">
-        <div class="small-box bg-purple">
+        <div class="small-card bg-purple">
             <div class="inner">
                 <h3>Dummy</h3>
                 <p>Populasi Data SKM</p>
@@ -20,18 +20,18 @@
             <div class="icon">
                 <i class="fa fa-database"></i>
             </div>
-            <a href="<?= adminUrl('skm/seed?confirm=yes'); ?>" class="small-box-footer" onclick="return confirm('Apakah Anda yakin ingin mengisi 1000 data dummy? Data lama akan dihapus.')">Klik untuk Generate 1000 Data <i class="fa fa-magic"></i></a>
+            <a href="<?= adminUrl('skm/seed?confirm=yes'); ?>" class="small-card-footer" onclick="return confirm('Apakah Anda yakin ingin mengisi 1000 data dummy? Data lama akan dihapus.')">Klik untuk Generate 1000 Data <i class="fa fa-magic"></i></a>
         </div>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-8">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title">Performa per Layanan</h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title">Performa per Layanan</h3>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="chart">
                     <canvas id="skmServiceChart" style="height: 300px; width: 100%;"></canvas>
                 </div>
@@ -39,11 +39,11 @@
         </div>
     </div>
     <div class="col-md-4">
-        <div class="box box-info">
-            <div class="box-header with-border">
-                <h3 class="box-title">Distribusi Responden</h3>
+        <div class="card card-info">
+            <div class="card-header with-border">
+                <h3 class="card-title">Distribusi Responden</h3>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="chart">
                     <canvas id="skmDistributionChart" style="height: 300px; width: 100%;"></canvas>
                 </div>
@@ -52,11 +52,11 @@
     </div>
 </div>
 
-<div class="box box-primary">
-    <div class="box-header with-border">
-        <h3 class="box-title">Data Rekapitulasi per Jenis Layanan</h3>
+<div class="card card-primary">
+    <div class="card-header with-border">
+        <h3 class="card-title">Data Rekapitulasi per Jenis Layanan</h3>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -76,10 +76,10 @@
                         <td>
                             <?php 
                                 $score = $item->avg_score;
-                                if ($score >= 3.25) echo '<span class="label label-success">SANGAT BAIK</span>';
-                                elseif ($score >= 2.5) echo '<span class="label label-info">BAIK</span>';
-                                elseif ($score >= 1.75) echo '<span class="label label-warning">KURANG BAIK</span>';
-                                else echo '<span class="label label-danger">TIDAK BAIK</span>';
+                                if ($score >= 3.25) echo '<span class="label badge bg-success">SANGAT BAIK</span>';
+                                elseif ($score >= 2.5) echo '<span class="label badge bg-info">BAIK</span>';
+                                elseif ($score >= 1.75) echo '<span class="label badge bg-warning">KURANG BAIK</span>';
+                                else echo '<span class="label badge bg-danger">TIDAK BAIK</span>';
                             ?>
                         </td>
                     </tr>
@@ -139,3 +139,5 @@
         });
     });
 </script>
+
+

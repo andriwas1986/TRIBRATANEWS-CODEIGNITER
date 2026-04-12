@@ -2,11 +2,11 @@
     <form action="<?= base_url('Admin/emailSettingsPost'); ?>" method="post">
         <?= csrf_field(); ?>
         <div class="col-lg-6 col-md-12" style="min-height: 600px;">
-            <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title"><?= trans('email_settings'); ?></h3>
+            <div class="card card-primary">
+                <div class="card-header with-border">
+                    <h3 class="card-title"><?= trans('email_settings'); ?></h3>
                 </div>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label class="control-label"><?= trans('mail_service'); ?></label>
                         <select name="mail_service" class="form-control" onchange="window.location.href = '<?= adminUrl(); ?>/email-settings?service='+this.value+'&protocol=<?= esc($protocol); ?>';">
@@ -89,8 +89,8 @@
                         </div>
                     <?php endif; ?>
                 </div>
-                <div class="box-footer">
-                    <button type="submit" name="submit" value="email" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" name="submit" value="email" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                 </div>
             </div>
         </div>
@@ -99,19 +99,19 @@
     <form action="<?= base_url('Admin/emailVerificationSettingsPost'); ?>" method="post">
         <?= csrf_field(); ?>
         <div class="col-lg-6 col-md-12">
-            <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title"><?= trans('email_verification'); ?></h3>
+            <div class="card card-primary">
+                <div class="card-header with-border">
+                    <h3 class="card-title"><?= trans('email_verification'); ?></h3>
                 </div>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label><?= trans("email_verification"); ?></label>
                         <?= formRadio('email_verification', 1, 0, trans("enable"), trans("disable"), $generalSettings->email_verification); ?>
                     </div>
                 </div>
 
-                <div class="box-footer">
-                    <button type="submit" name="submit" value="verification" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" name="submit" value="verification" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                 </div>
             </div>
         </div>
@@ -120,11 +120,11 @@
     <form action="<?= base_url('Admin/contactEmailSettingsPost'); ?>" method="post">
         <?= csrf_field(); ?>
         <div class="col-lg-6 col-md-12">
-            <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title"><?= trans('contact_messages'); ?></h3>
+            <div class="card card-primary">
+                <div class="card-header with-border">
+                    <h3 class="card-title"><?= trans('contact_messages'); ?></h3>
                 </div>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label><?= trans("send_contact_to_mail"); ?></label>
                         <?= formRadio('mail_contact_status', 1, 0, trans("enable"), trans("disable"), $generalSettings->mail_contact_status); ?>
@@ -136,8 +136,8 @@
                     </div>
                 </div>
 
-                <div class="box-footer">
-                    <button type="submit" name="submit" value="contact" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" name="submit" value="contact" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                 </div>
             </div>
         </div>
@@ -146,20 +146,20 @@
     <form action="<?= base_url('Admin/sendTestEmailPost'); ?>" method="post">
         <?= csrf_field(); ?>
         <div class="col-lg-6 col-md-12">
-            <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title"><?= trans('send_test_email'); ?></h3>
+            <div class="card card-primary">
+                <div class="card-header with-border">
+                    <h3 class="card-title"><?= trans('send_test_email'); ?></h3>
                     <small class="small-title"><?= trans('send_test_email_exp'); ?></small>
                 </div>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label class="control-label"><?= trans('email'); ?></label>
                         <input type="text" class="form-control" name="email" placeholder="<?= trans('email'); ?>" required>
                     </div>
                 </div>
 
-                <div class="box-footer">
-                    <button type="submit" name="submit" value="contact" class="btn btn-primary pull-right"><?= trans('send_email'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" name="submit" value="contact" class="btn btn-primary float-end"><?= trans('send_email'); ?></button>
                 </div>
             </div>
         </div>
@@ -173,3 +173,4 @@
         margin-top: 30px;
     }
 </style>
+

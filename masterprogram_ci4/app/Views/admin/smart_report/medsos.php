@@ -19,19 +19,19 @@
     .nav-tabs-custom > .nav-tabs > li > a { color: #fff; font-weight: 600; }
     .nav-tabs-custom > .nav-tabs > li > a:hover { color: #f39c12; }
 
-    /* BOX STYLES */
-    .modern-box {
-        background: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    /* card STYLES */
+    .modern-card {
+        background: #fff; border-radius: 8px; card-shadow: 0 4px 15px rgba(0,0,0,0.1);
         border: 1px solid #e1e1e1; padding: 20px; margin-bottom: 20px; border-top: 4px solid #1F3A60;
     }
-    .modern-box-header { font-size: 18px; font-weight: bold; color: #1F3A60; margin-bottom: 15px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
+    .modern-card-header { font-size: 18px; font-weight: bold; color: #1F3A60; margin-bottom: 15px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
 
     /* ENGAGEMENT INPUT CARDS */
     .eng-card {
         background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center; margin-bottom: 15px;
         transition: transform 0.2s;
     }
-    .eng-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-color: #1F3A60; }
+    .eng-card:hover { transform: translateY(-3px); card-shadow: 0 5px 15px rgba(0,0,0,0.1); border-color: #1F3A60; }
     .eng-icon { font-size: 24px; margin-bottom: 5px; display: block; }
     .eng-label { font-weight: bold; font-size: 12px; color: #555; text-transform: uppercase; display: block; margin-bottom: 5px; }
     .eng-input-field { text-align: center; font-weight: bold; font-size: 16px; border: 1px solid #ccc; height: 40px; }
@@ -71,13 +71,13 @@
     .table-elegant thead th { background-color: #1F3A60; color: #fff; padding: 10px; text-transform: uppercase; letter-spacing: 1px; font-size: 12px; font-weight: 600; border: none; }
     .table-elegant thead th:first-child { border-radius: 6px 0 0 6px; text-align: center; }
     .table-elegant thead th:last-child { border-radius: 0 6px 6px 0; }
-    .table-elegant tbody tr { background-color: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s; }
-    .table-elegant tbody tr:hover { transform: translateY(-2px); box-shadow: 0 5px 10px rgba(0,0,0,0.1); z-index: 10; position: relative; }
+    .table-elegant tbody tr { background-color: #fff; card-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: transform 0.2s, card-shadow 0.2s; }
+    .table-elegant tbody tr:hover { transform: translateY(-2px); card-shadow: 0 5px 10px rgba(0,0,0,0.1); z-index: 10; position: relative; }
     .table-elegant td { padding: 8px 12px; border: none; vertical-align: middle; border-top: 1px solid #f9f9f9; border-bottom: 1px solid #f9f9f9; color: #555; font-size: 13px; }
     .table-elegant td:first-child { border-left: 1px solid #f9f9f9; border-radius: 6px 0 0 6px; text-align: center; font-weight: bold; color: #1F3A60; }
     .table-elegant td:last-child { border-right: 1px solid #f9f9f9; border-radius: 0 6px 6px 0; }
 
-    .badge-plat { padding: 4px 10px; border-radius: 15px; color: #fff; font-size: 10px; font-weight: bold; display: inline-block; min-width: 90px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+    .badge-plat { padding: 4px 10px; border-radius: 15px; color: #fff; font-size: 10px; font-weight: bold; display: inline-block; min-width: 90px; text-align: center; card-shadow: 0 1px 3px rgba(0,0,0,0.2); }
     .bg-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
     .bg-fb { background-color: #1877F2; } .bg-tw { background-color: #1DA1F2; } .bg-tt { background-color: #000; }
     .bg-yt { background-color: #FF0000; } .bg-pt { background-color: #FFD700; color: #000; text-shadow: none; } .bg-def { background-color: #777; }
@@ -86,11 +86,11 @@
     .pagination-wrap { margin-top: 15px; text-align: right; }
     .pagination-wrap .pagination { margin: 0; }
     .pagination-wrap .pagination li a { border: none; color: #555; margin: 0 2px; border-radius: 4px; font-weight: bold; background: #eee; font-size: 12px; padding: 5px 10px; }
-    .pagination-wrap .pagination li.active a { background-color: #1F3A60; color: #fff; box-shadow: 0 2px 5px rgba(31,58,96,0.3); }
+    .pagination-wrap .pagination li.active a { background-color: #1F3A60; color: #fff; card-shadow: 0 2px 5px rgba(31,58,96,0.3); }
 
     /* IMAGES */
-    .thumb-wrap { position: relative; display: inline-block; margin: 5px; border: 2px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-    .btn-del-img { position: absolute; top: -8px; right: -8px; background: #e74c3c; color: white; border: 2px solid #fff; border-radius: 50%; width: 24px; height: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+    .thumb-wrap { position: relative; display: inline-block; margin: 5px; border: 2px solid #fff; card-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+    .btn-del-img { position: absolute; top: -8px; right: -8px; background: #e74c3c; color: white; border: 2px solid #fff; border-radius: 50%; width: 24px; height: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; card-shadow: 0 2px 4px rgba(0,0,0,0.2); }
 </style>
 
 <div class="row">
@@ -115,14 +115,14 @@
                 
                 <div class="tab-pane <?= (!isset($_GET['tab']) || $_GET['tab'] == 'all') ? 'active' : ''; ?>" id="tab_all">
                     
-                    <div class="modern-box">
-                        <div class="modern-box-header"><i class="fa fa-plus-circle"></i> TAMBAH LINK VIRALISASI</div>
+                    <div class="modern-card">
+                        <div class="modern-card-header"><i class="fa fa-plus-circle"></i> TAMBAH LINK VIRALISASI</div>
                         <form action="<?= adminUrl('smart-report/medsos/save'); ?>" method="post">
                             <?= csrf_field(); ?>
                             <div class="form-group">
                                 <textarea name="raw_links" class="form-control" rows="5" placeholder="Paste laporan di sini (campur teks & link)..." style="resize: vertical; font-size: 14px; border: 1px solid #ccc; background: #fdfdfd;"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary pull-right" style="background-color: #1F3A60; border-color: #1F3A60;"><i class="fa fa-save"></i> EKSTRAK & SIMPAN</button>
+                            <button type="submit" class="btn btn-primary float-end" style="background-color: #1F3A60; border-color: #1F3A60;"><i class="fa fa-save"></i> EKSTRAK & SIMPAN</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
@@ -149,14 +149,14 @@
                             $tableId = 'tbl_mini_' . $counter++;
                         ?>
                             <div class="col-md-4">
-                                <div class="box box-solid" style="border: 1px solid #ddd; border-top: 3px solid <?= $style['color']; ?>; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                                    <div class="box-header with-border" style="background-color: #f9f9f9; padding: 10px;">
-                                        <h4 class="box-title" style="color: <?= $style['color']; ?>; font-weight: bold; font-size: 16px;">
+                                <div class="card card-solid" style="border: 1px solid #ddd; border-top: 3px solid <?= $style['color']; ?>; card-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                                    <div class="card-header with-border" style="background-color: #f9f9f9; padding: 10px;">
+                                        <h4 class="card-title" style="color: <?= $style['color']; ?>; font-weight: bold; font-size: 16px;">
                                             <i class="fa <?= $style['icon']; ?>"></i> <?= esc($keyName); ?>
                                         </h4>
-                                        <span class="label pull-right" style="background-color: <?= $style['color']; ?>; color: <?= ($style['color']=='#FFD700') ? '#000' : '#fff'; ?>;"><?= count($links); ?></span>
+                                        <span class="label float-end" style="background-color: <?= $style['color']; ?>; color: <?= ($style['color']=='#FFD700') ? '#000' : '#fff'; ?>;"><?= count($links); ?></span>
                                     </div>
-                                    <div class="box-body no-padding mini-table-container">
+                                    <div class="card-body no-padding mini-table-container">
                                         <table class="table table-striped table-hover table-sm mini-table" id="<?= $tableId; ?>" style="margin-bottom: 0;">
                                             <thead>
                                                 <tr><th class="col-no">No</th><th>Link Postingan</th></tr>
@@ -200,7 +200,7 @@
 
                 <div class="tab-pane <?= (isset($_GET['tab']) && $_GET['tab'] == 'daily') ? 'active' : ''; ?>" id="tab_daily">
                     
-                    <div class="modern-box" style="padding: 15px; margin-bottom: 20px;">
+                    <div class="modern-card" style="padding: 15px; margin-bottom: 20px;">
                         <div class="row">
                             <div class="col-md-6">
                                 <form action="<?= current_url(); ?>" method="get" class="form-inline">
@@ -218,12 +218,12 @@
                         </div>
                     </div>
 
-                    <div class="box box-success">
-                        <div class="box-header with-border"><h3 class="box-title"><i class="fa fa-bar-chart"></i> 1. DATA ENGAGEMENT & STATISTIK</h3></div>
+                    <div class="card card-success">
+                        <div class="card-header with-border"><h3 class="card-title"><i class="fa fa-bar-chart"></i> 1. DATA ENGAGEMENT & STATISTIK</h3></div>
                         <form action="<?= adminUrl('smart-report/medsos/save-engagement'); ?>" method="post">
                             <?= csrf_field(); ?>
                             <input type="hidden" name="date" value="<?= esc($selectedDate); ?>">
-                            <div class="box-body">
+                            <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-2 col-sm-4 col-xs-6"><div class="eng-card"><i class="fa fa-instagram eng-icon c-ig"></i><span class="eng-label">INSTAGRAM</span><input type="number" name="ig" class="form-control eng-input-field eng-input" value="<?= $dailyStats['ig'] ?? 0; ?>"></div></div>
                                     <div class="col-md-2 col-sm-4 col-xs-6"><div class="eng-card"><i class="fa fa-twitter eng-icon c-tw"></i><span class="eng-label">TWITTER / X</span><input type="number" name="tw" class="form-control eng-input-field eng-input" value="<?= $dailyStats['tw'] ?? 0; ?>"></div></div>
@@ -240,7 +240,7 @@
                             </div>
                         </form>
 
-                        <div class="box-body" style="background: #f0f0f0; padding: 20px; border-top: 2px solid #ccc;">
+                        <div class="card-body" style="background: #f0f0f0; padding: 20px; border-top: 2px solid #ccc;">
                             <h5 class="text-center text-bold" style="color: #555; margin-bottom: 20px;">PREVIEW TABEL LAPORAN (Hasil Simpan)</h5>
                             <div class="row">
                                 <div class="col-md-6">
@@ -261,9 +261,9 @@
                         </div>
                     </div>
 
-                    <div class="box box-warning">
-                        <div class="box-header with-border"><h3 class="box-title"><i class="fa fa-image"></i> 2. LAMPIRAN KONTEN HARIAN</h3></div>
-                        <div class="box-body">
+                    <div class="card card-warning">
+                        <div class="card-header with-border"><h3 class="card-title"><i class="fa fa-image"></i> 2. LAMPIRAN KONTEN HARIAN</h3></div>
+                        <div class="card-body">
                             <form action="<?= adminUrl('smart-report/medsos/save-content'); ?>" method="post" enctype="multipart/form-data">
                                 <?= csrf_field(); ?><input type="hidden" name="date" value="<?= esc($selectedDate); ?>">
                                 <div class="form-group"><label>Upload Gambar (Bisa Banyak):</label><div class="input-group"><input type="file" name="content_images[]" class="form-control" multiple accept="image/*"><span class="input-group-btn"><button type="submit" class="btn btn-warning"><i class="fa fa-upload"></i> UPLOAD</button></span></div></div>
@@ -275,9 +275,9 @@
                         </div>
                     </div>
 
-                    <div class="box box-info">
-                        <div class="box-header with-border"><h3 class="box-title"><i class="fa fa-list"></i> DAFTAR LINK VIRALISASI</h3></div>
-                        <div class="box-body" style="background-color: #fcfcfc;">
+                    <div class="card card-info">
+                        <div class="card-header with-border"><h3 class="card-title"><i class="fa fa-list"></i> DAFTAR LINK VIRALISASI</h3></div>
+                        <div class="card-body" style="background-color: #fcfcfc;">
                             <table class="table-elegant">
                                 <thead><tr><th style="width: 60px;">NO</th><th style="width: 150px;">PLATFORM</th><th>LINK TAUTAN</th></tr></thead>
                                 <tbody>
@@ -302,7 +302,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="box-footer pagination-wrap"><?= $pager; ?></div>
+                        <div class="card-footer pagination-wrap"><?= $pager; ?></div>
                     </div>
                 </div>
 
@@ -315,11 +315,11 @@
                     <div class="alert alert-warning"><i class="fa fa-info-circle"></i> Jika gambar preview tidak berubah setelah upload, silakan Refresh halaman (F5).</div>
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="box box-primary">
-                                <div class="box-header with-border"><h3 class="box-title">Upload Template Laporan</h3></div>
+                            <div class="card card-primary">
+                                <div class="card-header with-border"><h3 class="card-title">Upload Template Laporan</h3></div>
                                 <form action="<?= adminUrl('smart-report/medsos/save-settings'); ?>" method="post" enctype="multipart/form-data">
                                     <?= csrf_field(); ?>
-                                    <div class="box-body">
+                                    <div class="card-body">
                                         <div class="form-group">
                                             <label>NAMA POLRES (Untuk Cover)</label>
                                             <input type="text" name="polres_name" class="form-control" placeholder="Contoh: POLRESTA BANYUWANGI" value="<?= esc($globalSettings['polres_name'] ?? ''); ?>">
@@ -339,27 +339,27 @@
                                             <small class="text-muted">Khusus halaman lampiran gambar.</small>
                                         </div>
                                     </div>
-                                    <div class="box-footer"><button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> SIMPAN PENGATURAN</button></div>
+                                    <div class="card-footer"><button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> SIMPAN PENGATURAN</button></div>
                                 </form>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="box box-solid">
-                                <div class="box-header with-border"><h3 class="box-title">Preview Template</h3></div>
-                                <div class="box-body text-center">
-                                    <strong>Nama Polres:</strong> <span class="label label-success"><?= esc($globalSettings['polres_name'] ?? 'Belum disetting'); ?></span><br><br>
+                            <div class="card card-solid">
+                                <div class="card-header with-border"><h3 class="card-title">Preview Template</h3></div>
+                                <div class="card-body text-center">
+                                    <strong>Nama Polres:</strong> <span class="label badge bg-success"><?= esc($globalSettings['polres_name'] ?? 'Belum disetting'); ?></span><br><br>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <strong>Cover:</strong><br><br>
-                                            <?php if(!empty($globalSettings['cover_image']) && file_exists(FCPATH . $globalSettings['cover_image'])): ?><img src="<?= base_url($globalSettings['cover_image']); ?>?t=<?= time(); ?>" style="width: 100%; border: 1px solid #ddd; padding: 3px; box-shadow: 2px 2px 5px #eee;"><?php else: ?><div style="height: 100px; background:#f0f0f0; border:1px dashed #ccc; display:flex; align-items:center; justify-content:center;">No Image</div><?php endif; ?>
+                                            <?php if(!empty($globalSettings['cover_image']) && file_exists(FCPATH . $globalSettings['cover_image'])): ?><img src="<?= base_url($globalSettings['cover_image']); ?>?t=<?= time(); ?>" style="width: 100%; border: 1px solid #ddd; padding: 3px; card-shadow: 2px 2px 5px #eee;"><?php else: ?><div style="height: 100px; background:#f0f0f0; border:1px dashed #ccc; display:flex; align-items:center; justify-content:center;">No Image</div><?php endif; ?>
                                         </div>
                                         <div class="col-md-4">
                                             <strong>BG Global:</strong><br><br>
-                                            <?php if(!empty($globalSettings['bg_image']) && file_exists(FCPATH . $globalSettings['bg_image'])): ?><img src="<?= base_url($globalSettings['bg_image']); ?>?t=<?= time(); ?>" style="width: 100%; border: 1px solid #ddd; padding: 3px; box-shadow: 2px 2px 5px #eee;"><?php else: ?><div style="height: 100px; background:#f0f0f0; border:1px dashed #ccc; display:flex; align-items:center; justify-content:center;">No Image</div><?php endif; ?>
+                                            <?php if(!empty($globalSettings['bg_image']) && file_exists(FCPATH . $globalSettings['bg_image'])): ?><img src="<?= base_url($globalSettings['bg_image']); ?>?t=<?= time(); ?>" style="width: 100%; border: 1px solid #ddd; padding: 3px; card-shadow: 2px 2px 5px #eee;"><?php else: ?><div style="height: 100px; background:#f0f0f0; border:1px dashed #ccc; display:flex; align-items:center; justify-content:center;">No Image</div><?php endif; ?>
                                         </div>
                                         <div class="col-md-4">
                                             <strong>BG Lampiran:</strong><br><br>
-                                            <?php if(!empty($globalSettings['bg_lampiran']) && file_exists(FCPATH . $globalSettings['bg_lampiran'])): ?><img src="<?= base_url($globalSettings['bg_lampiran']); ?>?t=<?= time(); ?>" style="width: 100%; border: 1px solid #ddd; padding: 3px; box-shadow: 2px 2px 5px #eee;"><?php else: ?><div style="height: 100px; background:#f0f0f0; border:1px dashed #ccc; display:flex; align-items:center; justify-content:center;">No Image</div><?php endif; ?>
+                                            <?php if(!empty($globalSettings['bg_lampiran']) && file_exists(FCPATH . $globalSettings['bg_lampiran'])): ?><img src="<?= base_url($globalSettings['bg_lampiran']); ?>?t=<?= time(); ?>" style="width: 100%; border: 1px solid #ddd; padding: 3px; card-shadow: 2px 2px 5px #eee;"><?php else: ?><div style="height: 100px; background:#f0f0f0; border:1px dashed #ccc; display:flex; align-items:center; justify-content:center;">No Image</div><?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -394,7 +394,7 @@
     function paginateMini(tableId, direction) {
         var table = document.getElementById(tableId); if(!table) return;
         var rows = table.querySelectorAll('.link-item');
-        var container = table.closest('.box');
+        var container = table.closest('.card');
         var info = container.querySelector('.curr-page');
         
         if(!info) return;
@@ -421,3 +421,4 @@
         info.innerText = newPage;
     }
 </script>
+

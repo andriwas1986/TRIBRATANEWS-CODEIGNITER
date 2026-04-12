@@ -6,13 +6,13 @@
 
 <div class="row">
     <div class="col-lg-6 col-md-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans('settings'); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans('settings'); ?></h3>
             </div>
             <form action="<?= base_url('Admin/seoToolsPost'); ?>" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label><?= trans("language"); ?></label>
                         <select name="lang_id" class="form-control max-400" onchange="window.location.href = '<?= adminUrl(); ?>'+'/seo-tools?lang='+this.value;">
@@ -42,25 +42,25 @@
                         <textarea class="form-control text-area" name="keywords" placeholder="<?= trans('keywords'); ?>" style="min-height: 70px;"><?= esc($seoSettings->keywords); ?></textarea>
                     </div>
 
-                    <div class="box-footer" style="padding-left: 0; padding-right: 0;">
-                        <button type="submit" name="submit" value="settings" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                    <div class="card-footer" style="padding-left: 0; padding-right: 0;">
+                        <button type="submit" name="submit" value="settings" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                     </div>
                 </div>
             </form>
         </div>
 
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans('google_indexing_api'); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans('google_indexing_api'); ?></h3>
             </div>
             <form id="formGoogleIndexingApi" action="<?= base_url('Admin/googleIndexingApiPost'); ?>" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label><?= trans("status"); ?></label>
                         <?= formRadio('google_indexing_api', 1, 0, trans("enable"), trans("disable"), $generalSettings->google_indexing_api); ?>
                     </div>
-                    <div class="box-footer text-right" style="padding-left: 0; padding-right: 0;">
+                    <div class="card-footer text-right" style="padding-left: 0; padding-right: 0;">
                         <button type="button" onclick="testGoogleIndexingApi()" class="btn btn-warning"><?= trans("test_api"); ?></button>
                         <button type="submit" class="btn btn-primary"><?= trans('save_changes'); ?></button>
                     </div>
@@ -81,19 +81,19 @@
             </form>
         </div>
 
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans('google_analytics'); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans('google_analytics'); ?></h3>
             </div>
             <form action="<?= base_url('Admin/seoToolsPost'); ?>" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label class="control-label"><?= trans('google_analytics_code'); ?></label>
                         <textarea class="form-control text-area" name="google_analytics" placeholder="<?= trans('google_analytics_code'); ?>" style="min-height: 100px;"><?= $generalSettings->google_analytics; ?></textarea>
                     </div>
-                    <div class="box-footer" style="padding-left: 0; padding-right: 0;">
-                        <button type="submit" name="submit" value="google_analytics" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                    <div class="card-footer" style="padding-left: 0; padding-right: 0;">
+                        <button type="submit" name="submit" value="google_analytics" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                     </div>
                 </div>
             </form>
@@ -101,14 +101,14 @@
     </div>
 
     <div class="col-lg-6 col-md-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans('sitemap'); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans('sitemap'); ?></h3>
             </div>
             <form action="<?= base_url('Admin/sitemapSettingsPost'); ?>" method="post">
                 <?= csrf_field(); ?>
                 <input type="hidden" name="back_url" value="<?= currentFullURL(); ?>">
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label class="label-sitemap"><?= trans('frequency'); ?></label>
                         <small class="small-sitemap"> (<?= trans('frequency_exp'); ?>)</small>
@@ -125,8 +125,8 @@
                         <?= formRadio('priority', 'auto', 'none', trans("automatically_calculated"), trans("none"), $generalSettings->sitemap_priority); ?>
                     </div>
                 </div>
-                <div class="box-footer">
-                    <button type="submit" name="submit" value="generate" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" name="submit" value="generate" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                 </div>
             </form>
 
@@ -191,3 +191,4 @@
         form.requestSubmit();
     }
 </script>
+

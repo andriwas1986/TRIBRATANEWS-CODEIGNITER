@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-sm-8">
-        <div class="box box-primary">
-            <div class="box-header with-border">
+        <div class="card card-primary">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans('add_payout'); ?></h3>
+                    <h3 class="card-title"><?= trans('add_payout'); ?></h3>
                 </div>
                 <div class="right">
                     <a href="<?= adminUrl('reward-system/earnings'); ?>" class="btn btn-success btn-add-new">
@@ -18,7 +18,7 @@
             </div>
             <form action="<?= base_url('Reward/addPayoutPost'); ?>" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label><?= trans("user"); ?></label>
                         <select name="user_id" class="form-control select2-users"></select>
@@ -37,16 +37,17 @@
                     <div class="form-group">
                         <label class="control-label"><?= trans('amount'); ?></label>
                         <div class="input-group">
-                            <div class="input-group-addon"><b><?= $generalSettings->currency_symbol; ?></b></div>
+                            <div class="input-group-text"><b><?= $generalSettings->currency_symbol; ?></b></div>
                             <input type="text" class="form-control price-input" name="amount" placeholder="E.g. 1.5" required>
                         </div>
                     </div>
                 </div>
 
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('add_payout'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('add_payout'); ?></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+

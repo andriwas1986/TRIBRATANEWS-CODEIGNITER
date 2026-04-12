@@ -40,26 +40,26 @@
 
 <div class="row" style="margin-top: 60px;">
     <div class="col-sm-12 col-md-6">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans('theme_settings'); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans('theme_settings'); ?></h3>
             </div>
             <form action="<?= base_url('Admin/setThemeSettingsPost'); ?>" method="post">
                 <?= csrf_field(); ?>
                 <input type="hidden" name="id" value="<?= $activeTheme->id; ?>">
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label><?= trans('site_color'); ?></label>
                         <div class="input-group my-colorpicker">
                             <input type="text" class="form-control" name="theme_color" maxlength="200" placeholder="<?= trans('color_code'); ?>" value="<?= esc($activeTheme->theme_color); ?>" required>
-                            <div class="input-group-addon"><i></i></div>
+                            <div class="input-group-text"><i></i></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label><?= trans('block_color'); ?></label>
                         <div class="input-group my-colorpicker">
                             <input type="text" class="form-control" name="block_color" maxlength="200" placeholder="<?= trans('color_code'); ?>" value="<?= esc($activeTheme->block_color); ?>" required>
-                            <div class="input-group-addon"><i></i></div>
+                            <div class="input-group-text"><i></i></div>
                         </div>
                     </div>
                     <?php if ($activeTheme->theme != 'classic'): ?>
@@ -67,13 +67,13 @@
                             <label><?= trans('mega_menu_color'); ?></label>
                             <div class="input-group my-colorpicker">
                                 <input type="text" class="form-control" name="mega_menu_color" maxlength="200" placeholder="<?= trans('color_code'); ?>" value="<?= esc($activeTheme->mega_menu_color); ?>" required>
-                                <div class="input-group-addon"><i></i></div>
+                                <div class="input-group-text"><i></i></div>
                             </div>
                         </div>
                     <?php endif; ?>
                 </div>
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                 </div>
             </form>
         </div>
@@ -98,3 +98,4 @@
         });
     });
 </script>
+

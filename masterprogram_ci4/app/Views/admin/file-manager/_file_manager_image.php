@@ -55,7 +55,7 @@
             </div>
             <div class="modal-footer">
                 <div class="file-manager-footer">
-                    <button type="button" id="btn_img_delete" class="btn btn-danger pull-left btn-file-delete"><i class="fa fa-trash"></i>&nbsp;&nbsp;<?= trans('delete'); ?></button>
+                    <button type="button" id="btn_img_delete" class="btn btn-danger float-start btn-file-delete"><i class="fa fa-trash"></i>&nbsp;&nbsp;<?= trans('delete'); ?></button>
                     <button type="button" id="btn_img_select" class="btn bg-olive btn-file-select"><i class="fa fa-check"></i>&nbsp;&nbsp;<?= trans('select_image'); ?></button>
                     <button type="button" class="btn btn-default" data-dismiss="modal"><?= trans('close'); ?></button>
                 </div>
@@ -164,3 +164,5 @@
         $(this).hide();
     });
 </script>
+
+

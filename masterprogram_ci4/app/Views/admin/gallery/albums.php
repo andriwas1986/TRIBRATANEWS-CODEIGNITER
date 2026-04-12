@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-lg-5 col-md-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans("add_album"); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans("add_album"); ?></h3>
             </div>
             <form action="<?= base_url('Gallery/addAlbumPost'); ?>" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label><?= trans("language"); ?></label>
                         <select name="lang_id" class="form-control">
@@ -21,21 +21,21 @@
                     </div>
                 </div>
 
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('add_album'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('add_album'); ?></button>
                 </div>
             </form>
         </div>
     </div>
 
     <div class="col-lg-7 col-md-12">
-        <div class="box">
-            <div class="box-header with-border">
-                <div class="pull-left">
-                    <h3 class="box-title"><?= trans('gallery_albums'); ?></h3>
+        <div class="card">
+            <div class="card-header with-border">
+                <div class="float-start">
+                    <h3 class="card-title"><?= trans('gallery_albums'); ?></h3>
                 </div>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="table-responsive">
@@ -87,3 +87,4 @@
         </div>
     </div>
 </div>
+

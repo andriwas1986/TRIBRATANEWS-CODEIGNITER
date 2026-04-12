@@ -1,10 +1,10 @@
-<div class="box">
-    <div class="box-header with-border">
+<div class="card">
+    <div class="card-header with-border">
         <div class="left">
-            <h3 class="box-title"><?= trans('post_details'); ?></h3>
+            <h3 class="card-title"><?= trans('post_details'); ?></h3>
         </div>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <input type="hidden" name="id" value="<?= esc($post->id); ?>">
         <input type="hidden" name="back_url" class="form-control" value="<?= esc(inputGet('back_url')); ?>">
 
@@ -198,13 +198,13 @@
 <?php if ($post->post_type == 'recipe'): ?>
     <div class="row">
         <div class="col-sm-12 m-b-30">
-            <div class="box">
-                <div class="box-header with-border">
+            <div class="card">
+                <div class="card-header with-border">
                     <div class="left">
-                        <h3 class="box-title"><?= trans("info_about_recipe"); ?></h3>
+                        <h3 class="card-title"><?= trans("info_about_recipe"); ?></h3>
                     </div>
                 </div>
-                <div class="box-body">
+                <div class="card-body">
                     <div id="main_editor_recipe">
                         <div class="row">
                             <div class="col-sm-12 editor-buttons">
@@ -223,8 +223,8 @@
 
     <div class="row">
         <div class="col-sm-12 col-md-6">
-            <div class="box">
-                <div class="box-body">
+            <div class="card">
+                <div class="card-body">
                     <label class="control-label"><?= trans("ingredients"); ?></label>
                     <div id="content_ingredients">
                         <?php if (!empty($dataRecipe) && !empty($dataRecipe['ingredients'])):
@@ -243,8 +243,8 @@
             </div>
         </div>
         <div class="col-sm-12 col-md-6">
-            <div class="box">
-                <div class="box-body">
+            <div class="card">
+                <div class="card-body">
                     <label class="control-label"><?= trans("nutritional_information"); ?></label>
                     <div id="content_nutritional">
                         <?php if (!empty($dataRecipe) && !empty($dataRecipe['nInfo'])):
@@ -288,3 +288,4 @@
         $('#itemNutritional' + dataId).remove();
     });
 </script>
+

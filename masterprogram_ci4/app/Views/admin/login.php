@@ -43,7 +43,7 @@
             z-index: -1;
         }
 
-        .login-box {
+        .login-card {
             width: 420px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
@@ -51,7 +51,7 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 20px;
             padding: 40px 35px;
-            box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+            card-shadow: 0 25px 45px rgba(0,0,0,0.2);
             color: white;
         }
 
@@ -66,7 +66,7 @@
             filter: drop-shadow(0 5px 5px rgba(0,0,0,0.3));
         }
 
-        .login-box-msg {
+        .login-card-msg {
             margin-bottom: 25px;
             text-align: center;
             color: rgba(255,255,255,0.8);
@@ -81,7 +81,7 @@
             border-radius: 0;
             color: #fff !important;
             padding-left: 5px;
-            box-shadow: none;
+            card-shadow: none;
             height: 45px;
             transition: 0.3s;
         }
@@ -91,7 +91,7 @@
         input:-webkit-autofill:hover, 
         input:-webkit-autofill:focus, 
         input:-webkit-autofill:active {
-            -webkit-box-shadow: 0 0 0 30px rgba(255, 255, 255, 0) inset !important;
+            -webkit-card-shadow: 0 0 0 30px rgba(255, 255, 255, 0) inset !important;
             -webkit-text-fill-color: #fff !important;
             transition: background-color 5000s ease-in-out 0s;
         }
@@ -125,7 +125,7 @@
             border-radius: 50px;
             height: 50px;
             font-weight: 600;
-            box-shadow: 0 10px 20px rgba(0, 114, 255, 0.3);
+            card-shadow: 0 10px 20px rgba(0, 114, 255, 0.3);
             width: 100%;
             margin-top: 15px;
         }
@@ -152,14 +152,14 @@
 </head>
 <body>
 
-<div class="login-box">
+<div class="login-card">
     <div class="login-logo">
         <a href="<?= adminUrl('login'); ?>">
             <img src="<?= base_url('assets/img/logo-login.png'); ?>" alt="Logo" class="logo-img">
         </a>
     </div>
     
-    <p class="login-box-msg">Login Pengguna</p>
+    <p class="login-card-msg">Login Pengguna</p>
 
     <?= view('admin/includes/_messages'); ?>
 
@@ -232,3 +232,4 @@
 
 </body>
 </html>
+

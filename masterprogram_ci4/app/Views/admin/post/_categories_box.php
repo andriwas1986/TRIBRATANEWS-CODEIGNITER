@@ -1,10 +1,10 @@
-<div class="box">
-    <div class="box-header with-border">
+<div class="card">
+    <div class="card-header with-border">
         <div class="left">
-            <h3 class="box-title"><?= trans('category'); ?></h3>
+            <h3 class="card-title"><?= trans('category'); ?></h3>
         </div>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <?php if (!empty($post)): ?>
             <div class="form-group">
                 <label><?= trans("language"); ?></label>
@@ -69,3 +69,4 @@
         <?php endif; ?>
     </div>
 </div>
+

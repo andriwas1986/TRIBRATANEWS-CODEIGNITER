@@ -1,12 +1,12 @@
 <style>
     /* Kerangka Utama Card */
-    .header-setting-card { background: #fff; border-radius: 12px; border: none; box-shadow: 0 4px 25px rgba(0,0,0,0.08); margin-bottom: 30px; overflow: hidden; }
-    .header-setting-card .box-header { background: #ffffff; border-bottom: 1px solid #f1f4f8; padding: 20px 25px; }
-    .header-setting-card .box-title { font-weight: 700; color: #1e293b; font-size: 18px; display: flex; align-items: center; }
+    .header-setting-card { background: #fff; border-radius: 12px; border: none; card-shadow: 0 4px 25px rgba(0,0,0,0.08); margin-bottom: 30px; overflow: hidden; }
+    .header-setting-card .card-header { background: #ffffff; border-bottom: 1px solid #f1f4f8; padding: 20px 25px; }
+    .header-setting-card .card-title { font-weight: 700; color: #1e293b; font-size: 18px; display: flex; align-items: center; }
     
     /* Styling Grouping Input */
     .setting-group { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; margin-bottom: 25px; transition: all 0.3s ease; }
-    .setting-group:hover { border-color: #3b82f6; background: #ffffff; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    .setting-group:hover { border-color: #3b82f6; background: #ffffff; card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
     
     /* Label Kategori */
     .group-label { font-weight: 700; color: #64748b; text-transform: uppercase; font-size: 11px; letter-spacing: 1.5px; margin-bottom: 15px; display: flex; align-items: center; }
@@ -24,7 +24,7 @@
 
     /* Buttons */
     .btn-modern-save { background: #00a8ff; color: #fff; border: none; border-radius: 8px; padding: 12px 35px; font-weight: 700; font-size: 14px; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-modern-save:hover { background: #0097e6; transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0, 168, 255, 0.3); color: #fff; }
+    .btn-modern-save:hover { background: #0097e6; transform: translateY(-2px); card-shadow: 0 8px 15px rgba(0, 168, 255, 0.3); color: #fff; }
     
     .btn-modern-reset { background: #fee2e2; color: #dc2626; border: 1px solid #fecaca; border-radius: 8px; padding: 12px 20px; font-weight: 600; transition: all 0.2s; }
     .btn-modern-reset:hover { background: #fecaca; color: #b91c1c; }
@@ -36,9 +36,9 @@
 
 <div class="row">
     <div class="col-md-11 col-lg-10 col-sm-12">
-        <div class="box header-setting-card">
-            <div class="box-header">
-                <h3 class="box-title">
+        <div class="card header-setting-card">
+            <div class="card-header">
+                <h3 class="card-title">
                     <span style="background: #e0f2fe; padding: 8px; border-radius: 8px; margin-right: 12px;">
                         <i class="fa fa-paint-brush" style="color: #00a8ff;"></i>
                     </span>
@@ -48,7 +48,7 @@
             
             <form action="<?= adminUrl('header-settings-post'); ?>" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
-                <div class="box-body" style="padding: 30px;">
+                <div class="card-body" style="padding: 30px;">
                     
                     <div class="row">
                         <div class="col-md-6">
@@ -128,12 +128,12 @@
 
                 </div>
                 
-                <div class="box-footer" style="background: #f8fafc; padding: 25px 30px; border-top: 1px solid #e2e8f0;">
+                <div class="card-footer" style="background: #f8fafc; padding: 25px 30px; border-top: 1px solid #e2e8f0;">
                     <button type="submit" name="submit" value="save" class="btn btn-modern-save">
                         <i class="fa fa-check-circle"></i> Simpan Konfigurasi
                     </button>
                     
-                    <button type="submit" name="submit" value="reset" class="btn btn-modern-reset pull-right" onclick="return confirm('Apakah Anda yakin ingin mereset semua warna ke pengaturan awal?')">
+                    <button type="submit" name="submit" value="reset" class="btn btn-modern-reset float-end" onclick="return confirm('Apakah Anda yakin ingin mereset semua warna ke pengaturan awal?')">
                         <i class="fa fa-refresh"></i> Reset Ke Default
                     </button>
                 </div>
@@ -151,3 +151,4 @@
         });
     });
 </script>
+

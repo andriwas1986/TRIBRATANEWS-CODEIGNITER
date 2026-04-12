@@ -1,7 +1,7 @@
-<div class="box">
-    <div class="box-header with-border">
+<div class="card">
+    <div class="card-header with-border">
         <div class="left">
-            <h3 class="box-title"><?= trans('rss_feeds'); ?></h3>
+            <h3 class="card-title"><?= trans('rss_feeds'); ?></h3>
         </div>
         <div class="right">
             <a href="<?= adminUrl('import-feed'); ?>" class="btn btn-success btn-add-new">
@@ -10,7 +10,7 @@
             </a>
         </div>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <div class="row">
             <div class="col-sm-12">
                 <div class="table-responsive">
@@ -136,7 +136,7 @@
                     <?php endif; ?>
                     <div class="col-sm-12">
                         <div class="row">
-                            <div class="pull-right">
+                            <div class="float-end">
                                 <?= $pager->links; ?>
                             </div>
                         </div>
@@ -149,3 +149,4 @@
 <div class="alert alert-danger alert-large" style="max-width: 1000px;">
     <strong><?= trans("warning"); ?>!</strong>&nbsp;&nbsp;<?= trans("msg_rss_warning"); ?>
 </div>
+

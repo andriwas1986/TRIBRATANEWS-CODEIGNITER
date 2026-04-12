@@ -1,10 +1,10 @@
 <?php $categoryModel = new \App\Models\CategoryModel(); ?>
 <div class="row">
     <div class="col-sm-12 col-lg-8">
-        <div class="box box-primary">
-            <div class="box-header with-border">
+        <div class="card card-primary">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans('bulk_post_upload'); ?></h3><br>
+                    <h3 class="card-title"><?= trans('bulk_post_upload'); ?></h3><br>
                     <small><?= trans("bulk_post_upload_exp"); ?></small>
                 </div>
                 <div class="right">
@@ -14,7 +14,7 @@
                     </a>
                 </div>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="form-group">
                     <label class="control-label"><?= trans('upload_csv_file'); ?></label>
                     <div class="dm-uploader-container">
@@ -58,14 +58,14 @@
         </div>
     </div>
     <div class="col-sm-12 col-lg-4">
-        <div class="box box-primary">
-            <div class="box-header with-border">
+        <div class="card card-primary">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans('help_documents'); ?></h3><br>
+                    <h3 class="card-title"><?= trans('help_documents'); ?></h3><br>
                     <small><?= trans("help_documents_exp"); ?></small>
                 </div>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="form-group">
                     <form action="<?= base_url('Post/downloadCSVFilePost'); ?>" method="post">
                         <?= csrf_field(); ?>
@@ -257,3 +257,4 @@
         }
     }
 </script>
+

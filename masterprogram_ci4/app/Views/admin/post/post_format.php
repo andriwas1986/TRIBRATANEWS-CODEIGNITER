@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-sm-12 form-header">
         <a href="<?= adminUrl('posts?lang_id=' . $activeLang->id); ?>"
-           class="btn btn-success btn-add-new pull-right">
+           class="btn btn-success btn-add-new float-end">
             <i class="fa fa-bars"></i>
             <?= trans('posts'); ?>
         </a>
@@ -182,3 +182,4 @@
         <?php endif; ?>
 
     </div>
+

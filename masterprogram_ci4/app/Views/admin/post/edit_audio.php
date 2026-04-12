@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-sm-12 form-header">
                     <h1 class="form-title"><?= trans('update_audio'); ?></h1>
-                    <a href="<?= adminUrl('posts'); ?>" class="btn btn-success btn-add-new pull-right">
+                    <a href="<?= adminUrl('posts'); ?>" class="btn btn-success btn-add-new float-end">
                         <i class="fa fa-bars"></i>
                         <?= trans('posts'); ?>
                     </a>
@@ -54,3 +54,4 @@
 </div>
 
 <?= view('admin/file-manager/_load_file_manager', ['loadImages' => true, 'loadFiles' => true, 'loadVideos' => false, 'loadAudios' => true]); ?>
+

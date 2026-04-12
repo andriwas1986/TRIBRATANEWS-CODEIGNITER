@@ -35,7 +35,7 @@ $tanggalLengkap = "Periode : " . $d . " " . $mIndo . " " . $y;
                     color: #fff; 
                     padding: 8px 15px; 
                     border-radius: 4px; 
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.15);">
+                    card-shadow: 0 2px 4px rgba(0,0,0,0.15);">
             <marquee behavior="scroll" direction="left" scrollamount="6" 
                      style="font-family: sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.5px;">
                 Selamat datang di System Monitoring & Archive Rekapitulasi Tribratanews - SMART TBNEWS |  Rekapitulasi Tribratanews Digital | Data Aman & Terpadu | Kerja Cepat, Laporan Tepat
@@ -73,16 +73,16 @@ $tanggalLengkap = "Periode : " . $d . " " . $mIndo . " " . $y;
 
                     <div class="row">
                         <div class="col-md-8">
-                            <div class="box box-primary">
-                                <div class="box-header with-border text-center">
-                                    <h3 class="box-title" style="line-height: 1.5; font-weight: 800; display: block;">
+                            <div class="card card-primary">
+                                <div class="card-header with-border text-center">
+                                    <h3 class="card-title" style="line-height: 1.5; font-weight: 800; display: block;">
                                         GRAFIK PRODUK HARIAN TRIBRATANEWS<br>
                                         <small style="font-size: 13px; color: #333; font-weight: normal;">
                                             <?= $tanggalLengkap; ?>
                                         </small>
                                     </h3>
                                 </div>
-                                <div class="box-body">
+                                <div class="card-body">
                                     <div class="chart-wrapper" style="width: 100%; overflow-x: hidden;">
                                         <div class="chart-container" style="position: relative; width: 100%;">
                                             <canvas id="operatorChart"></canvas>
@@ -96,10 +96,10 @@ $tanggalLengkap = "Periode : " . $d . " " . $mIndo . " " . $y;
                         </div>
 
                         <div class="col-md-4">
-                            <div class="box box-success">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title">Laporan WhatsApp</h3>
-                                    <div class="box-tools pull-right">
+                            <div class="card card-success">
+                                <div class="card-header with-border">
+                                    <h3 class="card-title">Laporan WhatsApp</h3>
+                                    <div class="card-tools float-end">
                                         <button type="button" class="btn btn-xs btn-default" onclick="toggleWaSettings()" title="Ganti Nama Polres">
                                             <i class="fa fa-cog"></i> Setting Header
                                         </button>
@@ -108,7 +108,7 @@ $tanggalLengkap = "Periode : " . $d . " " . $mIndo . " " . $y;
                                         </button>
                                     </div>
                                 </div>
-                                <div class="box-body">
+                                <div class="card-body">
                                     <div id="waSettingsBox" style="display:none; background: #f0f0f0; padding: 10px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #ddd;">
                                         <div class="form-group m-b-5">
                                             <label style="font-size:10px;">Nama Satker (Header):</label>
@@ -159,7 +159,7 @@ $tanggalLengkap = "Periode : " . $d . " " . $mIndo . " " . $y;
                                 <button type="submit" class="btn btn-primary btn-sm m-l-10"><i class="fa fa-eye"></i> Filter</button>
                             </form>
 
-                            <div class="pull-right">
+                            <div class="float-end">
                                 <a href="<?= base_url(adminUrl() . '/tb-news/export_excel?month='.$selectedMonth.'&year='.$selectedYear); ?>" target="_blank" class="btn btn-success btn-sm"><i class="fa fa-file-excel-o"></i> Export Excel</a>
                                 <button onclick="printDiv('printableArea')" class="btn btn-danger btn-sm"><i class="fa fa-file-pdf-o"></i> Export PDF (Print)</button>
                             </div>
@@ -173,11 +173,11 @@ $tanggalLengkap = "Periode : " . $d . " " . $mIndo . " " . $y;
                             <hr>
                         </div>
 
-                        <div class="box box-info">
-                            <div class="box-header with-border">
-                                <h3 class="box-title">1. Matriks Keaktifan Operator</h3>
+                        <div class="card card-info">
+                            <div class="card-header with-border">
+                                <h3 class="card-title">1. Matriks Keaktifan Operator</h3>
                             </div>
-                            <div class="box-body table-responsive no-padding">
+                            <div class="card-body table-responsive no-padding">
                                 <table class="table table-bordered table-striped table-hover table-sm text-center" style="font-size: 11px;">
                                     <thead class="bg-gray">
                                         <tr>
@@ -212,11 +212,11 @@ $tanggalLengkap = "Periode : " . $d . " " . $mIndo . " " . $y;
                             </div>
                         </div>
 
-                        <div class="box box-warning">
-                            <div class="box-header with-border">
-                                <h3 class="box-title">2. Rincian Daftar Link Berita</h3>
+                        <div class="card card-warning">
+                            <div class="card-header with-border">
+                                <h3 class="card-title">2. Rincian Daftar Link Berita</h3>
                             </div>
-                            <div class="box-body table-responsive">
+                            <div class="card-body table-responsive">
                                 <table class="table table-bordered table-hover" style="font-size: 12px;">
                                     <thead class="bg-gray">
                                         <tr>
@@ -280,8 +280,8 @@ $tanggalLengkap = "Periode : " . $d . " " . $mIndo . " " . $y;
 <script>
     // --- 1. LOGIC SETTING WA (AUTO SAVE) ---
     function toggleWaSettings() {
-        var box = document.getElementById("waSettingsBox");
-        box.style.display = (box.style.display === "none") ? "block" : "none";
+        var card = document.getElementById("waSettingsBox");
+        card.style.display = (card.style.display === "none") ? "block" : "none";
     }
 
     function updateWaText() {
@@ -473,8 +473,9 @@ $tanggalLengkap = "Periode : " . $d . " " . $mIndo . " " . $y;
         }
         
         /* Cleanup */
-        .box { border: 1px solid #ccc !important; box-shadow: none !important; }
+        .card { border: 1px solid #ccc !important; card-shadow: none !important; }
         a[href]:after { content: none !important; }
         .btn, .form-control { display: none !important; }
     }
 </style>
+

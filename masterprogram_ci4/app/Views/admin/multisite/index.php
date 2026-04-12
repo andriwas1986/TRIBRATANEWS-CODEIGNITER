@@ -1,10 +1,10 @@
 <div class="row">
     <div class="col-sm-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title">Kelola Domain / Cabang</h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title">Kelola Domain / Cabang</h3>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <form action="<?= adminUrl('sites/add'); ?>" method="post" class="form-inline" style="margin-bottom: 20px; background: #f9f9f9; padding: 15px;">
                     <?= csrf_field(); ?>
                     <div class="form-group">
@@ -39,7 +39,7 @@
                                         <?= esc($site->domain); ?> <i class="fa fa-external-link"></i>
                                     </a>
                                 </td>
-                                <td><span class="label label-success">Aktif</span></td>
+                                <td><span class="label badge bg-success">Aktif</span></td>
                                 <td>
                                     <?php if($site->id != 1): ?>
                                     <a href="<?= adminUrl('sites/delete/' . $site->id); ?>" 
@@ -60,3 +60,4 @@
         </div>
     </div>
 </div>
+

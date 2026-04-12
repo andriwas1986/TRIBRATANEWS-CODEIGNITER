@@ -5,7 +5,7 @@
 </div>
 <div class="row" style="display: flex; justify-content: center">
     <div class="col-lg-3 col-xs-6" style="max-width: 420px;">
-        <div class="small-box admin-small-box bg-primary">
+        <div class="small-card admin-small-card bg-primary">
             <div class="inner">
                 <h3><?= numberFormatShort(user()->total_pageviews); ?></h3>
                 <p><?= trans("total_pageviews"); ?></p>
@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="col-lg-3 col-xs-6" style="max-width: 420px;">
-        <div class="small-box admin-small-box bg-success">
+        <div class="small-card admin-small-card bg-success">
             <div class="inner">
                 <h3><?= priceFormatted(user()->balance); ?></h3>
                 <p><?= trans("balance"); ?></p>
@@ -30,8 +30,8 @@
 
 <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-6">
-        <div class="box">
-            <div class="box-body">
+        <div class="card">
+            <div class="card-body">
                 <div style="min-height: 400px;">
                     <canvas id="chart-1"></canvas>
                 </div>
@@ -39,8 +39,8 @@
         </div>
     </div>
     <div class="col-sm-12 col-md-12 col-lg-6">
-        <div class="box">
-            <div class="box-body">
+        <div class="card">
+            <div class="card-body">
                 <div style="min-height: 400px;">
                     <canvas id="chart-2"></canvas>
                 </div>
@@ -51,17 +51,17 @@
 
 <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-6">
-        <div class="box">
-            <div class="box-header with-border">
+        <div class="card">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans("payouts"); ?></h3>
+                    <h3 class="card-title"><?= trans("payouts"); ?></h3>
                 </div>
                 <div class="right">
                     <a href="<?= adminUrl('set-payout-account'); ?>" class="btn btn-primary btn-add-new"><i class="fa fa-credit-card"></i><?= trans("set_payout_account"); ?></a>&nbsp;
                     <button type="button" class="btn btn-success btn-add-new" data-toggle="modal" data-target="#modalNewPayout"><i class="fa fa-plus"></i><?= trans("new_payout_request"); ?></button>
                 </div>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="table-responsive">
@@ -84,9 +84,9 @@
                                             <td><?= trans($item->payout_method); ?></td>
                                             <td>
                                                 <?php if ($item->status == 1): ?>
-                                                    <label class="label label-success"><?= trans("completed"); ?></label>
+                                                    <label class="label badge bg-success"><?= trans("completed"); ?></label>
                                                 <?php else: ?>
-                                                    <label class="label label-warning"><?= trans("pending"); ?></label>
+                                                    <label class="label badge bg-warning"><?= trans("pending"); ?></label>
                                                 <?php endif; ?>
                                             </td>
                                             <td><?= formatDateFront($item->created_at); ?></td>
@@ -102,13 +102,13 @@
         </div>
     </div>
     <div class="col-sm-12 col-md-12 col-lg-6">
-        <div class="box">
-            <div class="box-header with-border">
+        <div class="card">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans("earnings"); ?></h3>
+                    <h3 class="card-title"><?= trans("earnings"); ?></h3>
                 </div>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="table-responsive">
@@ -160,7 +160,7 @@
                             <div class="form-group">
                                 <label class="control-label"><?= trans("withdraw_amount"); ?></label>
                                 <div class="input-group">
-                                    <div class="input-group-addon"><b><?= $generalSettings->currency_symbol; ?></b></div>
+                                    <div class="input-group-text"><b><?= $generalSettings->currency_symbol; ?></b></div>
                                     <input type="number" class="form-control" name="amount" min="0" max="999999" step="0.01" placeholder="E.g. 50" required>
                                 </div>
                             </div>
@@ -433,3 +433,4 @@ foreach ($pageViewsCounts as $item) {
         });
     });
 </script>
+

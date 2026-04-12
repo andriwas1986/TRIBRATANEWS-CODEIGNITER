@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-sm-12 col-lg-10">
-        <div class="box box-primary">
-            <div class="box-header with-border">
+        <div class="card card-primary">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans('import_rss_feed'); ?></h3>
+                    <h3 class="card-title"><?= trans('import_rss_feed'); ?></h3>
                 </div>
                 <div class="right">
                     <a href="<?= adminUrl('feeds'); ?>" class="btn btn-success btn-add-new">
@@ -14,7 +14,7 @@
             </div>
             <form action="<?= base_url('Rss/importFeedPost'); ?>" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label><?= trans("feed_name"); ?></label>
                         <input type="text" class="form-control" name="feed_name" placeholder="<?= trans("feed_name"); ?>" value="<?= old('feed_name'); ?>" maxlength="400" required>
@@ -87,10 +87,11 @@
                         <input type="text" class="form-control max-500" name="read_more_button_text" placeholder="<?= trans("read_more_button_text"); ?>" value="Read More">
                     </div>
                 </div>
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('import_rss_feed'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('import_rss_feed'); ?></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+

@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-sm-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title">Pilih Tema Dashboard Admin</h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title">Pilih Tema Dashboard Admin</h3>
             </div>
             <form action="<?= adminUrl('set-dashboard-theme-post'); ?>" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="row">
                         <!-- Classic Theme -->
                         <div class="col-md-4">
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="box-footer" style="text-align: right;">
+                <div class="card-footer" style="text-align: right;">
                     <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-save"></i> Terapkan Tema Global</button>
                 </div>
             </form>
@@ -91,7 +91,7 @@
 .theme-card:hover { background: #f8fafc; transform: translateY(-5px); }
 .theme-card.active { border-color: #00a8ff; background: #e0f2ff; }
 .theme-preview { transition: all 0.3s ease; }
-.theme-card:hover .theme-preview { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.theme-card:hover .theme-preview { card-shadow: 0 10px 25px rgba(0,0,0,0.1); }
 </style>
 
 <script>
@@ -103,3 +103,5 @@
         });
     });
 </script>
+
+

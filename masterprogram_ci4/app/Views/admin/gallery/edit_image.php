@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-sm-12 col-md-8">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans('update_image'); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans('update_image'); ?></h3>
             </div>
             <form action="<?= base_url('Gallery/editImagePost'); ?>" enctype="multipart/form-data" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <input type="hidden" name="id" value="<?= $image->id; ?>">
                     <input type="hidden" name="path_big" value="<?= esc($image->path_big); ?>">
                     <input type="hidden" name="path_small" value="<?= esc($image->path_small); ?>">
@@ -71,10 +71,11 @@
                         <div id="MultidvPreview"></div>
                     </div>
                 </div>
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+

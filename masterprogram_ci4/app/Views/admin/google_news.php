@@ -1,28 +1,28 @@
 <div class="row">
     <div class="col-lg-7 col-md-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans('google_news'); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans('google_news'); ?></h3>
             </div>
             <form action="<?= base_url('Admin/googleNewsPost'); ?>" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label><?= trans("status"); ?></label>
                         <?= formRadio('google_news', 1, 0, trans("enable"), trans("disable"), $generalSettings->google_news); ?>
                     </div>
 
-                    <div class="box-footer" style="padding-left: 0; padding-right: 0;">
-                        <button type="submit" name="action" value="save" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                    <div class="card-footer" style="padding-left: 0; padding-right: 0;">
+                        <button type="submit" name="action" value="save" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans('generate_feed_url'); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans('generate_feed_url'); ?></h3>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="form-group">
                     <label><?= trans("language"); ?></label>
                     <select name="lang_id" class="form-control" onchange="getParentCategoriesByLang(this.value);">
@@ -64,8 +64,8 @@
                 <div class="form-group">
                     <textarea id="urlTextarea" class="form-control" style="display: none"></textarea>
                 </div>
-                <div class="box-footer" style="padding-left: 0; padding-right: 0;">
-                    <button type="submit" name="action" value="save" id="btnGenerateFeedUrl" class="btn btn-primary pull-right"><?= trans('generate_feed_url'); ?></button>
+                <div class="card-footer" style="padding-left: 0; padding-right: 0;">
+                    <button type="submit" name="action" value="save" id="btnGenerateFeedUrl" class="btn btn-primary float-end"><?= trans('generate_feed_url'); ?></button>
                 </div>
             </div>
         </div>
@@ -112,3 +112,4 @@
         $('#urlTextarea').show();
     });
 </script>
+

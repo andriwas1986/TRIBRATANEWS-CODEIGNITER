@@ -1,31 +1,31 @@
 <div class="row">
     <div class="col-lg-6 col-md-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans('storage'); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans('storage'); ?></h3>
             </div>
             <form action="<?= base_url('Admin/storagePost'); ?>" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label><?= trans("storage"); ?></label>
                         <?= formRadio('storage', 'local', 'aws_s3', trans("local_storage"), trans("aws_storage"), $generalSettings->storage); ?>
                     </div>
-                    <div class="box-footer" style="padding-left: 0; padding-right: 0;">
-                        <button type="submit" name="action" value="save" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                    <div class="card-footer" style="padding-left: 0; padding-right: 0;">
+                        <button type="submit" name="action" value="save" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
     <div class="col-lg-6 col-md-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?= trans('aws_storage'); ?></h3>
+        <div class="card card-primary">
+            <div class="card-header with-border">
+                <h3 class="card-title"><?= trans('aws_storage'); ?></h3>
             </div>
             <form action="<?= base_url('Admin/awsS3Post'); ?>" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label class="control-label"><?= trans('aws_key'); ?></label>
                         <input type="text" class="form-control" name="aws_key" placeholder="<?= trans('aws_key'); ?>" value="<?= esc($generalSettings->aws_key); ?>">
@@ -46,11 +46,12 @@
                         <input type="text" class="form-control" name="aws_region" placeholder="E.g. us-east-1" value="<?= esc($generalSettings->aws_region); ?>">
                     </div>
 
-                    <div class="box-footer" style="padding-left: 0; padding-right: 0;">
-                        <button type="submit" name="action" value="save" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                    <div class="card-footer" style="padding-left: 0; padding-right: 0;">
+                        <button type="submit" name="action" value="save" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
+

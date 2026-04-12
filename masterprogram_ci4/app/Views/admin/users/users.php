@@ -1,7 +1,7 @@
-<div class="box">
-    <div class="box-header with-border">
+<div class="card">
+    <div class="card-header with-border">
         <div class="left">
-            <h3 class="box-title"><?= trans("users"); ?></h3>
+            <h3 class="card-title"><?= trans("users"); ?></h3>
         </div>
         <?php if (isSuperAdmin()): ?>
             <div class="right">
@@ -19,7 +19,7 @@
             </div>
         <?php endif; ?>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <div class="row">
             <div class="col-sm-12">
                 <div class="table-responsive">
@@ -52,11 +52,11 @@
                                                 if ($user->role_id == 1):?>
                                                     <label class="label bg-maroon"><?= esc($roleName); ?></label>
                                                 <?php elseif ($user->role_id == 2): ?>
-                                                    <label class="label label-success"><?= esc($roleName); ?></label>
+                                                    <label class="label badge bg-success"><?= esc($roleName); ?></label>
                                                 <?php elseif ($user->role_id == 3): ?>
                                                     <label class="label label-default"><?= esc($roleName); ?></label>
                                                 <?php else: ?>
-                                                    <label class="label label-warning"><?= esc($roleName); ?></label>
+                                                    <label class="label badge bg-warning"><?= esc($roleName); ?></label>
                                                 <?php endif;
                                             endif; ?>
                                             <?php if ($user->reward_system_enabled == 1): ?>
@@ -74,9 +74,9 @@
                                     </td>
                                     <td>
                                         <?php if ($user->status == 1): ?>
-                                            <label class="label label-success"><?= trans('active'); ?></label>
+                                            <label class="label badge bg-success"><?= trans('active'); ?></label>
                                         <?php else: ?>
-                                            <label class="label label-danger"><?= trans('banned'); ?></label>
+                                            <label class="label badge bg-danger"><?= trans('banned'); ?></label>
                                         <?php endif; ?>
                                     </td>
                                     <td><?= formatDate($user->created_at); ?></td>
@@ -204,3 +204,4 @@
         </div>
     </div>
 </div>
+

@@ -1,7 +1,7 @@
-<div class="box">
-    <div class="box-header with-border">
+<div class="card">
+    <div class="card-header with-border">
         <div class="left">
-            <h3 class="box-title"><?= trans("roles_permissions"); ?></h3>
+            <h3 class="card-title"><?= trans("roles_permissions"); ?></h3>
         </div>
         <div class="right">
             <a href="<?= adminUrl('add-role'); ?>" class="btn btn-success btn-add-new">
@@ -9,7 +9,7 @@
             </a>
         </div>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <div class="row">
             <div class="col-sm-12">
                 <div class="table-responsive">
@@ -33,7 +33,7 @@
                                     </td>
                                     <td>
                                         <?php if ($item->is_super_admin == 1): ?>
-                                            <label class="label label-success"><?= trans("all_permissions"); ?></label>
+                                            <label class="label badge bg-success"><?= trans("all_permissions"); ?></label>
                                         <?php endif;
                                         if (!empty($item->permissions)):
                                             $permissions = @explode(',', $item->permissions);
@@ -41,7 +41,7 @@
                                                 foreach ($permissions as $permission):
                                                     if (!empty($permission)):
                                                         if ($permission != "admin_panel"): ?>
-                                                            <label class="label label-success"><?= trans($permission); ?></label>
+                                                            <label class="label badge bg-success"><?= trans($permission); ?></label>
                                                         <?php endif;
                                                     endif;
                                                 endforeach;
@@ -73,3 +73,4 @@
         </div>
     </div>
 </div>
+

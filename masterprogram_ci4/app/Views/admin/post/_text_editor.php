@@ -1,12 +1,12 @@
 <?php $editorId = uniqid(); ?>
 
-<div class="box">
-    <div class="box-header with-border">
+<div class="card">
+    <div class="card-header with-border">
         <div class="left">
-            <h3 class="box-title"><?= !empty($textEditorLabel) ? $textEditorLabel : trans('content'); ?></h3>
+            <h3 class="card-title"><?= !empty($textEditorLabel) ? $textEditorLabel : trans('content'); ?></h3>
         </div>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <div id="main_editor">
             <div class="row">
                 <div class="col-sm-12 editor-buttons">
@@ -24,3 +24,4 @@
         </div>
     </div>
 </div>
+

@@ -1,13 +1,13 @@
-<div class="box">
-    <div class="box-header with-border">
+<div class="card">
+    <div class="card-header with-border">
         <div class="left">
-            <h3 class="box-title"><?= trans("images"); ?></h3>
+            <h3 class="card-title"><?= trans("images"); ?></h3>
         </div>
         <div class="right">
             <a href="<?= adminUrl('gallery-add-image'); ?>" class="btn btn-success btn-add-new"><i class="fa fa-plus"></i><?= trans("add_image"); ?></a>
         </div>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <div class="row">
             <div class="col-sm-12">
                 <div class="table-responsive">
@@ -37,7 +37,7 @@
                                                 <img src="<?= $imgBaseURL . esc($item->path_small); ?>" alt="" style="width: 100%; height: 100%; object-fit: cover">
                                             </div>
                                             <?php if ($item->is_album_cover): ?>
-                                                <label class="label label-success" style="position: absolute;left: 0;top: 0;"><?= trans("album_cover"); ?></label>
+                                                <label class="label badge bg-success" style="position: absolute;left: 0;top: 0;"><?= trans("album_cover"); ?></label>
                                             <?php endif; ?>
                                         </div>
                                     </td>
@@ -92,3 +92,4 @@
         </div>
     </div>
 </div>
+

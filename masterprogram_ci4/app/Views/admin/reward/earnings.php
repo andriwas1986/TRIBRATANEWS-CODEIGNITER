@@ -1,7 +1,7 @@
-<div class="box">
-    <div class="box-header with-border">
+<div class="card">
+    <div class="card-header with-border">
         <div class="left">
-            <h3 class="box-title"><?= trans('earnings'); ?></h3>
+            <h3 class="card-title"><?= trans('earnings'); ?></h3>
         </div>
         <div class="right">
             <a href="<?= adminUrl('reward-system/add-payout'); ?>" class="btn btn-success btn-add-new">
@@ -10,7 +10,7 @@
             </a>
         </div>
     </div>
-    <div class="box-body">
+    <div class="card-body">
         <div class="row">
             <div class="col-sm-12">
                 <div class="table-responsive">
@@ -78,3 +78,5 @@ endif; ?>
         min-height: 26px;
     }
 </style>
+
+

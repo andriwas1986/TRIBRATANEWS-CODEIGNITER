@@ -31,10 +31,10 @@
 <style>
     .wp-dashboard { padding: 20px 20px 50px 20px; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; color: #3c434a; margin-top: -20px; margin-left: -15px; margin-right: -15px;}
     .wp-title { font-size: 23px; font-weight: 400; margin: 0 0 20px 0; }
-    .wp-box { background: #fff; border: 1px solid #c3c4c7; border-radius: 0; margin-bottom: 20px; box-shadow: none; }
-    .wp-box-header { border-bottom: 1px solid #c3c4c7; padding: 12px 15px; }
-    .wp-box-header h2 { margin: 0; font-size: 14px; font-weight: 600; color: #1d2327; }
-    .wp-box-content { padding: 15px; }
+    .wp-card { background: #fff; border: 1px solid #c3c4c7; border-radius: 0; margin-bottom: 20px; card-shadow: none; }
+    .wp-card-header { border-bottom: 1px solid #c3c4c7; padding: 12px 15px; }
+    .wp-card-header h2 { margin: 0; font-size: 14px; font-weight: 600; color: #1d2327; }
+    .wp-card-content { padding: 15px; }
     
     .at-a-glance ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; }
     .at-a-glance li { width: 50%; margin-bottom: 5px; font-size: 13px; }
@@ -58,9 +58,9 @@
     <div class="row">
         <div class="col-md-6">
             <!-- At a Glance -->
-            <div class="wp-box at-a-glance">
-                <div class="wp-box-header"><h2>At a Glance</h2></div>
-                <div class="wp-box-content">
+            <div class="wp-card at-a-glance">
+                <div class="wp-card-header"><h2>At a Glance</h2></div>
+                <div class="wp-card-content">
                     <ul>
                         <li><i class="fa fa-newspaper-o"></i> <a href="<?= adminUrl('posts'); ?>"><?= $postsCount ?? 0; ?> Posts</a></li>
                         <li><i class="fa fa-file-text-o"></i> <a href="<?= adminUrl('pages'); ?>">Pages</a></li>
@@ -74,9 +74,9 @@
             </div>
 
             <!-- Activity -->
-            <div class="wp-box">
-                <div class="wp-box-header"><h2>Recent Activity</h2></div>
-                <div class="wp-box-content">
+            <div class="wp-card">
+                <div class="wp-card-header"><h2>Recent Activity</h2></div>
+                <div class="wp-card-content">
                     <div style="font-size: 12px; color: #646970; margin-bottom: 10px;">Recently Published</div>
                     <ul class="activity-list">
                         <?php if (!empty($latestPosts)): foreach ($latestPosts as $post): ?>
@@ -92,9 +92,9 @@
 
         <div class="col-md-6">
             <!-- Quick Draft -->
-            <div class="wp-box quick-draft">
-                <div class="wp-box-header"><h2>Quick Draft</h2></div>
-                <div class="wp-box-content">
+            <div class="wp-card quick-draft">
+                <div class="wp-card-header"><h2>Quick Draft</h2></div>
+                <div class="wp-card-content">
                     <form onsubmit="return false;">
                         <label>Title</label>
                         <input type="text" placeholder="What’s on your mind?">
@@ -106,9 +106,9 @@
             </div>
 
             <!-- System Info -->
-            <div class="wp-box">
-                <div class="wp-box-header"><h2>WordPress Events and News</h2></div>
-                <div class="wp-box-content">
+            <div class="wp-card">
+                <div class="wp-card-header"><h2>WordPress Events and News</h2></div>
+                <div class="wp-card-content">
                     <div style="text-align: center; padding: 20px; color: #646970;">
                         <i class="fa fa-wordpress" style="font-size: 40px; color: #dcdcde;"></i>
                         <p style="margin-top: 10px; font-size: 13px;">Police Website Platform is up to date.</p>
@@ -118,3 +118,5 @@
         </div>
     </div>
 </div>
+
+

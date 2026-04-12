@@ -64,7 +64,7 @@
         background: linear-gradient(90deg, var(--deep-blue) 0%, var(--electric-blue) 100%);
         color: white; border-radius: 50px; padding: 8px 20px; border: none;
         margin-bottom: 25px; display: flex; align-items: center;
-        box-shadow: 0 10px 25px rgba(0, 168, 255, 0.3); height: 45px;
+        card-shadow: 0 10px 25px rgba(0, 168, 255, 0.3); height: 45px;
     }
     .ticker-label {
         background: rgba(255,255,255,0.2);
@@ -72,7 +72,7 @@
         margin-right: 15px; white-space: nowrap;
         display: flex; align-items: center; gap: 5px;
     }
-    .dot-live { width: 6px; height: 6px; background: #fff; border-radius: 50%; animation: blink 1s infinite; box-shadow: 0 0 10px #fff; }
+    .dot-live { width: 6px; height: 6px; background: #fff; border-radius: 50%; animation: blink 1s infinite; card-shadow: 0 0 10px #fff; }
     @keyframes blink { 50% { opacity: 0.4; } }
     .ticker-text { width: 100%; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; opacity: 1; padding-top: 2px; }
 
@@ -80,9 +80,9 @@
     .card-colorful {
         border-radius: var(--radius); padding: 22px; margin-bottom: 25px;
         color: white; position: relative; overflow: hidden;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.08); transition: all 0.3s ease;
+        card-shadow: 0 15px 30px rgba(0,0,0,0.08); transition: all 0.3s ease;
     }
-    .card-colorful:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+    .card-colorful:hover { transform: translateY(-5px); card-shadow: 0 20px 40px rgba(0,0,0,0.15); }
     .grad-blue { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); }
     .grad-orange { background: linear-gradient(135deg, #f97316 0%, #ef4444 100%); }
     .grad-purple { background: linear-gradient(135deg, #a855f7 0%, #d946ef 100%); }
@@ -95,7 +95,7 @@
     .map-container {
         background: linear-gradient(135deg, #ffffff 0%, #e6f7ff 100%);
         border-radius: var(--radius); margin-bottom: 30px; position: relative; overflow: hidden;
-        box-shadow: 0 20px 60px rgba(0, 168, 255, 0.15), inset 0 0 30px rgba(255,255,255,0.8);
+        card-shadow: 0 20px 60px rgba(0, 168, 255, 0.15), inset 0 0 30px rgba(255,255,255,0.8);
         height: 480px; border: 1px solid #bae6ff;
     }
     .map-bg-img {
@@ -106,17 +106,17 @@
     #spiderCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; mix-blend-mode: screen; }
     .flying-dot {
         position: absolute; width: 6px; height: 6px; background: var(--electric-blue); border-radius: 50%;
-        box-shadow: 0 0 10px var(--electric-blue), 0 0 20px rgba(0, 168, 255, 0.6);
+        card-shadow: 0 0 10px var(--electric-blue), 0 0 20px rgba(0, 168, 255, 0.6);
         z-index: 3; pointer-events: none;
     }
     .map-overlay {
         position: relative; z-index: 10; padding: 25px; height: 100%;
         display: flex; flex-direction: column; justify-content: space-between; pointer-events: none;
     }
-    .live-counter-box {
+    .live-counter-card {
         background: rgba(255, 255, 255, 0.7); padding: 15px 25px; border-radius: 16px; 
         border: 1px solid rgba(0, 168, 255, 0.3); backdrop-filter: blur(15px); width: fit-content;
-        box-shadow: 0 10px 30px rgba(0, 168, 255, 0.15);
+        card-shadow: 0 10px 30px rgba(0, 168, 255, 0.15);
     }
     .counter-val { 
         font-size: 36px; font-weight: 800; color: var(--electric-blue); 
@@ -126,7 +126,7 @@
     /* NEWS LIST */
     .glass-panel {
         background: #ffffff; border-radius: var(--radius); padding: 25px;
-        box-shadow: 0 15px 40px rgba(0, 168, 255, 0.05); margin-bottom: 30px; 
+        card-shadow: 0 15px 40px rgba(0, 168, 255, 0.05); margin-bottom: 30px; 
         border: 1px solid #bae6ff; height: 480px; display: flex; flex-direction: column;
     }
     .panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
@@ -140,7 +140,7 @@
     .news-item:hover { transform: translateX(8px); background: #f8fdff; }
     .news-thumb {
         width: 60px; height: 60px; border-radius: 14px; object-fit: cover; margin-right: 15px;
-        box-shadow: 0 4px 15px rgba(0, 168, 255, 0.1); border: 2px solid #fff; background: #f0f7ff;
+        card-shadow: 0 4px 15px rgba(0, 168, 255, 0.1); border: 2px solid #fff; background: #f0f7ff;
     }
     .news-title { font-size: 13px; font-weight: 700; color: #334155; margin: 0 0 5px 0; line-height: 1.4; }
     .news-meta { font-size: 11px; color: #94a3b8; display: flex; align-items: center; gap: 8px; }
@@ -150,7 +150,7 @@
     .digital-panel {
         background: #0f172a; /* Background Gelap biar Angka Digital Menyala */
         border-radius: var(--radius); padding: 20px;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); margin-bottom: 30px; 
+        card-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); margin-bottom: 30px; 
         border: 1px solid #1e293b;
         display: flex; align-items: center; justify-content: space-between;
         position: relative; overflow: hidden;
@@ -177,7 +177,7 @@
 
     /* TABLE */
     .tbl-modern td { padding: 15px 0; border-bottom: 1px solid #f0f7ff; vertical-align: middle; font-size: 13px; }
-    .user-avt { width: 45px; height: 45px; border-radius: 12px; object-fit: cover; box-shadow: 0 4px 15px rgba(0, 168, 255, 0.1); }
+    .user-avt { width: 45px; height: 45px; border-radius: 12px; object-fit: cover; card-shadow: 0 4px 15px rgba(0, 168, 255, 0.1); }
 </style>
 
 <div class="dashboard-ultimate">
@@ -242,7 +242,7 @@
                         </div>
                         <div style="background:rgba(0, 168, 255, 0.1); color:var(--electric-blue); padding:5px 15px; border-radius:30px; font-size:10px; font-weight:800; border:1px solid rgba(0, 168, 255, 0.3);">ONLINE</div>
                     </div>
-                    <div class="live-counter-box">
+                    <div class="live-counter-card">
                         <div class="counter-val" id="liveVisitorCount">1,245</div>
                         <div style="font-size:10px; text-transform:uppercase; letter-spacing:1.5px; color:#64748b; font-weight:700; margin-top:5px;">Active Nodes</div>
                     </div>
@@ -465,3 +465,4 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+

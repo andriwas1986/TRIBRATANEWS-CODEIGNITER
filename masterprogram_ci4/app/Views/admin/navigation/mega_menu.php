@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col-md-4">
-        <div class="box box-primary">
-            <div class="box-header with-border"><h3 class="box-title">Banner Utama Mega Menu</h3></div>
+        <div class="card card-primary">
+            <div class="card-header with-border"><h3 class="card-title">Banner Utama Mega Menu</h3></div>
             <form action="<?= adminUrl('mega-menu-settings-post'); ?>" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
                 <input type="hidden" name="form_type" value="megamenu">
                 <input type="hidden" name="action" value="add" id="form_action">
                 <input type="hidden" name="id" value="" id="form_id">
                 
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label>Slug Menu Utama</label>
                         <input type="text" name="menu_slug" id="form_slug" class="form-control" required>
@@ -35,8 +35,8 @@
                         <input type="text" name="menu_image_url" id="form_img_url" class="form-control" placeholder="Atau URL manual..." style="margin-top:5px;">
                     </div>
                 </div>
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right">Simpan Banner</button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end">Simpan Banner</button>
                     <button type="button" class="btn btn-default" onclick="resetFormMega()">Batal</button>
                 </div>
             </form>
@@ -44,9 +44,9 @@
     </div>
 
     <div class="col-md-8">
-        <div class="box">
-            <div class="box-header with-border"><h3 class="box-title">Daftar Banner Mega Menu</h3></div>
-            <div class="box-body">
+        <div class="card">
+            <div class="card-header with-border"><h3 class="card-title">Daftar Banner Mega Menu</h3></div>
+            <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped">
                         <thead>
@@ -56,7 +56,7 @@
                             <?php if(!empty($megamenus)): foreach($megamenus as $m): ?>
                                 <tr>
                                     <td><strong><?= esc($m->menu_slug); ?></strong></td>
-                                    <td><span class="label label-info"><?= esc($m->menu_style); ?></span></td>
+                                    <td><span class="label badge bg-info"><?= esc($m->menu_style); ?></span></td>
                                     <td><?= esc($m->menu_title); ?></td>
                                     <td>
                                         <button class="btn btn-sm btn-success" onclick="editMenu('<?= $m->id ?>','<?= $m->menu_slug ?>','<?= $m->menu_style ?>','<?= $m->menu_title ?>','<?= htmlspecialchars($m->menu_desc, ENT_QUOTES) ?>','<?= $m->menu_image ?>')"><i class="fa fa-edit"></i></button>
@@ -77,15 +77,15 @@
 
 <div class="row">
     <div class="col-md-4">
-        <div class="box box-success">
-            <div class="box-header with-border"><h3 class="box-title">Pengaturan Sub-Menu (Icon & Teks)</h3></div>
+        <div class="card card-success">
+            <div class="card-header with-border"><h3 class="card-title">Pengaturan Sub-Menu (Icon & Teks)</h3></div>
             <form action="<?= adminUrl('mega-menu-settings-post'); ?>" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
                 <input type="hidden" name="form_type" value="submenu">
                 <input type="hidden" name="action" value="add" id="form_sub_action">
                 <input type="hidden" name="id" value="" id="form_sub_id">
                 
-                <div class="box-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label>Slug Sub-Menu</label>
                         <input type="text" name="sub_slug" id="form_sub_slug" class="form-control" placeholder="Contoh: skck-online" required>
@@ -107,8 +107,8 @@
                         <input type="text" name="sub_image_url" id="form_sub_img_url" class="form-control" placeholder="Atau URL manual gambar..." style="margin-top:5px;">
                     </div>
                 </div>
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-success pull-right">Simpan Sub-Menu</button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-success float-end">Simpan Sub-Menu</button>
                     <button type="button" class="btn btn-default" onclick="resetFormSub()">Batal</button>
                 </div>
             </form>
@@ -116,9 +116,9 @@
     </div>
 
     <div class="col-md-8">
-        <div class="box">
-            <div class="box-header with-border"><h3 class="box-title">Daftar Setingan Sub-Menu</h3></div>
-            <div class="box-body">
+        <div class="card">
+            <div class="card-header with-border"><h3 class="card-title">Daftar Setingan Sub-Menu</h3></div>
+            <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped">
                         <thead>
@@ -192,3 +192,4 @@ function resetFormSub() {
     document.getElementById('form_sub_desc').value = '';
 }
 </script>
+

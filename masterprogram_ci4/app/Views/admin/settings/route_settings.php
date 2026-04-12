@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col-sm-12 col-lg-8">
-        <div class="box">
-            <div class="box-header with-border">
+        <div class="card">
+            <div class="card-header with-border">
                 <div class="left">
-                    <h3 class="box-title"><?= trans("route_settings");; ?></h3>
+                    <h3 class="card-title"><?= trans("route_settings");; ?></h3>
                 </div>
             </div>
             <form action="<?= base_url('Admin/routeSettingsPost'); ?>" method="post">
                 <?= csrf_field(); ?>
-                <div class="box-body">
+                <div class="card-body">
                     <?php if (!empty($routes)):
                         foreach ($routes as $key => $value):?>
                             <div class="row">
@@ -27,8 +27,8 @@
                     <?php endif; ?>
                 </div>
 
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right"><?= trans('save_changes'); ?></button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-end"><?= trans('save_changes'); ?></button>
                 </div>
             </form>
         </div>
@@ -37,5 +37,7 @@
         </div>
     </div>
 </div>
+
+
 
 

@@ -96,3 +96,4 @@ if ($question->answer_format == 'large_image') {
         </div>
     </div>
 </div>
+

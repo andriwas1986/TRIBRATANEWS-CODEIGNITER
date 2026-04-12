@@ -49,7 +49,7 @@
                                         <?php foreach ($audios as $audio):
                                             if (!empty($audio)): ?>
                                                 <div class="col-file-manager" id="audio_col_id_<?= $audio->id; ?>">
-                                                    <div class="file-box" data-audio-id="<?= $audio->id; ?>" data-audio-name="<?= esc($audio->audio_name); ?>">
+                                                    <div class="file-card" data-audio-id="<?= $audio->id; ?>" data-audio-name="<?= esc($audio->audio_name); ?>">
                                                         <div class="image-container icon-container">
                                                             <div class="file-icon file-icon-lg" data-type="<?= @pathinfo($audio->audio_path, PATHINFO_EXTENSION); ?>"></div>
                                                         </div>
@@ -69,7 +69,7 @@
             </div>
             <div class="modal-footer">
                 <div class="file-manager-footer">
-                    <button type="button" id="btn_audio_delete" class="btn btn-danger pull-left btn-file-delete"><i class="fa fa-trash"></i>&nbsp;&nbsp;<?= trans('delete'); ?></button>
+                    <button type="button" id="btn_audio_delete" class="btn btn-danger float-start btn-file-delete"><i class="fa fa-trash"></i>&nbsp;&nbsp;<?= trans('delete'); ?></button>
                     <button type="button" id="btn_audio_select" class="btn bg-olive btn-file-select"><i class="fa fa-check"></i>&nbsp;&nbsp;<?= trans('select_audio'); ?></button>
                     <button type="button" class="btn btn-default" data-dismiss="modal"><?= trans('close'); ?></button>
                 </div>
@@ -142,3 +142,5 @@
         $(this).hide();
     });
 </script>
+
+

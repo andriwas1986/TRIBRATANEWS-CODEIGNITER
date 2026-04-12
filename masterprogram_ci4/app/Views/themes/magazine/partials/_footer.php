@@ -84,7 +84,7 @@
         <button type="button" class="btn btn-md btn-block btn-custom" aria-label="close" onclick="closeCookiesWarning();"><?= trans("accept_cookies"); ?></button>
     </div>
 <?php endif; ?>
-<script src="<?= base_url($assetsPath . '/js/jquery-3.6.1.min.js'); ?> "></script>
+<script src="<?= base_url($assetsPath . '/js/jquery-3.7.1.min.js'); ?> "></script>
 <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?> "></script>
 <script src="<?= base_url($assetsPath . '/js/plugins-2.4.2.js'); ?> "></script>
 <script src="<?= base_url($assetsPath . '/js/script-2.4.min.js'); ?> "></script>

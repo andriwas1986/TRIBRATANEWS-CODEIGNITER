@@ -223,6 +223,14 @@ class AdminController extends BaseAdminController
     public function themes()
     {
         checkSuperAdmin();
+        
+        // Auto-seed JNews themes if missing
+        $db = \Config\Database::connect();
+        $check = $db->table('themes')->where('theme', 'jnews_tech')->get()->getRow();
+        if (empty($check)) {
+            $this->seedThemes();
+        }
+
         $data['title'] = trans("themes");
         $data['themes'] = $this->settingsModel->getThemes();
 

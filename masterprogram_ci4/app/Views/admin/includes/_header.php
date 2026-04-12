@@ -435,44 +435,20 @@
                         <li class="nav-item nav-preferences">
                             <a class="nav-link" href="<?= adminUrl('preferences'); ?>"><i class="fa fa-check-square-o"></i><p><?= trans("preferences"); ?></p></a>
                         </li>
-                        <li class="nav-item has-treeview<?php isAdminNavActive(['settings', 'general-settings', 'email-settings', 'social-media-settings', 'facebook-login', 'google-login', 'storage-settings', 'route-settings', 'visual-settings'], 'menu-open'); ?>">
+                        <li class="nav-item has-treeview<?php isAdminNavActive(['settings', 'general-settings', 'email-settings', 'social-media-settings', 'facebook-login', 'google-login', 'storage-settings', 'route-settings', 'visual-settings', 'header-settings', 'mega-menu-settings', 'dashboard-themes', 'font-settings', 'social-login-settings'], 'menu-open'); ?>">
                             <a class="nav-link" href="#"><i class="fa fa-cogs"></i> <p><?= trans("settings"); ?> <i class="nav-arrow fa fa-angle-left float-end"></i></p></a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item nav-general-settings"><a class="nav-link" href="<?= adminUrl('general-settings'); ?>"><i class="fa fa-cog"></i><p><?= trans("general_settings"); ?></p></a></li>
                                 <li class="nav-item nav-visual-settings"><a class="nav-link" href="<?= adminUrl('visual-settings'); ?>"><i class="fa fa-paint-brush"></i><p><?= trans("visual_settings"); ?></p></a></li>
-                                <li class="nav-item nav-email-settings"><a class="nav-link" href="<?= adminUrl('email-settings'); ?>"><i class="fa fa-at"></i><p><?= trans("email_settings"); ?></p></a></li>
+                                <li class="nav-item nav-header-settings"><a class="nav-link" href="<?= adminUrl('header-settings'); ?>"><i class="fa fa-television"></i> <p>Header Settings</p></a></li>
+                                <li class="nav-item nav-mega-menu-settings"><a class="nav-link" href="<?= adminUrl('mega-menu-settings'); ?>"><i class="fa fa-list-alt"></i> <p>Mega Menu Custom</p></a></li>
+                                <li class="nav-item nav-dashboard-themes"><a class="nav-link" href="<?= adminUrl('dashboard-themes'); ?>"><i class="fa fa-magic"></i> <p>Tema Dashboard</p></a></li>
+                                <li class="nav-item nav-font-settings"><a class="nav-link" href="<?= adminUrl('font-settings'); ?>"><i class="fa fa-font"></i> <p><?= trans("font_settings"); ?></p></a></li>
+                                <li class="nav-item nav-email-settings"><a class="nav-link" href="<?= adminUrl('email-settings'); ?>"><i class="fa fa-envelope"></i><p><?= trans("email_settings"); ?></p></a></li>
                                 <li class="nav-item nav-social-media-settings"><a class="nav-link" href="<?= adminUrl('social-media-settings'); ?>"><i class="fa fa-share-alt"></i><p><?= trans("social_media_settings"); ?></p></a></li>
-                                <li class="nav-item nav-facebook-login"><a class="nav-link" href="<?= adminUrl('facebook-login'); ?>"><i class="fa fa-facebook"></i><p><?= trans("facebook_login"); ?></p></a></li>
-                                <li class="nav-item nav-google-login"><a class="nav-link" href="<?= adminUrl('google-login'); ?>"><i class="fa fa-google"></i><p><?= trans("google_login"); ?></p></a></li>
+                                <li class="nav-item nav-facebook-login nav-google-login nav-social-login-settings"><a class="nav-link" href="<?= adminUrl('facebook-login'); ?>"><i class="fa fa-key"></i><p>Social Login Settings</p></a></li>
                                 <li class="nav-item nav-storage-settings"><a class="nav-link" href="<?= adminUrl('storage-settings'); ?>"><i class="fa fa-database"></i><p><?= trans("storage_settings"); ?></p></a></li>
                                 <li class="nav-item nav-route-settings"><a class="nav-link" href="<?= adminUrl('route-settings'); ?>"><i class="fa fa-map-signs"></i><p><?= trans("route_settings"); ?></p></a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item has-treeview<?php isAdminNavActive(['header-settings', 'mega-menu-settings', 'dashboard-themes']); ?>">
-                            <a class="nav-link" href="#"><i class="fa fa-cogs"></i><p><?= trans("settings"); ?> <i class="nav-arrow fa fa-angle-left float-end"></i></p></a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item nav-header-settings">
-                                    <a class="nav-link" href="<?= adminUrl('header-settings'); ?>"><i class="fa fa-paint-brush"></i> <p>Header Settings</p></a>
-                                </li>
-                                <li class="nav-item nav-mega-menu-settings">
-                                    <a class="nav-link" href="<?= adminUrl('mega-menu-settings'); ?>"><i class="fa fa-window-restore"></i> <p>Mega Menu Custom</p></a>
-                                </li>
-                                </li>
-                                <li class="nav-item nav-email-settings">
-                                    <a class="nav-link" href="<?= adminUrl('email-settings'); ?>"><i class="fa fa-envelope-o"></i> <p><?= trans("email_settings"); ?></p></a>
-                                </li>
-                                <li class="nav-item nav-font-settings">
-                                    <a class="nav-link" href="<?= adminUrl('font-settings'); ?>"><i class="fa fa-font"></i> <p><?= trans("font_settings"); ?></p></a>
-                                </li>
-                                <li class="nav-item nav-social-login-settings">
-                                    <a class="nav-link" href="<?= adminUrl('social-login-settings'); ?>"><i class="fa fa-share-alt"></i> <p><?= trans("social_login_settings"); ?></p></a>
-                                </li>
-                                <li class="nav-item nav-route-settings">
-                                    <a class="nav-link" href="<?= adminUrl('route-settings'); ?>"><i class="fa fa-map-signs"></i> <p><?= trans("route_settings"); ?></p></a>
-                                </li>
-                                <li class="nav-item nav-dashboard-themes">
-                                    <a class="nav-link" href="<?= adminUrl('dashboard-themes'); ?>"><i class="fa fa-paint-brush"></i> <p>Tema Dashboard</p></a>
-                                </li>
                             </ul>
                         </li>
                     <?php endif;

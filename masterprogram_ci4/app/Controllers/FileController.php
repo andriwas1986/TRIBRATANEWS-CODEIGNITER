@@ -124,7 +124,14 @@ class FileController extends BaseAdminController
      */
     public function uploadQuizImageFile()
     {
-        $this->fileModel->uploadQuizImage();
+        $fileId = $this->fileModel->uploadQuizImage();
+        if ($fileId) {
+            $file = $this->fileModel->getQuizImage($fileId);
+            if (!empty($file)) {
+                $file->img_base_url = getBaseURLByStorage($file->storage);
+                echo json_encode($file);
+            }
+        }
     }
 
     /**
@@ -203,7 +210,14 @@ class FileController extends BaseAdminController
      */
     public function uploadRecipeImage()
     {
-        $this->fileModel->uploadRecipeImage();
+        $fileId = $this->fileModel->uploadRecipeImage();
+        if ($fileId) {
+            $file = $this->fileModel->getRecipeImage($fileId);
+            if (!empty($file)) {
+                $file->img_base_url = getBaseURLByStorage($file->storage);
+                echo json_encode($file);
+            }
+        }
     }
 
     /**

@@ -57,6 +57,7 @@ class FileModel extends BaseModel
             $data['storage'] = $this->generalSettings->storage;
             $db = \Config\Database::connect(null, false);
             $db->table('images')->insert($data);
+            $insertId = $db->insertID();
             $db->close();
             $this->uploadModel->deleteTempFile($tempFile['path']);
             //move to s3
@@ -167,6 +168,7 @@ class FileModel extends BaseModel
 
             $db = \Config\Database::connect(null, false);
             $db->table('post_item_images')->insert($data);
+            $insertId = $db->insertID();
             $db->close();
             $this->uploadModel->deleteTempFile($tempFile['path']);
             //move to s3
@@ -178,7 +180,9 @@ class FileModel extends BaseModel
                     $awsModel->uploadFile($data['image_small']);
                 }
             }
+            return $insertId;
         }
+        return false;
     }
 
     //get quiz image
@@ -259,6 +263,7 @@ class FileModel extends BaseModel
 
             $db = \Config\Database::connect(null, false);
             $db->table('post_item_images')->insert($data);
+            $insertId = $db->insertID();
             $db->close();
             $this->uploadModel->deleteTempFile($tempFile['path']);
             //move to s3
@@ -267,7 +272,9 @@ class FileModel extends BaseModel
                 $awsModel = new AwsModel();
                 $awsModel->uploadFile($data['image_default']);
             }
+            return $insertId;
         }
+        return false;
     }
 
     //get recipe image

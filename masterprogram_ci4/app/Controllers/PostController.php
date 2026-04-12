@@ -94,7 +94,7 @@ class PostController extends BaseAdminController
         $val = \Config\Services::validation();
         $val->setRule('title', trans("title"), 'required|max_length[500]');
         $val->setRule('category_id', trans("category"), 'required');
-        $val->setRule('optional_url', trans("cateoptional_urlgory"), 'max_length[1000]');
+        $val->setRule('optional_url', trans("optional_url"), 'max_length[1000]');
         if (!$this->validate(getValRules($val))) {
             $this->session->setFlashdata('errors', $val->getErrors());
             return redirect()->to(adminUrl('add-post?type=' . cleanStr($postType)))->withInput();
@@ -541,6 +541,11 @@ class PostController extends BaseAdminController
         } else {
             setErrorMessage("msg_error");
         }
+        if ($this->request->isAJAX()) {
+            echo json_encode(['result' => 1]);
+        } else {
+            return redirect()->to(adminUrl('posts'));
+        }
     }
 
     /**
@@ -861,6 +866,7 @@ class PostController extends BaseAdminController
     {
         $postId = inputPost('post_id');
         $this->postAdminModel->deletePostMainImage($postId);
+        echo json_encode(['result' => 1]);
     }
 
     /**
@@ -870,6 +876,7 @@ class PostController extends BaseAdminController
     {
         $fileId = inputPost('file_id');
         $this->postAdminModel->deletePostAdditionalImage($fileId);
+        echo json_encode(['result' => 1]);
     }
 
     /**
@@ -879,6 +886,7 @@ class PostController extends BaseAdminController
     {
         $id = inputPost('id');
         $this->postAdminModel->deletePostFile($id);
+        echo json_encode(['result' => 1]);
     }
 
     /*

@@ -50,7 +50,7 @@
                                             </button>
                                             <ul class="dropdown-menu options-dropdown">
                                                 <li>
-                                                    <a href="javascript:void(0)" onclick="deleteItem('AdminSkmController/delete','<?= $item->id; ?>','Apakah Anda yakin ingin menghapus data survei ini?');">
+                                                    <a href="javascript:void(0)" onclick="deleteItem('skm/delete','<?= $item->id; ?>','Apakah Anda yakin ingin menghapus data survei ini?');">
                                                         <i class="fa fa-trash option-icon"></i><?= trans('delete'); ?>
                                                     </a>
                                                 </li>

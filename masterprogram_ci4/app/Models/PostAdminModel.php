@@ -75,6 +75,7 @@ class PostAdminModel extends BaseModel
         if (empty($data['show_right_column'])) {
             $data['show_right_column'] = 0;
         }
+        $data['site_id'] = defined('CURRENT_SITE_ID') ? CURRENT_SITE_ID : 1;
         if ($this->builder->insert($data)) {
             return $this->db->insertID();
         }

@@ -20,10 +20,20 @@ class SkmController extends BaseController
     public function submit()
     {
         if ($this->request->isAJAX()) {
+            $serviceType = inputPost('service_type');
+            $allowedServices = ['SPKT', 'SIM', 'SKCK'];
+            
+            if (!in_array($serviceType, $allowedServices)) {
+                return $this->response->setJSON([
+                    'status' => 'error',
+                    'message' => 'Layanan tersebut tidak valid.'
+                ]);
+            }
+
             $data = [
                 'name'          => inputPost('name'),
                 'phone'         => inputPost('phone'),
-                'service_type'  => inputPost('service_type'),
+                'service_type'  => $serviceType,
                 'user_ip'       => $this->request->getIPAddress(),
                 'r1'            => clrNum(inputPost('r1')),
                 'r2'            => clrNum(inputPost('r2')),

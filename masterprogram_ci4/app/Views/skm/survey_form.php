@@ -34,12 +34,9 @@
                                 <label style="font-weight: 600;">Jenis Layanan yang Diterima</label>
                                 <select name="service_type" class="form-control" required>
                                     <option value="">-- Pilih Layanan --</option>
-                                    <option value="SPKT">SPKT (Laporan/Pengaduan)</option>
+                                    <option value="SPKT">SPKT (Layanan Pengaduan)</option>
                                     <option value="SKCK">SKCK (Surat Keterangan Catatan Kepolisian)</option>
                                     <option value="SIM">SIM (Surat Izin Mengemudi)</option>
-                                    <option value="SIDIK JARI">Perumusan Sidik Jari</option>
-                                    <option value="IZIN KERAMAIAN">Perizinan Keramaian</option>
-                                    <option value="LAINNYA">Layanan Lainnya</option>
                                 </select>
                             </div>
                         </div>

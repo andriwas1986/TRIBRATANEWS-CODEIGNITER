@@ -3,8 +3,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-    /* Ultra-Premium Luxury Dashboard CSS */
-<style>
     /* Royal Clean Luxury Dashboard CSS */
     :root {
         --royal-bg: #f8fafc;
@@ -205,21 +203,23 @@
 
 
 <?php
-function getStars($score) {
-    if (!$score) return '';
-    $stars = ($score / 4) * 5;
-    $output = '<div class="star-rating d-inline-block" style="color: var(--royal-gold); font-size: 1.2rem; filter: drop-shadow(0 0 5px var(--royal-gold-glow));">';
-    for ($i = 1; $i <= 5; $i++) {
-        if ($i <= floor($stars)) {
-            $output .= '<i class="fa fa-star me-1"></i>';
-        } elseif ($i - 0.5 <= $stars) {
-            $output .= '<i class="fa fa-star-half-o me-1"></i>';
-        } else {
-            $output .= '<i class="fa fa-star-o me-1"></i>';
+if (!function_exists('getStars')) {
+    function getStars($score) {
+        if (!$score) return '';
+        $stars = ($score / 4) * 5;
+        $output = '<div class="star-rating d-inline-block" style="color: var(--royal-gold); font-size: 1.2rem; filter: drop-shadow(0 0 5px var(--royal-gold-glow));">';
+        for ($i = 1; $i <= 5; $i++) {
+            if ($i <= floor($stars)) {
+                $output .= '<i class="fa fa-star me-1"></i>';
+            } elseif ($i - 0.5 <= $stars) {
+                $output .= '<i class="fa fa-star-half-o me-1"></i>';
+            } else {
+                $output .= '<i class="fa fa-star-o me-1"></i>';
+            }
         }
+        $output .= '</div>';
+        return $output;
     }
-    $output .= '</div>';
-    return $output;
 }
 $monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
 ?>
@@ -588,11 +588,13 @@ $monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "
 
 
 <?php
-function truncateString($str, $len) {
-    if (strlen($str) > $len) {
-        return substr($str, 0, $len) . '...';
+if (!function_exists('truncateString')) {
+    function truncateString($str, $len) {
+        if (mb_strlen($str) > $len) {
+            return mb_substr($str, 0, $len) . '...';
+        }
+        return $str;
     }
-    return $str;
 }
 ?>
 

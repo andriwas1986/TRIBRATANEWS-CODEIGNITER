@@ -13,7 +13,6 @@
 </div>
 <script src="<?= base_url('assets/admin/js/jquery-ui.min.js'); ?>"></script>
 <script>$.widget.bridge('uibutton', $.ui.button);</script>
-<script src="<?= base_url('assets/admin/plugins/bootstrap/js/bootstrap.min.js'); ?>"></script>
 <script src="<?= base_url('assets/admin/plugins/bootstrap5/js/bootstrap.bundle.min.js'); ?>"></script>
 <script src="<?= base_url('assets/admin/js/adminlte.min.js'); ?>"></script>
 <script src="<?= base_url('assets/admin/js/adminlte4.min.js'); ?>"></script>

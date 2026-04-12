@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/admin/plugins/file-uploader/css/styles-1.0.css'); ?>"/>
     <link rel="stylesheet" href="<?= base_url('assets/admin/css/custom-2.4.min.css'); ?>">
     <script src="<?= base_url('assets/admin/js/jquery.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/admin/js/jquery-migrate.min.js'); ?>"></script>
     <script src="<?= base_url('assets/admin/plugins/overlay-scrollbars/OverlayScrollbars.min.js'); ?>"></script>
     <script>$(function () {
             $('.sidebar-scrollbar').overlayScrollbars({});

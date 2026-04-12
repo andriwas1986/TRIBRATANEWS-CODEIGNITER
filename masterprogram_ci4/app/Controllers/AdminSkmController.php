@@ -39,7 +39,9 @@ class AdminSkmController extends BaseAdminController
         $data = [
             'title' => 'Statistik SKM',
             'stats' => $this->skmModel->getStatistics(),
-            'overallAvg' => $this->skmModel->getOverallAvg()
+            'overallAvg' => $this->skmModel->getOverallAvg(),
+            'yearlyStats' => $this->skmModel->getYearlyStatistics(),
+            'monthlyStats' => $this->skmModel->getMonthlyStatistics(date('Y'))
         ];
 
         echo view('admin/includes/_header', $data);
@@ -69,7 +71,7 @@ class AdminSkmController extends BaseAdminController
             return redirect()->to(adminUrl('skm/statistics'));
         }
 
-        $services = ['SPKT', 'SKCK', 'SIM', 'SIDIK JARI', 'IZIN KERAMAIAN', 'LAINNYA'];
+        $services = ['SPKT', 'SKCK', 'SIM'];
         
         // Clear old dummy data if exists (using truncate for speed)
         $this->skmModel->truncate();
@@ -84,12 +86,16 @@ class AdminSkmController extends BaseAdminController
             $this->skmModel->insert($this->generateMockData(3, $services));
         }
 
-        setSuccessMessage("Populasi Data Berhasil: 1000 responden ditambahkan (80% Sangat Puas, 20% Puas).");
+        setSuccessMessage("Populasi Data Berhasil: 1000 responden ditambahkan (SPKT, SIM, SKCK).");
         return redirect()->to(adminUrl('skm/statistics'));
     }
 
     private function generateMockData($rating, $services)
     {
+        // Spread dates across the last 2 years for yearly/monthly table testing
+        $randomDays = rand(0, 730);
+        $createdAt = date('Y-m-d H:i:s', strtotime('-' . $randomDays . ' days'));
+
         $data = [
             'name' => 'Responden ' . rand(1000, 9999),
             'phone' => '08' . rand(111111111, 999999999),
@@ -99,7 +105,7 @@ class AdminSkmController extends BaseAdminController
             'r4' => $rating, 'r5' => $rating, 'r6' => $rating,
             'r7' => $rating, 'r8' => $rating, 'r9' => $rating,
             'suggestion' => ($rating == 4) ? 'Sangat memuaskan. Pelayanan cepat dan transparan.' : 'Sudah baik, tingkatkan progresnya.',
-            'created_at' => date('Y-m-d H:i:s', strtotime('-' . rand(0, 30) . ' days'))
+            'created_at' => $createdAt
         ];
         $total = $rating * 9;
         $data['total_score'] = $total;

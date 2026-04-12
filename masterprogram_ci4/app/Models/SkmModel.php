@@ -88,7 +88,9 @@ class SkmModel extends Model
 
     public function getSurveys()
     {
-        return $this->orderBy('id DESC')->get()->getResult();
+        return $this->whereIn('service_type', ['SPKT', 'SIM', 'SKCK'])
+            ->orderBy('id DESC')
+            ->get()->getResult();
     }
 
     public function getStatistics()
@@ -96,6 +98,7 @@ class SkmModel extends Model
         $db = \Config\Database::connect();
         return $db->table($this->table)
             ->select('service_type, COUNT(*) as total, AVG(average_score) as avg_score')
+            ->whereIn('service_type', ['SPKT', 'SIM', 'SKCK'])
             ->groupBy('service_type')
             ->get()->getResult();
     }
@@ -103,7 +106,35 @@ class SkmModel extends Model
     public function getOverallAvg()
     {
         $db = \Config\Database::connect();
-        $res = $db->table($this->table)->select('AVG(average_score) as avg')->get()->getRow();
+        $res = $db->table($this->table)
+            ->select('AVG(average_score) as avg')
+            ->whereIn('service_type', ['SPKT', 'SIM', 'SKCK'])
+            ->get()->getRow();
         return $res ? number_format($res->avg, 2) : 0;
     }
+
+    public function getYearlyStatistics()
+    {
+        $db = \Config\Database::connect();
+        return $db->table($this->table)
+            ->select('YEAR(created_at) as year, AVG(average_score) as avg_score, COUNT(*) as total')
+            ->whereIn('service_type', ['SPKT', 'SIM', 'SKCK'])
+            ->groupBy('year')
+            ->orderBy('year', 'DESC')
+            ->get()->getResult();
+    }
+
+    public function getMonthlyStatistics($year = null)
+    {
+        if (!$year) $year = date('Y');
+        $db = \Config\Database::connect();
+        return $db->table($this->table)
+            ->select('MONTH(created_at) as month, AVG(average_score) as avg_score, COUNT(*) as total')
+            ->where('YEAR(created_at)', $year)
+            ->whereIn('service_type', ['SPKT', 'SIM', 'SKCK'])
+            ->groupBy('month')
+            ->orderBy('month', 'ASC')
+            ->get()->getResult();
+    }
 }
+

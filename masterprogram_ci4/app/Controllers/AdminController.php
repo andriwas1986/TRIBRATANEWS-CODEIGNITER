@@ -226,7 +226,7 @@ class AdminController extends BaseAdminController
         
         // Auto-seed JNews themes if missing
         $db = \Config\Database::connect();
-        $check = $db->table('themes')->where('theme', 'jnews_tech')->get()->getRow();
+        $check = $db->table('themes')->where('theme', 'jnews_classic')->get()->getRow();
         if (empty($check)) {
             $this->seedThemes();
         }
@@ -269,6 +269,15 @@ class AdminController extends BaseAdminController
                 'theme_color' => '#eb2f06',
                 'block_color' => '#eb2f06',
                 'mega_menu_color' => '#b71540',
+                'is_active' => 0
+            ],
+            [
+                'theme' => 'jnews_classic',
+                'theme_name' => 'JNews Classic',
+                'theme_folder' => 'jnews_classic',
+                'theme_color' => '#f90c1e',
+                'block_color' => '#f90c1e',
+                'mega_menu_color' => '#212121',
                 'is_active' => 0
             ]
         ];

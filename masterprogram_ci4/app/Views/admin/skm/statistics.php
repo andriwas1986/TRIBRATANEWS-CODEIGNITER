@@ -4,26 +4,29 @@
 
 <style>
     /* Ultra-Premium Luxury Dashboard CSS */
+<style>
+    /* Royal Clean Luxury Dashboard CSS */
     :root {
-        --midnight-deep: #050b18;
-        --midnight-main: #0a192f;
-        --midnight-card: rgba(17, 34, 64, 0.7);
-        --royal-gold: #d4af37;
-        --royal-gold-light: #f1c40f;
-        --royal-gold-glow: rgba(212, 175, 55, 0.3);
-        --glass-border: rgba(212, 175, 55, 0.2);
-        --text-platinum: #e6f1ff;
-        --text-gold: #f6e05e;
+        --royal-bg: #f8fafc;
+        --royal-main: #1e3a8a;
+        --royal-card: #ffffff;
+        --royal-gold: #b8860b; /* Darker gold for better contrast on light bg */
+        --royal-gold-light: #d4af37;
+        --royal-gold-glow: rgba(184, 134, 11, 0.15);
+        --glass-border: rgba(30, 58, 138, 0.1);
+        --text-deep: #0f172a;
+        --text-muted: #64748b;
     }
 
     .luxury-container {
-        padding: 25px;
-        background: radial-gradient(circle at 10% 20%, var(--midnight-main) 0%, var(--midnight-deep) 100%);
+        padding: 30px;
+        background: var(--royal-bg);
         border-radius: 30px;
-        color: var(--text-platinum);
+        color: var(--text-deep);
         font-family: 'Inter', sans-serif;
-        box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
         min-height: 100vh;
+        position: relative;
+        overflow: hidden;
     }
 
     h1, h2, h3, h4, h5, .score-big {
@@ -31,78 +34,60 @@
     }
 
     .hero-stats-card {
-        background: linear-gradient(135deg, #112240 0%, #1a365d 100%);
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
         color: white;
         border-radius: 32px;
         padding: 40px;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 
-                    inset 0 0 20px rgba(212, 175, 55, 0.05);
+        box-shadow: 0 20px 40px rgba(30, 58, 138, 0.15);
         margin-bottom: 30px;
-        border: 1px solid var(--glass-border);
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(255,255,255,0.1);
+        transition: all 0.5s ease;
     }
 
     .hero-stats-card::before {
         content: "";
         position: absolute;
-        top: -50%;
+        top: -20%;
         right: -10%;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(circle, var(--royal-gold-glow) 0%, transparent 70%);
-        filter: blur(60px);
-        opacity: 0.5;
-        pointer-events: none;
-    }
-
-    .hero-stats-card:hover {
-        transform: translateY(-5px) scale(1.01);
-        border-color: var(--royal-gold);
-        box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.6), 
-                    0 0 30px var(--royal-gold-glow);
+        width: 350px;
+        height: 350px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+        filter: blur(40px);
     }
 
     .score-big {
         font-size: 5.5rem;
         font-weight: 800;
         line-height: 1;
-        margin-bottom: 15px;
+        margin-bottom: 5px;
         letter-spacing: -3px;
-        background: linear-gradient(to bottom, #ffffff 30%, var(--royal-gold) 100%);
+        background: linear-gradient(to bottom, #ffffff 40%, rgba(255,255,255,0.7) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
-        animation: pulseGold 3s infinite alternate;
-    }
-
-    @keyframes pulseGold {
-        0% { filter: drop-shadow(0 0 5px rgba(255,255,255,0.2)); }
-        100% { filter: drop-shadow(0 0 20px var(--royal-gold-glow)); }
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
     }
 
     .luxury-card {
-        background: var(--midnight-card);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background: var(--royal-card);
         border-radius: 24px;
         border: 1px solid var(--glass-border);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         transition: all 0.4s ease;
         margin-bottom: 30px;
         overflow: hidden;
     }
 
     .luxury-card:hover {
-        background: rgba(17, 34, 64, 0.9);
-        border-color: rgba(212, 175, 55, 0.4);
-        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(30, 58, 138, 0.08);
+        transform: translateY(-5px);
+        border-color: rgba(30, 58, 138, 0.2);
     }
 
     .luxury-card-header {
         padding: 25px 30px;
-        background: rgba(255,255,255,0.03);
+        background: rgba(30, 58, 138, 0.02);
         border-bottom: 1px solid var(--glass-border);
         display: flex;
         align-items: center;
@@ -110,9 +95,9 @@
     }
 
     .luxury-card-title {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
         font-weight: 700;
-        color: var(--text-gold);
+        color: var(--royal-main);
         margin: 0;
         letter-spacing: 0.5px;
         text-transform: uppercase;
@@ -129,99 +114,93 @@
         font-weight: 800;
         letter-spacing: 1px;
         text-transform: uppercase;
-        border: 1px solid transparent;
     }
 
     .bg-luxury-gold { 
-        background: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%); 
-        color: #000; 
-        box-shadow: 0 0 15px var(--royal-gold-glow);
+        background: #fffbeb; 
+        color: #b45309; 
+        border: 1px solid #fde68a;
     }
 
     .table-luxury {
         width: 100%;
         border-collapse: separate;
-        border-spacing: 0 12px;
+        border-spacing: 0 10px;
     }
 
     .table-luxury th {
-        background: transparent;
-        border: none;
-        color: #8892b0;
+        color: var(--text-muted);
         font-weight: 700;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         padding: 5px 25px;
         text-transform: uppercase;
         letter-spacing: 1.5px;
     }
 
     .table-luxury tr {
-        background: rgba(255,255,255,0.02);
+        background: #ffffff;
         transition: all 0.3s;
     }
 
     .table-luxury td {
-        padding: 20px 25px;
+        padding: 18px 25px;
         border-top: 1px solid var(--glass-border);
         border-bottom: 1px solid var(--glass-border);
         vertical-align: middle;
-        color: var(--text-platinum);
+        color: var(--text-deep);
     }
 
     .table-luxury td:first-child { border-left: 1px solid var(--glass-border); border-top-left-radius: 16px; border-bottom-left-radius: 16px; }
     .table-luxury td:last-child { border-right: 1px solid var(--glass-border); border-top-right-radius: 16px; border-bottom-right-radius: 16px; }
 
     .table-luxury tr:hover td {
-        background: rgba(212, 175, 55, 0.05);
-        border-color: var(--royal-gold);
+        background: #f1f5f9;
+        border-color: var(--royal-main);
     }
 
     .icon-box-luxury {
-        width: 55px;
-        height: 55px;
-        border-radius: 18px;
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.6rem;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: var(--royal-gold);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        font-size: 1.4rem;
+        background: #eff6ff;
+        color: var(--royal-main);
+        border: 1px solid #dbeafe;
     }
 
     .dummy-btn {
-        background: linear-gradient(135deg, var(--royal-gold) 0%, #b8860b 100%);
-        color: #000 !important;
-        padding: 14px 28px;
-        border-radius: 15px;
+        background: var(--royal-main);
+        color: #fff !important;
+        padding: 12px 24px;
+        border-radius: 12px;
         text-decoration: none;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        font-weight: 700;
         display: inline-flex;
         align-items: center;
-        gap: 12px;
-        transition: all 0.4s;
-        border: none;
-        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        gap: 10px;
+        transition: all 0.3s;
+        box-shadow: 0 10px 20px rgba(30, 58, 138, 0.2);
     }
 
     .dummy-btn:hover {
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
-        filter: brightness(1.1);
+        transform: translateY(-2px);
+        box-shadow: 0 15px 30px rgba(30, 58, 138, 0.3);
+        background: #1e40af;
     }
 
-    /* Animation */
     .animate-up {
-        animation: fadeInUp 0.8s both;
+        animation: fadeInUp 0.6s both;
     }
 
     @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(30px); }
+        from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
     }
+</style>
+
 </style>
 
 
@@ -467,23 +446,23 @@ $monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 
-<div id="luxury-particles" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.3;"></div>
+<div id="luxury-particles" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.15;"></div>
 
 <script>
-    // Particle Effect
+    // Particle Effect for Light Theme
     function createParticles() {
         const container = document.getElementById('luxury-particles');
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 40; i++) {
             const particle = document.createElement('div');
             particle.style.position = 'absolute';
-            particle.style.width = Math.random() * 3 + 'px';
+            particle.style.width = Math.random() * 4 + 'px';
             particle.style.height = particle.style.width;
-            particle.style.background = Math.random() > 0.5 ? '#d4af37' : '#ffffff';
+            particle.style.background = Math.random() > 0.5 ? '#1e3a8a' : '#b8860b';
             particle.style.borderRadius = '50%';
             particle.style.top = Math.random() * 100 + '%';
             particle.style.left = Math.random() * 100 + '%';
-            particle.style.opacity = Math.random() * 0.5;
-            particle.style.animation = `float ${Math.random() * 10 + 10}s linear infinite`;
+            particle.style.opacity = Math.random() * 0.4;
+            particle.style.animation = `float ${Math.random() * 15 + 15}s linear infinite`;
             container.appendChild(particle);
         }
     }
@@ -491,9 +470,10 @@ $monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "
     const styleSheet = document.createElement("style");
     styleSheet.innerText = `
         @keyframes float {
-            0% { transform: translateY(0) translateX(0); opacity: 0; }
-            50% { opacity: 0.5; }
-            100% { transform: translateY(-100vh) translateX(${Math.random() * 50 - 25}px); opacity: 0; }
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.4; }
+            80% { opacity: 0.4; }
+            100% { transform: translateY(-300px) rotate(360deg); opacity: 0; }
         }
     `;
     document.head.appendChild(styleSheet);
@@ -508,21 +488,17 @@ $monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "
         const avgScores = [<?php foreach($stats as $s) echo $s->avg_score . ','; ?>];
         const respondentCounts = [<?php foreach($stats as $s) echo $s->total . ','; ?>];
 
-        // Global Chart Defaults
-        Chart.defaults.color = '#8892b0';
+        // Global Chart Defaults for Light Theme
+        Chart.defaults.color = '#64748b';
         Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.plugins.tooltip.padding = 12;
 
         // Service Performance Bar Chart
         const ctxBar = document.getElementById('skmServiceChart').getContext('2d');
         
-        // Create Gradients
-        const goldGradient = ctxBar.createLinearGradient(0, 0, 0, 400);
-        goldGradient.addColorStop(0, 'rgba(212, 175, 55, 1)');
-        goldGradient.addColorStop(1, 'rgba(212, 175, 55, 0.1)');
-
         const blueGradient = ctxBar.createLinearGradient(0, 0, 0, 400);
-        blueGradient.addColorStop(0, 'rgba(59, 130, 246, 1)');
-        blueGradient.addColorStop(1, 'rgba(59, 130, 246, 0.1)');
+        blueGradient.addColorStop(0, '#1e3a8a');
+        blueGradient.addColorStop(1, '#60a5fa');
 
         new Chart(ctxBar, {
             type: 'bar',
@@ -531,13 +507,9 @@ $monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "
                 datasets: [{
                     label: 'Skor Rata-rata',
                     data: avgScores,
-                    backgroundColor: goldGradient,
-                    borderColor: '#d4af37',
-                    borderWidth: 1,
+                    backgroundColor: blueGradient,
                     borderRadius: 12,
                     barThickness: 35,
-                    shadowBlur: 15,
-                    shadowColor: 'rgba(212, 175, 55, 0.4)'
                 }]
             },
             options: {
@@ -546,12 +518,11 @@ $monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "
                 plugins: {
                     legend: { display: false },
                     tooltip: {
-                        backgroundColor: '#112240',
-                        titleColor: '#f6e05e',
-                        bodyColor: '#e6f1ff',
-                        borderColor: 'rgba(212, 175, 55, 0.3)',
+                        backgroundColor: '#ffffff',
+                        titleColor: '#0f172a',
+                        bodyColor: '#1e3a8a',
+                        borderColor: '#e2e8f0',
                         borderWidth: 1,
-                        padding: 15,
                         displayColors: false,
                         callbacks: {
                             title: function(context) { return fullLabels[context[0].dataIndex]; }
@@ -562,12 +533,11 @@ $monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "
                     y: { 
                         beginAtZero: true, 
                         max: 4,
-                        grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false },
-                        ticks: { stepSize: 1, color: '#8892b0' }
+                        grid: { color: 'rgba(0,0,0,0.05)', drawBorder: false },
+                        ticks: { stepSize: 1 }
                     },
                     x: { 
-                        grid: { display: false },
-                        ticks: { color: '#8892b0' }
+                        grid: { display: false }
                     }
                 }
             }
@@ -582,31 +552,32 @@ $monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "
                 datasets: [{
                     data: respondentCounts,
                     backgroundColor: [
-                        '#d4af37', '#10b981', '#3b82f6', '#8b5cf6', '#f59e0b', '#ef4444'
+                        '#1e3a8a', '#b8860b', '#3b82f6', '#10b981', '#f59e0b', '#ef4444'
                     ],
-                    borderWidth: 0,
-                    hoverOffset: 25,
-                    borderRadius: 5
+                    borderWidth: 5,
+                    borderColor: '#ffffff',
+                    hoverOffset: 15
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                cutout: '75%',
+                cutout: '72%',
                 plugins: {
                     legend: { 
                         position: 'bottom', 
                         labels: { 
                             usePointStyle: true, 
                             padding: 25,
-                            color: '#8892b0',
-                            font: { size: 11 }
+                            font: { size: 11, weight: '600' }
                         } 
                     },
                     tooltip: {
-                        backgroundColor: '#112240',
-                        padding: 15,
-                        displayColors: true,
+                        backgroundColor: '#ffffff',
+                        titleColor: '#0f172a',
+                        bodyColor: '#1e3a8a',
+                        borderColor: '#e2e8f0',
+                        borderWidth: 1,
                         boxPadding: 8
                     }
                 }
@@ -614,6 +585,7 @@ $monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "
         });
     });
 </script>
+
 
 <?php
 function truncateString($str, $len) {

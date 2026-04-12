@@ -94,7 +94,7 @@
         .sidebar-wrapper { background: #343a40 !important; }
         .nav-sidebar .nav-item { width: 100%; margin-bottom: 2px; }
         .nav-sidebar .nav-link { 
-            color: #ced4da !important; 
+            color: #ffffff !important; 
             padding: 10px 15px !important; 
             display: flex !important; 
             align-items: center !important; 
@@ -107,7 +107,7 @@
             width: 24px; 
             text-align: center; 
             margin-right: 12px;
-            opacity: 0.8;
+            opacity: 1;
         }
         .nav-sidebar .nav-link p { margin-bottom: 0; line-height: 1.5; }
         .nav-sidebar .nav-link:hover { background-color: rgba(255,255,255,0.05) !important; color: #fff !important; }

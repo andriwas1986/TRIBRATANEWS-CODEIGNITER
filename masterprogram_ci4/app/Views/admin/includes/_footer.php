@@ -107,32 +107,7 @@
     </script>
 <?php endif; ?>
 
-<style>
-    /* 1. Memperbesar Menu Utama (Home, Navigation, Add Post, dll) */
-    .sidebar-menu > li > a {
-        font-size: 18px !important; /* Ubah angka ini sesuai selera */
-        font-weight: 500 !important; /* Agar agak tebal sedikit */
-        padding: 12px 12px !important; /* Menambah jarak biar tidak mepet */
-    }
 
-    /* 2. Memperbesar Ikon di Menu */
-    .sidebar-menu > li > a > i {
-        font-size: 18px !important; /* Ikon juga ikut diperbesar */
-        width: 25px !important;
-    }
-
-    /* 3. Memperbesar Judul Header (MAIN NAVIGATION) */
-    .sidebar-menu .header {
-        font-size: 13px !important;
-        font-weight: bold !important;
-        letter-spacing: 1px;
-    }
-
-    /* 4. Memperbesar Sub-Menu (Anak menu jika ada) */
-    .sidebar-menu .treeview-menu > li > a {
-        font-size: 14px !important;
-    }
-</style>
 
 </body>
 </html>

@@ -84,13 +84,47 @@
         .pull-left { float: left !important; }
     </style>
     <style>
-        /* Sidebar Item Fix */
-        .nav-sidebar .nav-item { width: 100%; }
-        .nav-sidebar .nav-link { color: #c2c7d0 !important; display: flex !important; align-items: center !important; gap: 10px; }
-        .nav-sidebar .nav-link i { font-size: 16px; width: 20px; text-align: center; }
-        .nav-sidebar .nav-link:hover, .nav-sidebar .nav-link.active { background-color: rgba(255,255,255,.1) !important; color: #fff !important; }
-        .nav-treeview { padding-left: 15px; background: rgba(255,255,255,.02); }
-        .nav-header { padding: 15px 20px 5px !important; font-size: 12px; color: #6c757d; text-transform: uppercase; }
+        /* --- SIDEBAR NAVIGATION FIX (AdminLTE 4 Standard) --- */
+        .sidebar-wrapper { background: #343a40 !important; }
+        .nav-sidebar .nav-item { width: 100%; margin-bottom: 2px; }
+        .nav-sidebar .nav-link { 
+            color: #ced4da !important; 
+            padding: 8px 15px !important; 
+            display: flex !important; 
+            align-items: center !important; 
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
+            font-size: 14px;
+        }
+        .nav-sidebar .nav-link i { 
+            font-size: 14px; 
+            width: 24px; 
+            text-align: center; 
+            margin-right: 10px;
+            opacity: 0.8;
+        }
+        .nav-sidebar .nav-link p { margin-bottom: 0; line-height: 1.5; }
+        .nav-sidebar .nav-link:hover { background-color: rgba(255,255,255,0.05) !important; color: #fff !important; }
+        .nav-sidebar .nav-link.active { background-color: rgba(13, 110, 253, 0.2) !important; color: #3b82f6 !important; font-weight: 600; }
+        
+        /* Sub-menu (Treeview) styling */
+        .nav-treeview { padding-left: 10px; background: rgba(0,0,0,0.1); }
+        .nav-treeview .nav-link { padding: 6px 15px !important; font-size: 13px; }
+        .nav-treeview .nav-link i { font-size: 10px; width: 20px; }
+        
+        /* Nav Header Styling */
+        .nav-header { 
+            padding: 15px 15px 5px !important; 
+            font-size: 11px !important; 
+            color: #6c757d !important; 
+            text-transform: uppercase; 
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Animation for arrows */
+        .nav-item .nav-arrow { transition: transform 0.3s ease; }
+        .nav-item.menu-open > .nav-link .nav-arrow { transform: rotate(-90deg); }
     </style>
     <style>
         /* --- GLOBAL THEME OVERRIDES --- */
@@ -239,17 +273,17 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?= adminUrl('smart-report/medsos'); ?>">
-                                        <i class="fa fa-circle-o"></i><p>Laporan Medsos</p>
+                                        <i class="fa fa-circle"></i><p>Laporan Medsos</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?= adminUrl('smart-report/policetube'); ?>">
-                                        <i class="fa fa-circle-o"></i><p>Laporan Policetube</p>
+                                        <i class="fa fa-circle"></i><p>Laporan Policetube</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?= adminUrl('smart-report/youtube'); ?>">
-                                        <i class="fa fa-circle-o"></i><p>Laporan Youtube</p>
+                                        <i class="fa fa-circle"></i><p>Laporan Youtube</p>
                                     </a>
                                 </li>
                             </ul>
@@ -259,8 +293,8 @@
                                 <i class="fa fa-line-chart"></i> <p>SKM (Survei) <i class="nav-arrow fa fa-angle-left float-end"></i></p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item nav-skm"><a class="nav-link" href="<?= adminUrl('skm'); ?>"><i class="fa fa-circle-o"></i><p>Daftar Survei</p></a></li>
-                                <li class="nav-item nav-skm-statistics"><a class="nav-link" href="<?= adminUrl('skm/statistics'); ?>"><i class="fa fa-circle-o"></i><p>Statistik SKM</p></a></li>
+                                <li class="nav-item nav-skm"><a class="nav-link" href="<?= adminUrl('skm'); ?>"><i class="fa fa-circle"></i><p>Daftar Survei</p></a></li>
+                                <li class="nav-item nav-skm-statistics"><a class="nav-link" href="<?= adminUrl('skm/statistics'); ?>"><i class="fa fa-circle"></i><p>Statistik SKM</p></a></li>
                             </ul>
                         </li>
                         <?php if (isSuperAdmin() || $generalSettings->bulk_post_upload_for_authors == 1): ?>
@@ -271,7 +305,7 @@
                         <li class="nav-item has-treeview<?php isAdminNavActive(['posts', 'slider-posts', 'featured-posts', 'breaking-news', 'recommended-posts', 'pending-posts', 'scheduled-posts', 'drafts', 'update-post']); ?>">
                             <a class="nav-link" href="#"><i class="fa fa-bars"></i> <p><?= trans("posts"); ?> <i class="nav-arrow fa fa-angle-left float-end"></i></p></a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item nav-posts"><a class="nav-link" href="<?= adminUrl('posts'); ?>"><p><?= trans("posts"); ?></p></a></li>
+                                <li class="nav-item nav-posts"><a class="nav-link" href="<?= adminUrl('posts'); ?>"><i class="fa fa-circle"></i><p><?= trans("posts"); ?></p></a></li>
                                 <?php if (hasPermission('manage_all_posts')): ?>
                                     <li class="nav-item nav-slider-posts"><a class="nav-link" href="<?= adminUrl('slider-posts'); ?>"><p><?= trans("slider_posts"); ?></p></a></li>
                                     <li class="nav-item nav-featured-posts"><a class="nav-link" href="<?= adminUrl('featured-posts'); ?>"><p><?= trans("featured_posts"); ?></p></a></li>
@@ -307,9 +341,9 @@
                         <li class="nav-item has-treeview<?php isAdminNavActive(['gallery-images', 'gallery-albums', 'gallery-categories', 'update-gallery-image', 'update-gallery-album', 'update-gallery-category', 'gallery-add-image']); ?>">
                             <a class="nav-link" href="#"><i class="fa fa-image"></i> <p><?= trans("gallery"); ?> <i class="nav-arrow fa fa-angle-left float-end"></i></p></a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item nav-gallery-images"><a class="nav-link" href="<?= adminUrl('gallery-images'); ?>"><p><?= trans("images"); ?></p></a></li>
-                                <li class="nav-item nav-gallery-albums"><a class="nav-link" href="<?= adminUrl('gallery-albums'); ?>"><p><?= trans("albums"); ?></p></a></li>
-                                <li class="nav-item nav-gallery-categories"><a class="nav-link" href="<?= adminUrl('gallery-categories'); ?>"><p><?= trans("categories"); ?></p></a></li>
+                                <li class="nav-item nav-gallery-images"><a class="nav-link" href="<?= adminUrl('gallery-images'); ?>"><i class="fa fa-circle"></i><p><?= trans("images"); ?></p></a></li>
+                                <li class="nav-item nav-gallery-albums"><a class="nav-link" href="<?= adminUrl('gallery-albums'); ?>"><i class="fa fa-circle"></i><p><?= trans("albums"); ?></p></a></li>
+                                <li class="nav-item nav-gallery-categories"><a class="nav-link" href="<?= adminUrl('gallery-categories'); ?>"><i class="fa fa-circle"></i><p><?= trans("categories"); ?></p></a></li>
                             </ul>
                         </li>
                     <?php endif;
@@ -320,8 +354,8 @@
                         <li class="nav-item has-treeview<?php isAdminNavActive(['comments', 'pending-comments']); ?>">
                             <a class="nav-link" href="#"><i class="fa fa-comments"></i> <p><?= trans("comments"); ?> <i class="nav-arrow fa fa-angle-left float-end"></i></p></a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item nav-pending-comments"><a class="nav-link" href="<?= adminUrl('pending-comments'); ?>"><p><?= trans("pending_comments"); ?></p></a></li>
-                                <li class="nav-item nav-comments"><a class="nav-link" href="<?= adminUrl('comments'); ?>"><p><?= trans("approved_comments"); ?></p></a></li>
+                                <li class="nav-item nav-pending-comments"><a class="nav-link" href="<?= adminUrl('pending-comments'); ?>"><i class="fa fa-circle"></i><p><?= trans("pending_comments"); ?></p></a></li>
+                                <li class="nav-item nav-comments"><a class="nav-link" href="<?= adminUrl('comments'); ?>"><i class="fa fa-circle"></i><p><?= trans("approved_comments"); ?></p></a></li>
                             </ul>
                         </li>
                     <?php endif;
@@ -334,10 +368,10 @@
                         <li class="nav-item has-treeview<?php isAdminNavActive(['reward-system']); ?>">
                             <a class="nav-link" href="#"><i class="fa fa-money"></i> <p><?= trans("reward_system"); ?> <i class="nav-arrow fa fa-angle-left float-end"></i></p></a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item nav-reward-system"><a class="nav-link" href="<?= adminUrl('reward-system'); ?>"><p><?= trans("reward_system"); ?></p></a></li>
-                                <li class="nav-item nav-reward-system-earnings"><a class="nav-link" href="<?= adminUrl('reward-system/earnings'); ?>"><p><?= trans("earnings"); ?></p></a></li>
-                                <li class="nav-item nav-reward-system-payouts"><a class="nav-link" href="<?= adminUrl('reward-system/payouts'); ?>"><p><?= trans("payouts"); ?></p></a></li>
-                                <li class="nav-item nav-reward-system-pageviews"><a class="nav-link" href="<?= adminUrl('reward-system/pageviews'); ?>"><p><?= trans("pageviews"); ?></p></a></li>
+                                <li class="nav-item nav-reward-system"><a class="nav-link" href="<?= adminUrl('reward-system'); ?>"><i class="fa fa-circle"></i><p><?= trans("reward_system"); ?></p></a></li>
+                                <li class="nav-item nav-reward-system-earnings"><a class="nav-link" href="<?= adminUrl('reward-system/earnings'); ?>"><i class="fa fa-circle"></i><p><?= trans("earnings"); ?></p></a></li>
+                                <li class="nav-item nav-reward-system-payouts"><a class="nav-link" href="<?= adminUrl('reward-system/payouts'); ?>"><i class="fa fa-circle"></i><p><?= trans("payouts"); ?></p></a></li>
+                                <li class="nav-item nav-reward-system-pageviews"><a class="nav-link" href="<?= adminUrl('reward-system/pageviews'); ?>"><i class="fa fa-circle"></i><p><?= trans("pageviews"); ?></p></a></li>
                             </ul>
                         </li>
                     <?php endif;

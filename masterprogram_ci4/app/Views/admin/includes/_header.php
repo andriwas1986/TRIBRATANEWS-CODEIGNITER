@@ -3,10 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?= esc($title); ?> - <?= trans("admin"); ?>&nbsp;<?= esc($baseSettings->site_title); ?></title>
+    <title><?= esc($title); ?> - <?= trans("admin"); ?>&nbsp;<?= isset($baseSettings) ? esc($baseSettings->site_title) : ''; ?></title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <?= csrf_meta(); ?>
     <link rel="shortcut icon" type="image/png" href="<?= getFavicon(); ?>"/>
+    <?php 
+    $adminTheme = $adminTheme ?? 'classic';
+    $activeLang = $activeLang ?? (object)['id' => 1, 'text_direction' => 'ltr', 'name' => 'English'];
+    ?>
     <link rel="stylesheet" href="<?= base_url('assets/admin/plugins/bootstrap5/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('assets/admin/plugins/font-awesome/css/font-awesome.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('assets/admin/css/adminlte4.min.css'); ?>">
@@ -88,7 +92,7 @@
         .nav-treeview { padding-left: 15px; background: rgba(255,255,255,.02); }
         .nav-header { padding: 15px 20px 5px !important; font-size: 12px; color: #6c757d; text-transform: uppercase; }
     </style>
-
+    <style>
         /* --- GLOBAL THEME OVERRIDES --- */
         
         /* MODERN GLASS THEME */
@@ -128,6 +132,7 @@
 </head>
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary theme-<?= $adminTheme; ?>">
 <div class="app-wrapper">
+    <?php if (authCheck()): ?>
     <nav class="app-header navbar navbar-expand bg-body shadow-sm">
         <div class="container-fluid">
             <ul class="navbar-nav">
@@ -142,7 +147,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" aria-expanded="false">
-                        <i class="fa fa-globe"></i>&nbsp;<?= esc($activeLang->name); ?>
+                        <i class="fa fa-globe"></i>&nbsp;<?= isset($activeLang) ? esc($activeLang->name) : ''; ?>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end shadow">
                         <?php if (!empty($activeLanguages)):
@@ -177,14 +182,15 @@
                         </li>
                     </ul>
                 </li>
+                <?php endif; ?>
             </ul>
         </div>
     </nav>
-
+    <?php if (authCheck()): ?>
     <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
         <div class="sidebar-brand">
             <a href="<?= adminUrl(); ?>" class="brand-link texto-center">
-                <span class="brand-text fw-light"><b><?= esc($baseSettings->application_name); ?></b> <?= trans("panel"); ?></span>
+                <span class="brand-text fw-light"><b><?= isset($baseSettings) ? esc($baseSettings->application_name) : ''; ?></b> <?= trans("panel"); ?></span>
             </a>
         </div>
         <div class="sidebar-wrapper">
@@ -405,7 +411,7 @@
                     <?php endif;
                     if ($generalSettings->reward_system_status == 1 && user()->reward_system_enabled == 1): ?>
                         <li class="nav-author-earnings"><a href="<?= adminUrl('author-earnings'); ?>"><i class="fa fa-money" aria-hidden="true"></i><span><?= trans("my_earnings"); ?></span></a></li>
-                    <?php endif;
+                    <?php endif; ?>
                         <li class="nav-item">
                             <div class="database-backup px-3 py-2">
                                 <form action="<?= base_url('Admin/downloadDatabaseBackup'); ?>" method="post">
@@ -419,6 +425,7 @@
             </nav>
         </div>
     </aside>
+    <?php endif; ?>
     <?php
     $segment2 = $segment = getSegmentValue(2);
     $segment3 = $segment = getSegmentValue(3);

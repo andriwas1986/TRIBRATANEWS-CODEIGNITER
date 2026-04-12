@@ -6,7 +6,7 @@
             <span class="badge rounded-pill bg-info-subtle text-info border border-info-subtle px-3 py-2">
                 <i class="fa fa-info-circle"></i> Bootstrap v5.3.3 & AdminLTE v4.0.0
             </span>
-            <strong class="ms-3 fw-semibold"><?= $baseSettings->copyright; ?>&nbsp;</strong>
+            <strong class="ms-3 fw-semibold"><?= isset($baseSettings) ? $baseSettings->copyright : ''; ?>&nbsp;</strong>
         </div>
         <div class="d-inline">
             <b>Andri Solution 08113647707 - APP Version 5.3.3</b>
@@ -49,8 +49,8 @@
             relative_urls: false,
             entity_encoding: 'raw',
             remove_script_host: false,
-            directionality: VrConfig.directionality,
-            language: '<?= $activeLang->text_editor_lang; ?>',
+            directionality: typeof VrConfig !== 'undefined' ? VrConfig.directionality : 'ltr',
+            language: '<?= isset($activeLang) ? $activeLang->text_editor_lang : 'en'; ?>',
             menubar: menuBar,
 
             // 1. Matikan menu klik kanan TinyMCE (agar bisa Paste lewat Klik Kanan Mouse)

@@ -95,18 +95,18 @@
         .nav-sidebar .nav-item { width: 100%; margin-bottom: 2px; }
         .nav-sidebar .nav-link { 
             color: #ced4da !important; 
-            padding: 8px 15px !important; 
+            padding: 10px 15px !important; 
             display: flex !important; 
             align-items: center !important; 
             border-radius: 4px;
             transition: all 0.2s ease-in-out;
-            font-size: 14px;
+            font-size: 16px;
         }
         .nav-sidebar .nav-link i { 
-            font-size: 14px; 
+            font-size: 16px; 
             width: 24px; 
             text-align: center; 
-            margin-right: 10px;
+            margin-right: 12px;
             opacity: 0.8;
         }
         .nav-sidebar .nav-link p { margin-bottom: 0; line-height: 1.5; }
@@ -115,13 +115,13 @@
         
         /* Sub-menu (Treeview) styling */
         .nav-treeview { padding-left: 10px; background: rgba(0,0,0,0.1); }
-        .nav-treeview .nav-link { padding: 6px 15px !important; font-size: 13px; }
+        .nav-treeview .nav-link { padding: 8px 15px !important; font-size: 15px; }
         .nav-treeview .nav-link i { font-size: 10px; width: 20px; }
         
         /* Nav Header Styling */
         .nav-header { 
-            padding: 15px 15px 5px !important; 
-            font-size: 11px !important; 
+            padding: 18px 15px 8px !important; 
+            font-size: 13px !important; 
             color: #6c757d !important; 
             text-transform: uppercase; 
             font-weight: 700;

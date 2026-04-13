@@ -36,9 +36,11 @@ class FileController extends BaseAdminController
                 echo json_encode($file);
             } else {
                 log_message('error', 'uploadImage: File ID found but image data empty.');
+                echo json_encode(['error' => 'Gagal memuat gambar setelah diupload.']);
             }
         } else {
             log_message('error', 'uploadImage: upload failed (FileModel::uploadImage returned false).');
+            echo json_encode(['error' => 'Upload gagal. Pastikan folder uploads/tmp writable dan format file didukung.']);
         }
     }
 

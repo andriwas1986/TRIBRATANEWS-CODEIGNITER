@@ -50,6 +50,11 @@ class UploadModel extends BaseModel
             // Format: prefix_20231025_120000_a1b2c3.jpg
             $uniqueName = $namePrefix . date('Ymd_His') . '_' . uniqid() . '.' . $ext;
             
+            // PASTIKAN DIREKTORI ADA & WRITABLE!
+            if (!is_dir(FCPATH . $directory)) {
+                @mkdir(FCPATH . $directory, 0775, true);
+            }
+            
             if (!$file->hasMoved()) {
                 if ($file->move(FCPATH . $directory, $uniqueName)) {
                     return ['name' => $uniqueName, 'orjName' => $orjName, 'path' => $directory . $uniqueName, 'ext' => $ext];
@@ -306,7 +311,7 @@ class UploadModel extends BaseModel
         $directory = date("Ym");
         $directoryPath = FCPATH . 'uploads/' . $folder . '/' . $directory . '/';
         if (!is_dir($directoryPath)) {
-            if (!mkdir($directoryPath, 0755, true)) {
+            if (!mkdir($directoryPath, 0775, true)) {
                 log_message('error', 'UploadModel::createUploadDirectory - Failed to create directory: ' . $directoryPath);
             }
         }

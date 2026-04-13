@@ -19,7 +19,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         passphrase: ${{ secrets.SSH_PASSPHRASE }}
         port: 65002
-        source: "masterprogram_ci4/**,!masterprogram_ci4/vendor/**,!masterprogram_ci4/system/**"
+        source: "kopetcodeigniter/**,!kopetcodeigniter/vendor/**,!kopetcodeigniter/system/**"
         target: "kopetcodeigniter"
         strip_components: 1
 
@@ -31,8 +31,9 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         passphrase: ${{ secrets.SSH_PASSPHRASE }}
         port: 65002
-        source: "**,!masterprogram_ci4/**,!.git/**,!.github/**"
+        source: "public_html/waskitho.suaramadiun.com/**"
         target: "public_html/waskitho.suaramadiun.com/"
+        strip_components: 2
 
     - name: 🧹 One-time Cleanup
       uses: appleboy/ssh-action@v1.0.3

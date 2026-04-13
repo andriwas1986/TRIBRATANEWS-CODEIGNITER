@@ -34,7 +34,11 @@ class FileController extends BaseAdminController
             if (!empty($file)) {
                 $file->img_base_url = getBaseURLByStorage($file->storage);
                 echo json_encode($file);
+            } else {
+                log_message('error', 'uploadImage: File ID found but image data empty.');
             }
+        } else {
+            log_message('error', 'uploadImage: upload failed (FileModel::uploadImage returned false).');
         }
     }
 

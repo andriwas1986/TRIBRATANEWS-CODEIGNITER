@@ -94,40 +94,45 @@ class UploadModel extends BaseModel
     //upload post image
     public function uploadPostImage($tempPath, $type)
     {
-        $img = Image::make($tempPath)->orientate();
-        $name = '';
-        
-        // Prefix ukuran
-        if ($type == 'big') {
-            $name = 'image_870x580_';
-            $img->fit(870, 580);
-        } elseif ($type == 'default') {
-            $name = 'image_870x_';
-            $img->resize(870, null, function ($constraint) {
-                $constraint->aspectRatio();
-            });
-        } elseif ($type == 'slider') {
-            $name = 'image_694x532_';
-            $img->fit(694, 532);
-        } elseif ($type == 'mid') {
-            $name = 'image_430x256_';
-            $img->fit(450, 280);
-        } elseif ($type == 'small') {
-            $name = 'image_140x98_';
-            $img->fit(140, 98);
-        }
+        try {
+            $img = Image::make($tempPath)->orientate();
+            $name = '';
+            
+            // Prefix ukuran
+            if ($type == 'big') {
+                $name = 'image_870x580_';
+                $img->fit(870, 580);
+            } elseif ($type == 'default') {
+                $name = 'image_870x_';
+                $img->resize(870, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            } elseif ($type == 'slider') {
+                $name = 'image_694x532_';
+                $img->fit(694, 532);
+            } elseif ($type == 'mid') {
+                $name = 'image_430x256_';
+                $img->fit(450, 280);
+            } elseif ($type == 'small') {
+                $name = 'image_140x98_';
+                $img->fit(140, 98);
+            }
 
-        if ($this->getFileExt($tempPath) == 'webp') {
-            $this->jpgQuality = 100;
-        }
+            if ($this->getFileExt($tempPath) == 'webp') {
+                $this->jpgQuality = 100;
+            }
 
-        // [MODIFIKASI] Tambahkan Site ID di nama file gambar postingan
-        // Hasil: uploads/images/202310/site_1_image_870x_abcdef12345.jpg
-        $sitePrefix = 'site_' . $this->activeSiteId . '_';
-        
-        $newPath = 'uploads/images/' . $this->createUploadDirectory('images') . $sitePrefix . $name . uniqid();
-        $img->save(FCPATH . $newPath . $this->imgExt, $this->jpgQuality);
-        return $this->convertImageFormat($newPath);
+            // [MODIFIKASI] Tambahkan Site ID di nama file gambar postingan
+            // Hasil: uploads/images/202310/site_1_image_870x_abcdef12345.jpg
+            $sitePrefix = 'site_' . $this->activeSiteId . '_';
+            
+            $newPath = 'uploads/images/' . $this->createUploadDirectory('images') . $sitePrefix . $name . uniqid();
+            $img->save(FCPATH . $newPath . $this->imgExt, $this->jpgQuality);
+            return $this->convertImageFormat($newPath);
+        } catch (\Exception $e) {
+            log_message('error', 'uploadPostImage Error (' . $type . '): ' . $e->getMessage());
+            return null;
+        }
     }
 
     //upload quiz image
@@ -256,12 +261,17 @@ class UploadModel extends BaseModel
     //convert image format
     public function convertImageFormat($sourcePath)
     {
-        if ($this->generalSettings->image_file_format == 'WEBP') {
-            WebPConvert::convert($sourcePath . $this->imgExt, $sourcePath . '.webp', ['quality' => $this->webpQuality]);
-            @unlink($sourcePath . $this->imgExt);
-            return $sourcePath . '.webp';
+        try {
+            if ($this->generalSettings->image_file_format == 'WEBP') {
+                WebPConvert::convert($sourcePath . $this->imgExt, $sourcePath . '.webp', ['quality' => $this->webpQuality]);
+                @unlink($sourcePath . $this->imgExt);
+                return $sourcePath . '.webp';
+            }
+            return $sourcePath . $this->imgExt;
+        } catch (\Exception $e) {
+            log_message('error', 'convertImageFormat Error: ' . $e->getMessage());
+            return $sourcePath . $this->imgExt;
         }
-        return $sourcePath . $this->imgExt;
     }
 
     //download temp image
@@ -296,7 +306,9 @@ class UploadModel extends BaseModel
         $directory = date("Ym");
         $directoryPath = FCPATH . 'uploads/' . $folder . '/' . $directory . '/';
         if (!is_dir($directoryPath)) {
-            @mkdir($directoryPath, 0755, true);
+            if (!mkdir($directoryPath, 0755, true)) {
+                log_message('error', 'UploadModel::createUploadDirectory - Failed to create directory: ' . $directoryPath);
+            }
         }
         if (!file_exists($directoryPath . "index.html")) {
             @copy(FCPATH . "uploads/index.html", $directoryPath . "index.html");
